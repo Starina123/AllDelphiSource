@@ -1,0 +1,36 @@
+{$IFDEF CONDITIONALEXPRESSIONS}
+  {$IF CompilerVersion >= 17.0}
+    {$DEFINE DIAMONDBACK_UP}
+  {$IFEND}
+  {$IF CompilerVersion >= 18.0}
+    {$DEFINE DIAMONDBACK_UP}
+    {$DEFINE DEXTER_UP}
+  {$IFEND}
+  {$IF CompilerVersion >= 19.0}
+    {$DEFINE DIAMONDBACK_UP}
+    {$DEFINE DEXTER_UP}
+    {$DEFINE HIGHLANDER_UP}
+  {$IFEND}
+  {$IF CompilerVersion >= 20.0}
+    {$DEFINE DIAMONDBACK_UP}
+    {$DEFINE DEXTER_UP}
+    {$DEFINE HIGHLANDER_UP}
+    {$DEFINE TIBURON_UP}
+  {$IFEND}
+  {$IF CompilerVersion >= 21.0}
+    {$DEFINE DIAMONDBACK_UP}
+    {$DEFINE DEXTER_UP}
+    {$DEFINE HIGHLANDER_UP}
+    {$DEFINE TIBURON_UP}
+    {$DEFINE WEAVER_UP}
+  {$IFEND}
+  {$IF CompilerVersion >= 22.0}
+    {$DEFINE DIAMONDBACK_UP}
+    {$DEFINE DEXTER_UP}
+    {$DEFINE HIGHLANDER_UP}
+    {$DEFINE TIBURON_UP}
+    {$DEFINE WEAVER_UP}
+    {$DEFINE FULCRUM_UP}
+  {$IFEND}
+{$ENDIF}
+
