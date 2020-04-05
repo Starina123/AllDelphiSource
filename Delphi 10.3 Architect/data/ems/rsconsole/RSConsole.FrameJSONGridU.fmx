@@ -1,0 +1,824 @@
+object FrameJSONGrid: TFrameJSONGrid
+  Size.Width = 834.000000000000000000
+  Size.Height = 367.000000000000000000
+  Size.PlatformDefault = False
+  object StringGrid: TStringGrid
+    StyleName = 'gridstyle'
+    Align = Client
+    CanFocus = True
+    ClipChildren = True
+    Size.Width = 834.000000000000000000
+    Size.Height = 287.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    RowHeight = 21.000000000000000000
+    Options = [ColumnResize, ColLines, RowLines, RowSelect, AlwaysShowSelection, Tabs, Header, HeaderClick]
+    OnHeaderClick = StringGridHeaderClick
+    OnColumnMoved = StringGridColumnMoved
+    OnEditingDone = StringGridEditingDone
+    OnCellDblClick = StringGridCellDblClick
+    Viewport.Width = 830.000000000000000000
+    Viewport.Height = 262.000000000000000000
+  end
+  object ToolBar1: TToolBar
+    Size.Width = 834.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+    object MenuButton: TButton
+      Align = MostLeft
+      Size.Width = 49.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'speedbuttonstyle'
+      TabOrder = 0
+      OnClick = MenuButtonClick
+      object Image2: TImage
+        MultiResBitmap.Height = 36
+        MultiResBitmap.Width = 36
+        MultiResBitmap.LoadSize = 2
+        MultiResBitmap = <
+          item
+            Width = 96
+            Height = 96
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+              38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              008249444154785EEDD9210E80401004C183FFFF19102711880B1D4895D9F52D
+              67000000000000000000BFB3CDFBD871992F37B6CB7C1FD9E72522404C809800
+              31016202C404000000008097D88417B3097F8C0031016202C404880910130000
+              0000005E62135ECC26FC3102C404880910132026404C00000000000000000080
+              A5C638018EF70C2EADB4F1020000000049454E44AE426082}
+            FileName = 'C:\Users\embt\Desktop\baseline_menu_white_48dp.png'
+          end>
+        Align = Client
+        HitTest = False
+        Margins.Top = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Size.Width = 49.000000000000000000
+        Size.Height = 20.000000000000000000
+        Size.PlatformDefault = False
+        object MenuFillRGBEffect: TFillRGBEffect
+          Color = xFF0874D6
+        end
+      end
+    end
+    object NoEditingGPL: TGridPanelLayout
+      Align = Left
+      Size.Width = 600.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      ColumnCollection = <
+        item
+          Value = 19.047619047619050000
+        end
+        item
+          Value = 19.047619047619050000
+        end
+        item
+          Value = 23.809523809523800000
+        end
+        item
+          Value = 19.047619047619050000
+        end
+        item
+          Value = 19.047619047619050000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = Layout1
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = Layout2
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = Layout3
+          Row = 0
+        end
+        item
+          Column = 3
+          Control = Layout4
+          Row = 0
+        end
+        item
+          Column = 4
+          Control = Layout5
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end
+        item
+          SizeStyle = Auto
+        end>
+      object Layout1: TLayout
+        Align = Client
+        Size.Width = 114.285713195800800000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object RefreshButton: TSpeedButton
+          StaysPressed = True
+          Align = Client
+          Size.Width = 114.285713195800800000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'speedbuttonstyle'
+          OnClick = RefreshButtonClick
+          object Image1: TImage
+            MultiResBitmap.Height = 36
+            MultiResBitmap.Width = 36
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 96
+                Height = 96
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                  38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  072E49444154785EED9C49885D451486FBBDEE8E260E741C6246442131A61D90
+                  18C1AC9CC5854B457BA1908590B87158186D5111A1896014C46C3446DC28BA70
+                  8A824330A2A06D8C6915B5418223064C2491744C4C4F7E47EE0B2FCFD735BCAA
+                  7BEBF6EB73A1E8E156D5F9CF77AAEA56DDA13A3AF450024A4009280125A00494
+                  801250024A4009280125A00494801250024A4009280125A004DA9D40A5EC0E4E
+                  4E4ECE42E365A415131313CBF9B99CFF2D209DCEEFF34813A43F2B95CA3ED21E
+                  7E1FAE56ABC39CFF96BF77908EE6E5237A1EC2D6A379D59FAC5E1C5B4A7A787C
+                  7CFCC3D1D1D17F80D9D241D9C314DC4E5DFD240956B4837AD78BA86815A6AE08
+                  5FE602E9FEB1B1B16F5AA26D2944308E12D097B0B13AD4D71AFCB6080040CE06
+                  CC3300FA3B0FF0CDEA24C89FF2FF9B4855DF60A0F7AEFA3A7DCB97263F4E5470
+                  665D91E01B8381EDEFD170B52B9446F8D3B607E0C822199B8B6AF1363BF4C0B7
+                  D174A62910CDE04FCB00E0481F2DEF2F1B94A2CFA3690F3657360B029AD74EA5
+                  C7B5F724CF87039DB4B4678B06EB634F665CC0BEA51E96097E8C1E50C83A00A1
+                  7370E40DE6CCD7B4D212B868EEA6EC2073FA41CACBDC7E676D7E4FBDA7F0BF85
+                  595AC4CF25D8BB80FF5FDED5D5758EAF3D6C4D767676F6636F40E0636793A90E
+                  CE17C2D0D78F63F971E2049C1AF4698992575A233DE679CA9FD7AA71CA5E481D
+                  2F52D7A8AF7DCA7DE052A6556D8595C389575C1CA9E581D508CE3F01BCB36289
+                  A4AE25D4F974B630F39163CD1B4B632EF5E0F87D560FB20CC03904A40D94392D
+                  1731544ADD8BB1F1AEAB26977C79690DAE1767AF07EA848B13E41B960559B051
+                  C70AB299D87E176DB63C8E268BCD8683CB807AD0265ECED322DF22FF49C52AEC
+                  E8C0F47C52F05AA468DD567B3855E1A2FB9523FC4DE4F3BE1D6015E19801DBDD
+                  BED7A846BF1C4D4D992DBAF3085CC334EE229B305AFD66F2AD631627B793531D
+                  63E81849653CBA5DE09FCCD0B3D7D6FA65E99FB2E5D71C9769AE4DABED7C7488
+                  2115D29AFA6D82E5822B810AB113A32CF065F80B3E626889528740251D307904
+                  FC239C97A75A498F58F0C5D7A48ED41BA7F5DFEDD09C1E492D3826FC52058099
+                  CF90A5F5FF2AB72552062036FCD20400B02B6CAD9F3CF72686FFA44D632BE753
+                  FA74CC362DEB314BEB3F98DDB54CA2177DB9C02F4D0F60F8D9610A8074FD24E4
+                  319A27FC520400113DB67B3EB4FE4B5204206FF8A50800706FB40C3FFB12C11F
+                  68654CF72D13EA5B8C5B11E79B44F064697BA848DFF2B4FC01ECAEF72D97227F
+                  70006831CB4CC2B9D7F359918E4D27F851B87001FEC8D46D19A26E8862A84D2B
+                  89D1038CEFD3C0ED87366517C5ADE000A042DE4A98F260083A1045699B561223
+                  00A79AD8303C1D6A537651DC8A1100E303157AC07814A56D5A498C00189F28D1
+                  038C43549B7275762BF700A064AEB39A19983138000C317B2DDC8CEB8419C8FC
+                  38976304C036CDEC9DE9904DFE07078025BF3100F490551A80A9090407808BEC
+                  7726C0AC94AFD200E448401EC63BDC8EBE384709D3BAEAE01EC0103342FAC2B2
+                  18BB63BA5192D7DA4DF7B8E8D91FC7F0293800228200BC6712C30DB9DB523E92
+                  F40585D685A45B8D17CF6AF54DDF7A73CB8FD85EDB830CF2DC939B80C815D3FA
+                  37DAFCE1FCB991CD8655677B2197EB44F2D7525C3C04EC7CF948C432FC7CE252
+                  974B9E28439018623ABAC56490EFB51673BEF44FA9E8A91BD16A7C5DDEE6AB0B
+                  F8E879103E9B96B3DFF27CF848C8375FD145375488B6D5B6A127FB9C55361029
+                  DF81030F3838508A97731BE9C94722D98BC34617C8B7B67CE43345D99AE00F5B
+                  10B8C8BD439E68C35F2810B4C837CCEFDB7413A0DDE42967EBAF41A085ACB139
+                  22E771F8B95070B1CA23E70517CDF8E6BCAF442C6DDEF5E0887CA2B4CBC5A1EC
+                  65D9643D417A211A9E72D4FA9A378C5405E442EBF191DED6441FE9F5007F9B0B
+                  7CD9DB028D51377CCA3D36F23A8AED1E51CDF9049FA95E8ACD9F5CE04B1E7C39
+                  6EFF88DCE1C53280709F0FB5E50BF90DF87B462CFB4D663AB3B1F138F0C75DE1
+                  CBAA382F3D85D48B032FBB3A2BF9EAB62A58104BA0AC5148B7FBB4FA6CA250AA
+                  D95A4B3CE4AB18DBEBEBCD0214BA5907757663FB5A1AC016D906C1A711D4C1EF
+                  6EC9698F42856CB5824331B7ABF99CBBAF5FD6B6ABA1EE1349F2E0BF8724FB4C
+                  ACE4EFEB807F25B714E678B0A8CFFA2A7FF46163ACC5F2E52B962D7636FBB6C4
+                  A2F36753E3421A669228D1326F06AAF173D6A2A167D79EC3B2884C02A568A338
+                  2ABB5A056F94112B505CA376A26969D11C92DA9315334EDFC905B2B0FD421B03
+                  86EDDFB35B27ED3BE4D8A20C80C2376ECD56B60FCAF4D4A66FC69C97990C4064
+                  EBE2AF630D2D4D5AFCCFD8907DA465E3EF521CA5EC7AD978DC07C02BE42109D3
+                  C9966F0113D05F7882B59529E5EBA46D89B7C7F95FD04B19807A950461166915
+                  E07A09466DFB7AD9ED4A6E59CC2338FF6D7F20DB4DF2E347600F917788DF25ED
+                  E2EFDF4AD1D455841250024A4009280125A00494801250024A4009280125A004
+                  94801250024A4009280125306309FC0B18043F09C5272B960000000049454E44
+                  AE426082}
+                FileName = 'C:\Users\embt\Desktop\baseline_refresh_white_48dp.png'
+              end>
+            Align = Client
+            HitTest = False
+            Margins.Top = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Size.Width = 47.285713195800780000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            object RefreshFillRGBEffect: TFillRGBEffect
+              Color = xFF0874D6
+            end
+          end
+          object Label2: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 47.285713195800780000
+            Size.Width = 67.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Refresh'
+            TabOrder = 1
+          end
+        end
+      end
+      object Layout2: TLayout
+        Align = Client
+        Size.Width = 114.285713195800800000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object EditModeButton: TSpeedButton
+          StaysPressed = True
+          Align = Client
+          Size.Width = 114.285713195800800000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'speedbuttonstyle'
+          OnClick = EditModeButtonClick
+          object Image3: TImage
+            MultiResBitmap.Height = 36
+            MultiResBitmap.Width = 36
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 96
+                Height = 96
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                  38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  011649444154785EEDD9410A80201005D0ECFE772ED72D9260E44B3EB7A5A3EF
+                  2341731C06010204081020408000010204081020408000010204081020408000
+                  0102040810204080000102040810204080C05F04DAD7835C7DBCCD697DBC3D1F
+                  CDFFBA9FD5DE1F9DFFB9DF73B503ECB61F018413178000C202E1F26E8000C202
+                  E1F26E403800E50910204080000102040810D84F403FA03873FD8062D0D9CBF9
+                  15315B78B0BE000410160897770304101608977703C201284F80000102040810
+                  204080C07E02FA01C599EB071483CE5ECEAF88D9C2FA0161610108606D81F0EE
+                  7C03041016509E00010204081020408000010204081020408000010204081020
+                  40800001020408102040800001020408102040804091C00DD922182E875F93BA
+                  0000000049454E44AE426082}
+                FileName = 'C:\Users\embt\Desktop\baseline_list_white_48dp.png'
+              end>
+            Align = Client
+            HitTest = False
+            Margins.Top = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Size.Width = 47.285713195800780000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            object EditFillRGBEffect: TFillRGBEffect
+              Color = xFF0874D6
+            end
+          end
+          object Label1: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 47.285713195800780000
+            Size.Width = 67.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Edit'
+            TabOrder = 1
+          end
+        end
+      end
+      object Layout3: TLayout
+        Align = Client
+        Size.Width = 142.857162475585900000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object EditSelectedButton: TSpeedButton
+          StaysPressed = True
+          Align = Client
+          Size.Width = 142.857162475585900000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'speedbuttonstyle'
+          OnClick = EditSelectedButtonClick
+          object Image4: TImage
+            MultiResBitmap.Height = 36
+            MultiResBitmap.Width = 36
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 96
+                Height = 96
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                  38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  02ED49444154785EEDDB3F4E1B4114C7716C0921BADC20674170050E8114A5A2
+                  B49414EE906838444E90C60D4A912AE106941C201454FEC71B59968C65EFBED9
+                  79336F33FBB584906176FE7C7E33B37F0C2727BC104000010410400001041040
+                  00010410400001041018A8C07ABDBE92AFBFF3F9FC4DBE9E57ABD544DE8F06CA
+                  5176D882FD55D05702FEE1B55C2E7FCA0F4ECBF66660AD09FE977DF8DDF712C2
+                  8C10324D8A36FC6D1084902100C1BF6D9AF907B6A3991C7396A12BC3AB32167F
+                  67253C1242E27CE98A4F0889F0E170C1FF16B3ED1C2B2BE784B012CE0DBA349C
+                  2A04ECC2027F5BC762B1F84D0891F34766EE1D2144A25917CF10C22FEE982353
+                  B20E41B6A29BC82ED45F5C66E5A7A6515A8620E7833FF58B468C305C6ACAB39D
+                  17F9FEB94408D2D66B44F7EA2EBA7B9D5F2A0459014F75AB2A4777E826AB5008
+                  D7CA2ED65BACE90E376708722EB9AF57553932CDE3851C2108FE83B28BF516D3
+                  E06F6FBE2C43007FF36C27EA917208C2228470095BEF94568EAC0BBEC54A00BF
+                  E3CCDF7F06D46525806F84DF71257C572ECE7A8BA56C3BC79E826A5682B47B59
+                  AFAA726439F0635682B29B7516CB894F082D73A6043E211C09A124FE6E086D8F
+                  B22DF699B1452539EB08F8A3D1A8F80DCF783CFE21EDFECB39B6DED7ED31F3C3
+                  0AE03ADFF83A3FE60378F0C1F7DD99D8761CFDC1F7C50FFF8952FCC59E2FA10B
+                  C2B4B83C573B9BE566F97739312132F3C177DCF0C107DF57C0B175F67CF01D05
+                  1C9B66E683EF28E0D834331F7C4701C7A699F9E03B0A3836CDCC1F26FED471D8
+                  FD68DA6BE6CB8738937E0838F6C211FFD671D8FD681A7CC71CC007DF51C0B169
+                  663EF88E02CE4DC77CF06D5536FCBD90F3B0FBD3BC15AAB61EF0F7B2D7C25994
+                  03FFC0C2B380D5D401FE915D4F83975A06FC86534E2A6EDBF1E0B79CEFDB0053
+                  7E0FBEE2622B05B8E958F015F8A1488E00C057E2E70800FC087CEB00C08FC4B7
+                  0C00FC0EF8560180DF11DF2200F013F05303003F119FC3114000010410400001
+                  0410400001041040000104FE6B81775CBEA5A37F6BA6A60000000049454E44AE
+                  426082}
+                FileName = 'C:\Users\embt\Desktop\baseline_edit_white_48dp.png'
+              end>
+            Align = Client
+            HitTest = False
+            Margins.Top = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Size.Width = 58.857162475585940000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            object EditSelFillRGBEffect: TFillRGBEffect
+              Color = xFF0874D6
+            end
+          end
+          object Label3: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 58.857162475585940000
+            Size.Width = 84.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Edit Selected'
+            TabOrder = 1
+          end
+        end
+      end
+      object Layout4: TLayout
+        Align = Client
+        Size.Width = 114.285705566406300000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object AddItemButton: TSpeedButton
+          StaysPressed = True
+          Align = Client
+          Size.Width = 114.285705566406300000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'speedbuttonstyle'
+          OnClick = AddItemButtonClick
+          object Image5: TImage
+            MultiResBitmap.Height = 36
+            MultiResBitmap.Width = 36
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 96
+                Height = 96
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                  38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  017849444154785EEDDA518AC240104551E3FEF7AC6E40F371038FC8C9F75475
+                  3C9786117C3C3C04081020408000010204081020408000010204081020408000
+                  010204081020F0AF02C7DD3ED8EBF3FC7AE7E3F3DCE9333DEFF4B2FFF8AE028C
+                  AB0A20C058607CBC1B20C058607CBC1B20C058607CBC1B20C058607CBC1B20C0
+                  58607CBC1B20C058607CBC1B20C058607CBC1B20C058607CBC1B20C058607CBC
+                  1B20C058607CBC1B300E70F96F68CE7EB733FEBCF9F8AB7F77E406E4246D8100
+                  CD2F4F0B9009DB02019A5F9E162013B6050234BF3C2D40266C0B2EFF1ED05EE7
+                  7CFAEC7BC6D5FFA79FBF51FB0B37A0F9E5690132615B2040F3CBD30264C2B640
+                  80E697A705C8846D8100CD2F4F0B9009DB02019A5F9E162013B6050234BF3C2D
+                  40266C0B04687E795A804CD81608D0FCF2B40099B02D10A0F9E5690132615B20
+                  40F3CBD30264C2B64080E697A705C8846D8100CDCF3401020408102040800001
+                  02040810204080000102040810204080000102040810F82AF00682790C6E5EF5
+                  D6310000000049454E44AE426082}
+                FileName = 'C:\Users\embt\Desktop\baseline_add_white_48dp.png'
+              end>
+            Align = Client
+            HitTest = False
+            Margins.Top = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Size.Width = 47.285705566406250000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            object AddFillRGBEffect: TFillRGBEffect
+              Color = xFF0874D6
+            end
+          end
+          object Label4: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 47.285705566406250000
+            Size.Width = 67.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Add'
+            TabOrder = 1
+          end
+        end
+      end
+      object Layout5: TLayout
+        Align = Client
+        Size.Width = 114.285705566406300000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        object DeleteButton: TSpeedButton
+          Align = Client
+          Size.Width = 114.285705566406300000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'speedbuttonstyle'
+          OnClick = DeleteButtonClick
+          object Image6: TImage
+            MultiResBitmap.Height = 36
+            MultiResBitmap.Width = 36
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 96
+                Height = 96
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                  38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  029349444154785EED9D4D4A1C511845DBEE0687D941242B48464ECC121CBB1E
+                  17926C20938C02C912320AB88016DD813812FAC7AF068288985BF09DEA164EC1
+                  9BC8AD5BEF9D53AF901A54CF661E129080042420010948400212908004242001
+                  0948400212D82381DD6E7759A3FBB8DCE392DECFA521F84F3295F0D6AD00C357
+                  C201C03F380947DD0FA76185DD9D87D4775447E77CE69D65768D27A080F1CC5A
+                  CF50402BCEF1650A18CFACF50C05B4E21C5FA680F1CC5ACF50402B4ECB242001
+                  094840023981D6F71AAF5DF6BDBF1BEA7EF7F39291FF05E5372B92540082352F
+                  5540CE0A492A00C19A972A20678524158060CD4B1590B342920A40B0E6A50AC8
+                  592149052058F35205E4AC90A40210AC79A902725648520108D6BC5401392B24
+                  A900046B5EAA809C1592540082352F5540CE0A492A00C19A972A206785241580
+                  60CD4B1590B342920A40B0E6A50AC8592149052058F35205E4AC90A40210AC79
+                  A902725648520108D6BC5401392B24A900046B5EAA809C1592540082352F5540
+                  CE0A492A00C19A972A20678524158060CD4B1590B342920A40B0E6A50AC85921
+                  49052058F35205E4AC90A40210AC79A902725648520108D6BC5401392B24890B
+                  58AFD7F7C8CC27289D62EEB880FAE0D16A0256C8256AEED748F1B3D22904FCA1
+                  1741F59780DF54F7532FFEC9B2ED767BB2D96C56CBE51297DD09AB1E3FDB9AF3
+                  A79270DBD9FBB20B87329FCF6F6A7C23174174D79CBFD3F08779E33B60B848ED
+                  82E31A7F178BC56702567767EDD8AB12705AE3A1BB7BF21D305C705848C1FF5A
+                  127ED6D63ED85FD818E636CCB1E67A3605FCC976C073EBF519CB8F352E6A7B9F
+                  D7DFBFD4F840DF65FFE9BF2BE8FF6A3EBF6AFC98E2B1B3E7F57A790948400212
+                  90800424200109484002129080042420813D117804CAC0D8DB9249B2B3000000
+                  0049454E44AE426082}
+                FileName = 'C:\Users\embt\Desktop\baseline_delete_white_48dp.png'
+              end>
+            Align = Client
+            HitTest = False
+            Margins.Top = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Size.Width = 47.285705566406250000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            object DeleteFillRGBEffect: TFillRGBEffect
+              Color = xFF0874D6
+            end
+          end
+          object Label5: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 47.285705566406250000
+            Size.Width = 67.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Delete'
+            TabOrder = 1
+          end
+        end
+      end
+    end
+    object EditingLayout: TLayout
+      Align = Client
+      Size.Width = 234.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object EditingLayoutA: TLayout
+        Align = Left
+        Size.Width = 97.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object DoneButton: TSpeedButton
+          Align = Client
+          Size.Width = 97.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'speedbuttonstyle'
+          OnClick = DoneButtonClick
+          object Image7: TImage
+            MultiResBitmap.Height = 36
+            MultiResBitmap.Width = 36
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 96
+                Height = 96
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                  38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  029949444154785EEDDABF4AC44010C771C921A2826061E7236861A3EF66A595
+                  85888560E17B88205AE8353636363E852058DE9F387B2410E2C5CC6E921DB8FD
+                  1E88827BD9E4F39BDD4C3CD7D678218000020820800002082080000208208000
+                  0208208000020820800002082080000208208000020820B01098CFE77BF2750A
+                  8781409EE7BB93C9E453BEE7B3D9ECD6E014D29DD2E14FA7D30F875FBE2484EB
+                  7445225EF9327C428814C07FF895102E229D4E5AD368F02B219CFBEA64BE6F48
+                  69BCC3973DFE65341A1D6AAE3BCBB25C338E310A019FCA2F56C099E2B00CD108
+                  80AF511A688C3C60EDD45BCD6ADBB9E4672ABFAF2C0AFCF716F0EAAFC107BF2F
+                  01C3E350F9E01B0A184E4DE5836F28603835950FBEA180E1D452F9DBF290459F
+                  6F914181FFC64396813EF806E8E594E0836F28603835950FBEA180E1D4C956BE
+                  5CF8897C7EFA246DDE9695BF9CC3A6F4F9E9B59A72E1C7F2DF623FAEC71680B1
+                  83881D42813F4EAECF970B3F2AF1CB8B8F1D42D2F882FEBDACEA62859032FE41
+                  137EAC959032FEBE6C3B5F9AFD5656C2EB10376677CCE2D89AD3706356EB0374
+                  E978EEB457DEF776946CE5D73B9B801036BA7647E0D7047D4290B1CF02181C02
+                  F80DE51B2304179CDBCAB4DBDECAEDF96D5BC79021387CB77AC06F49618810C0
+                  6F2BFD01EF09E07BE297C36525DC68B78BA61B33F881F8A1214860EB958F11D9
+                  F33BFA2FDEEEB9121E5C08547E1FF295634808571EDBD1BD8C7FD48E4FAED50C
+                  CDC66725801FAADCDEA2AA6FCC8A1056EB0F6B0399FF396C4F2B01FC2E814908
+                  978A0A6F1A027E17FC4A8B1A1202F87DE00786007E9FF89E21803F04BE3204F0
+                  87C46F0901FC18F80D21801F13BF1602F816F8CC890002082080000208208000
+                  0208208000020820800002082080000208208000020820D0BBC02FF0B3886AA0
+                  CA4C3A0000000049454E44AE426082}
+                FileName = 'C:\Users\embt\Desktop\baseline_done_white_48dp.png'
+              end>
+            Align = Client
+            HitTest = False
+            Margins.Top = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Size.Width = 25.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            object DoneFillRGBEffect: TFillRGBEffect
+              Color = xFF0874D6
+            end
+          end
+          object Label6: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 25.000000000000000000
+            Size.Width = 72.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Update'
+            TabOrder = 1
+          end
+        end
+      end
+      object EditingLayoutB: TLayout
+        Align = Left
+        Position.X = 97.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object CancelButton: TSpeedButton
+          Align = Client
+          Size.Width = 96.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'speedbuttonstyle'
+          OnClick = CancelButtonClick
+          object Image8: TImage
+            MultiResBitmap.Height = 36
+            MultiResBitmap.Width = 36
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 96
+                Height = 96
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                  38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  085949444154785EED9DDD8B555518C69D7144A5A9ACD448282C88488A2648AA
+                  416B9AD13E2815FAB8B0BAC8BA0BFF86BCCAABA8AB082122ECB2DBBE50D1BC50
+                  D38412A14F4A4534440BCD4A65669C7E8FED1DA7D399B3DEF5B1CFD9FBCCDEB0
+                  98C3ECB5DEF7799F677DECBDD7DA6BCF9A551F35033503350335033503350335
+                  03350335033503338D81BE32077CF9F2E5DBC1773769E9D4D4D4D2ECEF8DFCBE
+                  96DF0B480B4913A473A4B37D7D7D4AA7F87D94BF47F59774A8BFBFFFA7B2C659
+                  2A01207690B4963406F9AB0606066E4941DCC4C4C43144D88928DBB0F731BFCF
+                  A7B0DB333620FB9EC9C9C977C6C7C7FF84FC420F7C9CC7D7169C0CF50C812181
+                  40C01C885F4FEDDC5B28E36D8CCB37189E179690182A598660AF23E8D7A889A7
+                  BA457CB35FB0FC02A64DC25649522DA009AE8F205F26D85FCB427C0B214E83F1
+                  1561B5C454993C047517CD7D7F59896FC625ACC25C1982DB012590A7A9F57F55
+                  85FC1CA7300B7B654520907EAE365EAF1AF1CD78896173915D52217D1D80E751
+                  7B3EE47AFBA9CAD6A006E0C4A27B8767B98FB8983A9EE402007611E993D9B367
+                  DF971A6C37EDD1120E22C263A4DF52E2E84F698C9A7F1B40BFEC35F2C5916222
+                  B6038A312567C95A00B5FE2600EEE7F1C1CD290196CD165748C711E3015AC2C9
+                  14D892B400753B90BFBBD7C917E18A91587711F3E2140244B7000DB800DA47AD
+                  9851CF5688F96B627E3076608E6E01D48437661AF9D99830A4D8635B41540BA0
+                  F6AF02C0F65810552E0F07BA32D263EEA02358001C2F6440FA963E51932233F6
+                  8083D370B08CAEE84C0809C15D10CDEFAD994E7E3628EBBEE7CD10F25526A805
+                  50FB4728BB2BD4692F96839351BA226F4EBC5B008E066876EFA522115B7F60F3
+                  51DDC0A5B2E9B2235F1ABFE4DB95D77A1E9BEF76646287E6F66AAA076C9A82C4
+                  DEFD0A129B8310A23BCD428FCCC7A07CCA77CA69507163152C289F6A3F804FA6
+                  60280B7C452390A24568243FF78BCF15A944C0CE11711444AEA5100A6F4844FE
+                  4505DECA675122B422BF4904614A71BC64E132280F0A7F1F8B101B171172B41D
+                  804C843DB1BEF2F2902F5B57BA9DE90E6112B6589FE228885C5721003E1C0B4E
+                  E5B1B3CEE52BEB9FE767C445B9950D7CCE37FA5C17E52C2B8CBF872CFEBCF230
+                  CA6F4D012E7B9035D7E25CC4C588E049FE5C614B14E3564B7CE63C1071558AE6
+                  9907D70911BA45BE6284AB0BE2CC4CB02B23C69E4951331A6D14294266DBDAED
+                  24ABF98DF1893317AF3A6FBA11C3F088C5984F1EEE1A47B0FB19409DDD11792F
+                  905691F773970FE5E1B9CCE32A63C83B571884C595D7F77C52CE68CE8753B780
+                  C0EEA86D6DF56D55A9FAFC56DC88335FD15AE6A7465D5F14F94D22447519BEE4
+                  C70CEE563EC45DB4081819B33A8CC91733689691FCEC927BCC2580650CB8C365
+                  24C57966D586117B87E59A9D3EFB92FA79F5F7A4ED599F7FC98543B6E543BE5C
+                  79139D7772E71400259D461281D5D20F2F1110E209D29312C485A10BE4EB01A3
+                  933BA70004E634E20ADEE7BC8F089A10278DBBEC43C460876B7E0EC9C99D5300
+                  C02F710598FABC8F082EDF229F31626707BB9D7F2159B8B308708D2BC822CEE7
+                  2288C050FB0DE42F0FB511530EFF4EEE9C0200C069240664BBB21241B5374484
+                  6E939FC5E5E4CE22C082A208B6D84584E5BE2294847C85A7D769DB1E16019C83
+                  9CCB49A7CF238025AE4EC0D23BCCD10274F59DDA6CB5F528573BE609742E4B7F
+                  A7E58C7672A27F1A969DDC596A8AD3884BE5D0F321E4E7BE245809447072E714
+                  80409C4642096E572E86FCB28860E1CE22409275F03E2241FE5ED55E9F6E673A
+                  FB0D2D61AF0F861479F17DC265C72900067E701949795EE4EBD9BF857C06DB79
+                  4A2EFFB2259BB2EDCA9BF8BC933BA70080771A49053A27DF3A99C2E3854FB364
+                  9ED4E9A40816EE9C0274AA05F8929FCF6485CCAC755084F8CA4B0DBB21E639BF
+                  A56C8A39DC92CE09043F46F94FAFC264C9210B9121793C89ABD294E4214BD76C
+                  E98266D197EDB618F3CDD330816E7A9EEF9A40F7ED8EF2491D5FDC96FC4939AB
+                  97A5F8B76DEBB2148B985AC6AD855917FC61B42EE1D9ED04AD8E8B99638E8D33
+                  5BFF9A6E61965402D4FBB1C0541EF2B759D602C9675597268A2B53CDF6C9A405
+                  A72904C0CE1A8BDF58F273AC9E2D411B06461F605F6989D13B4F9597A7BB565B
+                  70BEDCCBD3B32EA1CA2F684CBB4C9D2AAFB764A2DF0D50D341C80DDE35DB5A00
+                  FB7A45E944741BC540975E51FADF8B1A19F949B6CBCC5EDF2AEE15A5AC156C4C
+                  21806CF4E04B7A1BAD9539381FBCCD81B8EF128A705E037C27DE906C18980F68
+                  C9A536714D188738F1AEFD412F6A037E983BBD3DC12AF66041C81FE64E7C9F6F
+                  68A64711CD4671A41D673FF075D6ABF9C54508F9E223A805643766DAACE31BF6
+                  8B58D4ABC45AE2828333707067C737EB9043A60D5FB480ECE53C90BF3E947CF1
+                  12D405E5846A9F1C9ADFDBBD4C70BBD8143BE4EF88893FB80BCA9D32F868CB32
+                  4DA2DF1B03A46A6589F92B2D9DECFA966502404B584D5F183FFD56111514AB62
+                  8E253F6A106EE68AE6B8845AF145AFEF9C58CA6D2BAF0C26ECA309F923003C56
+                  918AEC0D53B1D1ED3C926ACFD0E841B839029AE4CFD96AE683DED195BC00ADFB
+                  A06283FCA41F048ABA0A6AC519004F0374255DD24725E7D40C4FB12826C5662E
+                  64CC985C802B03CB3F03F35A806F36E2286D36C5A058520CB85D0992CBD4E752
+                  ED4895EAC199C54EE53FE0D0A836B568190358D53E61B2AC2B35B628A7D4BAFA
+                  233E4591EB631721F419AB4DF567AC7C582B20AF267610E205BAA67D963EB988
+                  3CF22D0CC2524088D5310901435C676FA1556813D7420FCD82C917C4EB23A15D
+                  3FA21FC6A58C0052AEC6DE1A1418E5F7EA99F031CF5209D02C2622347FCEF656
+                  C4594C6AFC9CED24E5CE2A71AD7E8E947FCEF608FF3B4A3ACC75FC8F292B4A6D
+                  AB66A066A066A066A066A066A066A066A066A066A066208681BF011A8FB97371
+                  D6D1690000000049454E44AE426082}
+                FileName = 'C:\Users\embt\Desktop\baseline_cancel_white_48dp.png'
+              end>
+            Align = Client
+            HitTest = False
+            Margins.Top = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Size.Width = 29.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            object CancelFillRGBEffect: TFillRGBEffect
+              Color = xFF0874D6
+            end
+          end
+          object Label7: TLabel
+            Align = Right
+            StyledSettings = [Family, Style, FontColor]
+            Position.X = 29.000000000000000000
+            Size.Width = 67.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 11.000000000000000000
+            TextSettings.HorzAlign = Center
+            Text = 'Cancel'
+            TabOrder = 1
+          end
+        end
+      end
+    end
+  end
+  object ToolBar2: TToolBar
+    Position.Y = 40.000000000000000000
+    Size.Width = 834.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 21
+    object LayoutExtras: TLayout
+      Align = Client
+      Size.Width = 834.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object ComboBoxExtras: TComboBox
+        StyleName = 'ComboBoxstyle'
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 94.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 174.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnChange = ComboBoxExtrasChange
+      end
+      object LabelExtras: TLabel
+        StyleName = 'Labelstyle'
+        Align = Left
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 79.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Label'
+        TabOrder = 1
+      end
+    end
+  end
+  object PopupMenu: TPopupMenu
+    Left = 136
+    Top = 104
+    object RefreshMT: TMenuItem
+      Text = 'Refresh'
+      OnClick = RefreshButtonClick
+    end
+    object EditMT: TMenuItem
+      Text = 'Edit'
+      OnClick = EditModeButtonClick
+    end
+    object EditSelectedMT: TMenuItem
+      Text = 'Edit Selected'
+      OnClick = EditSelectedButtonClick
+    end
+    object AddMT: TMenuItem
+      Text = 'Add'
+      OnClick = AddItemButtonClick
+    end
+    object DeleteMT: TMenuItem
+      Text = 'Delete'
+      OnClick = DeleteButtonClick
+    end
+    object UpdateMT: TMenuItem
+      Enabled = False
+      Text = 'Update'
+      OnClick = DoneButtonClick
+    end
+    object CancelMT: TMenuItem
+      Enabled = False
+      Text = 'Cancel'
+      OnClick = CancelButtonClick
+    end
+  end
+  object FDMemTable: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    Left = 96
+    Top = 160
+  end
+  object RESTResponseDataSetAdapter: TRESTResponseDataSetAdapter
+    Dataset = FDMemTable
+    FieldDefs = <>
+    OnBeforeOpenDataSet = RESTResponseDataSetAdapterBeforeOpenDataSet
+    Left = 328
+    Top = 72
+  end
+  object BindSourceDB: TBindSourceDB
+    DataSet = FDMemTable
+    ScopeMappings = <>
+    Left = 184
+    Top = 136
+  end
+  object BindingsList: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 28
+    Top = 69
+    object LinkGridToDataSourceBindSourceDB: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB
+      GridControl = StringGrid
+      Columns = <>
+    end
+  end
+end

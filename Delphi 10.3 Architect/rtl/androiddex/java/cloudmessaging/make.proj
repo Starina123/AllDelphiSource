@@ -1,0 +1,26 @@
+
+<Project DefaultTargets="default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+
+    <PropertyGroup>
+        <JarName>cloud-messaging</JarName>
+        <SourceRootDir>androiddex\cloudmessaging</SourceRootDir>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <DependentJarFiles
+            Include="
+                ..\fmx\bin\fmx.jar;
+                ..\..\libs\gms\*.jar;
+                ..\..\libs\fcm\*.jar;"
+         />
+        <JavaFiles
+            Include="$(ProjectPath)\src\**\*.java"
+        />
+    </ItemGroup>
+
+    <Import Project="..\..\java.targets"/>
+
+    <Target Name="default" DependsOnTargets="buildjar"/>
+    <Target Name="clean" DependsOnTargets="cleanfiles"/>
+</Project>

@@ -1,0 +1,230 @@
+object DlgPushData: TDlgPushData
+  Left = 0
+  Top = 0
+  BorderStyle = Single
+  Caption = 'Push Data'
+  ClientHeight = 496
+  ClientWidth = 448
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object GroupBoxAPNS: TGroupBox
+    Align = Top
+    Margins.Left = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 57.000000000000000000
+    Size.Width = 438.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    Text = ' Apple Notifications'
+    TabOrder = 2
+    object EditAPSBadge: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 2
+      Position.X = 16.000000000000000000
+      Position.Y = 107.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object LabelAPSBadge: TLabel
+        Position.Y = -24.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'APS.Badge'
+      end
+    end
+    object EditAPSSound: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      Position.X = 16.000000000000000000
+      Position.Y = 161.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object LabelAPSSound: TLabel
+        Position.Y = -24.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'APS.Sound'
+      end
+    end
+    object Edit1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Position.X = 16.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object Label2: TLabel
+        Position.Y = -19.000000000000000000
+        Text = 'APS.Alert'
+      end
+    end
+  end
+  object GroupBoxGCM: TGroupBox
+    Align = Client
+    Margins.Left = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Size.Width = 438.000000000000000000
+    Size.Height = 191.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Android Notifications'
+    TabOrder = 3
+    object EditGCMTitle: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 4
+      Position.X = 16.000000000000000000
+      Position.Y = 49.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object LabelGCMTitle: TLabel
+        Position.Y = -24.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'GCM.Title'
+      end
+    end
+    object EditGCMMessage: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 5
+      Position.X = 16.000000000000000000
+      Position.Y = 105.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object Label1: TLabel
+        Position.Y = -24.000000000000000000
+        TextSettings.WordWrap = False
+        Text = 'GCM.Message'
+      end
+    end
+  end
+  object Layout1: TLayout
+    Align = Bottom
+    Position.Y = 448.000000000000000000
+    Size.Width = 448.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    object ButtonCancel: TButton
+      Align = MostRight
+      ModalResult = 2
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 363.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Cancel'
+    end
+    object ButtonOK: TButton
+      Align = Right
+      ModalResult = 1
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 273.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'OK'
+    end
+  end
+  object Layout2: TLayout
+    Align = Top
+    Margins.Left = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Size.Width = 438.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    object EditMessage: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = VertCenter
+      TabOrder = 0
+      Position.X = 10.000000000000000000
+      Position.Y = 28.000000000000000000
+      Margins.Left = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Size.Width = 418.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object LabelMessage: TLabel
+      Align = Top
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 433.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Message'
+      TabOrder = 1
+    end
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 140
+    Top = 301
+    object LinkControlToFieldMessage: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BackendPush1
+      FieldName = 'Message'
+      Control = EditMessage
+      Track = False
+    end
+    object LinkControlToFieldAPSBadge: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BackendPush1
+      FieldName = 'APS.Badge'
+      Control = EditAPSBadge
+      Track = False
+    end
+    object LinkControlToFieldAPSSound: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BackendPush1
+      FieldName = 'APS.Sound'
+      Control = EditAPSSound
+      Track = False
+    end
+    object LinkControlToFieldGCMTitle: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BackendPush1
+      FieldName = 'GCM.Title'
+      Control = EditGCMTitle
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BackendPush1
+      FieldName = 'GCM.Message'
+      Control = EditGCMMessage
+      Track = False
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BackendPush1
+      FieldName = 'APS.Alert'
+      Control = Edit1
+      Track = False
+    end
+  end
+  object BackendPush1: TBackendPush
+    Extras = <>
+    Left = 104
+    Top = 336
+  end
+end

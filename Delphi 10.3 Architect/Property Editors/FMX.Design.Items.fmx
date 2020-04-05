@@ -1,0 +1,132 @@
+object DesignItemsForm: TDesignItemsForm
+  Left = 0
+  Top = 0
+  Caption = 'Items Designer'
+  ClientHeight = 367
+  ClientWidth = 485
+  Position = ScreenCenter
+  FormFactor.Width = 2199
+  FormFactor.Height = 1276
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object ItemsTree: TTreeView
+    Align = Client
+    Margins.Left = 8.000000000000000000
+    Margins.Top = 8.000000000000000000
+    Margins.Right = 8.000000000000000000
+    Margins.Bottom = 8.000000000000000000
+    Size.Width = 304.000000000000000000
+    Size.Height = 351.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    AllowDrag = True
+    OnChange = ItemsTreeChange
+    OnDragChange = ItemsTreeDragChange
+    Viewport.Width = 300.000000000000000000
+    Viewport.Height = 347.000000000000000000
+  end
+  object ControlsLayout: TLayout
+    Align = Right
+    Padding.Top = 9.000000000000000000
+    Padding.Right = 9.000000000000000000
+    Padding.Bottom = 9.000000000000000000
+    Position.X = 320.000000000000000000
+    Size.Width = 165.000000000000000000
+    Size.Height = 367.000000000000000000
+    Size.PlatformDefault = False
+    object ItemsClasses: TComboBox
+      Align = Top
+      ListBoxResource = 'transparentlistboxstyle'
+      Margins.Bottom = 9.000000000000000000
+      Position.Y = 9.000000000000000000
+      Size.Width = 156.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+    object btnAdd: TButton
+      Align = Top
+      Margins.Bottom = 9.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 156.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Add Item'
+      OnClick = btnAddClick
+    end
+    object btnAddChild: TButton
+      Align = Top
+      Margins.Bottom = 9.000000000000000000
+      Position.Y = 71.000000000000000000
+      Size.Width = 156.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Add Child Item'
+      OnClick = btnAddChildClick
+    end
+    object Layout2: TLayout
+      Align = Top
+      Position.Y = 102.000000000000000000
+      Size.Width = 156.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object btnUp: TButton
+        Align = Left
+        Margins.Right = 8.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClick = btnUpClick
+        object Path1: TPath
+          Align = Center
+          Data.Path = {
+            08000000000000007DFF9F4373888843010000006AECAA430AE79A4301000000
+            6ABCA2430AE79A43010000006ABCA2438D47B043010000004E429D438D47B043
+            010000004E429D430AE79A43010000004E1295430AE79A43030000007DFF9F43
+            73888843}
+          Fill.Kind = None
+          HitTest = False
+          Size.Width = 13.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object btnDown: TButton
+        Align = Left
+        Margins.Right = 8.000000000000000000
+        Position.X = 46.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        OnClick = btnDownClick
+        object Path2: TPath
+          Align = Center
+          Data.Path = {
+            08000000000000007DFF9F438D47B043010000004E129543F6E89D4301000000
+            4E429D43F6E89D43010000004E429D4373888843010000006ABCA24373888843
+            010000006ABCA243F6E89D43010000006AECAA43F6E89D43030000007DFF9F43
+            8D47B043}
+          Fill.Kind = None
+          HitTest = False
+          Size.Width = 13.000000000000000000
+          Size.Height = 13.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object btnDelete: TButton
+        Align = Client
+        Size.Width = 64.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Delete'
+        OnClick = btnDeleteClick
+      end
+    end
+  end
+end

@@ -1,0 +1,430 @@
+object PushNotificationsFrame: TPushNotificationsFrame
+  Size.Width = 563.000000000000000000
+  Size.Height = 469.000000000000000000
+  Size.PlatformDefault = False
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 563.000000000000000000
+    Size.Height = 469.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 563.000000000000000000
+    Viewport.Height = 469.000000000000000000
+    object Label59: TLabel
+      Align = Top
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 553.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Push GCM'
+      TabOrder = 9
+    end
+    object Label60: TLabel
+      Align = Top
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 152.000000000000000000
+      Size.Width = 553.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Push APNS'
+      TabOrder = 8
+    end
+    object Layout48: TLayout
+      Align = Top
+      Position.Y = 27.000000000000000000
+      Size.Width = 563.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 14
+      object ApiKeyEdit: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = VertCenter
+        TabOrder = 0
+        Position.X = 155.000000000000000000
+        Position.Y = 5.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 372.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ApiKeyCB: TCheckBox
+        Align = Left
+        Enabled = False
+        Margins.Left = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Size.Width = 145.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'ApiKey'
+      end
+      object ApiKeyHelpButton: TButton
+        Align = Right
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 537.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'infotoolbutton'
+        TabOrder = 1
+        Text = '?'
+        OnClick = HelpButtonClick
+      end
+    end
+    object Layout49: TLayout
+      Align = Top
+      Position.Y = 234.000000000000000000
+      Size.Width = 563.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 12
+      object CertificateFilePasswordEdit: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = VertCenter
+        TabOrder = 0
+        Position.X = 155.000000000000000000
+        Position.Y = 5.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 372.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object CertificateFilePasswordCB: TCheckBox
+        Align = Left
+        Enabled = False
+        Margins.Left = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Size.Width = 145.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Certificate File Password'
+      end
+      object CertFilePasswordHelpButton: TButton
+        Align = Right
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 537.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'infotoolbutton'
+        TabOrder = 1
+        Text = '?'
+        OnClick = HelpButtonClick
+      end
+    end
+    object Layout50: TLayout
+      Align = Top
+      Position.Y = 294.000000000000000000
+      Size.Width = 563.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object ProductionEnvironmentCB: TCheckBox
+        Align = Left
+        Enabled = False
+        Margins.Left = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Production Environment'
+      end
+      object Layout7: TLayout
+        Align = Client
+        Size.Width = 327.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object Label8: TLabel
+          Align = Right
+          StyledSettings = [Family, Size, FontColor]
+          Position.X = 283.000000000000000000
+          Size.Width = 44.000000000000000000
+          Size.Height = 60.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'ON'
+          TabOrder = 1
+        end
+        object Label9: TLabel
+          Align = Right
+          StyledSettings = [Family, Size, FontColor]
+          Position.X = 147.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 60.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'OFF'
+          TabOrder = 0
+        end
+        object ProductionEnvironmentSwitch: TSwitch
+          Align = Right
+          IsChecked = False
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 200.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 78.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+        end
+      end
+      object ProductionEnvironmentHelpButton: TButton
+        Align = Right
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 537.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'infotoolbutton'
+        TabOrder = 1
+        Text = '?'
+        OnClick = HelpButtonClick
+      end
+    end
+    object Layout51: TLayout
+      Align = Top
+      Position.Y = 174.000000000000000000
+      Size.Width = 563.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 23
+      object CertificateFileNameEdit: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = VertCenter
+        TabOrder = 0
+        Position.X = 155.000000000000000000
+        Position.Y = 5.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 282.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object CertFileNameButton: TButton
+        Align = Right
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 447.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Locate'
+        OnClick = CertFileNameButtonClick
+      end
+      object CertificateFileNameCB: TCheckBox
+        Align = Left
+        Enabled = False
+        Margins.Left = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Size.Width = 145.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Certificate File Name'
+      end
+      object CertFileNameHelpButton: TButton
+        Align = Right
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 537.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'infotoolbutton'
+        TabOrder = 1
+        Text = '?'
+        OnClick = HelpButtonClick
+      end
+    end
+    object Layout1: TLayout
+      Align = Top
+      Position.Y = 87.000000000000000000
+      Size.Width = 563.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 13
+      object ApiURLEdit: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = VertCenter
+        TabOrder = 0
+        Position.X = 155.000000000000000000
+        Position.Y = 5.000000000000000000
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Size.Width = 372.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ApiURLCB: TCheckBox
+        Align = Left
+        Enabled = False
+        Margins.Left = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Size.Width = 145.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'ApiURL'
+      end
+      object ApiURLHelpButton: TButton
+        Align = Right
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 537.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'infotoolbutton'
+        TabOrder = 1
+        Text = '?'
+        OnClick = HelpButtonClick
+      end
+    end
+  end
+  object OpenDialog: TOpenDialog
+    DefaultExt = 'cer'
+    Filter = 'APNs Certificate Files|*.cer'
+    Options = [ofHideReadOnly, ofFileMustExist, ofEnableSizing]
+    Left = 248
+    Top = 360
+  end
+  object BindSourceDBPushNotifications: TBindSourceDB
+    DataSet = ConfigDM.PushNotificationsMT
+    ScopeMappings = <>
+    Left = 216
+    Top = 192
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 372
+    Top = 285
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBPushNotifications
+      FieldName = 'ApiKey'
+      Control = ApiKeyEdit
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBPushNotifications
+      FieldName = 'CertificateFileName'
+      Control = CertificateFileNameEdit
+      Track = False
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBPushNotifications
+      FieldName = 'CertificateFilePassword'
+      Control = CertificateFilePasswordEdit
+      Track = False
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'ApiKey'
+      Control = ApiKeyCB
+      Track = True
+    end
+    object LinkControlToField6: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'CertificateFileName'
+      Control = CertificateFileNameCB
+      Track = True
+    end
+    object LinkControlToField7: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'CertificateFilePassword'
+      Control = CertificateFilePasswordCB
+      Track = True
+    end
+    object LinkControlToField8: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'ProductionEnvironment'
+      Control = ProductionEnvironmentCB
+      Track = True
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBPushNotifications
+      FieldName = 'ProductionEnvironment'
+      Control = ProductionEnvironmentSwitch
+      Track = True
+      CustomFormat = 'IfThen(ToVariant(%s)='#39'1'#39',True,False)'
+      CustomParse = 'IfThen(%s=False,0,1)'
+    end
+    object LinkControlToField9: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBPushNotifications
+      FieldName = 'ApiURL'
+      Control = ApiURLEdit
+      Track = False
+    end
+    object LinkControlToField10: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'ApiURL'
+      Control = ApiURLCB
+      Track = True
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = ConfigDM.PushNotificationsStatusMT
+    ScopeMappings = <>
+    Left = 272
+    Top = 232
+  end
+end

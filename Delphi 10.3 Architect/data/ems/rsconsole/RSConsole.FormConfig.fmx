@@ -1,0 +1,1236 @@
+object ConfigForm: TConfigForm
+  Left = 0
+  Top = 0
+  Caption = 'RAD Server Config Editor'
+  ClientHeight = 623
+  ClientWidth = 667
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object TabControl1: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 667.000000000000000000
+    Size.Height = 601.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = None
+    OnChange = TabControlChange
+    Sizes = (
+      667s
+      601s
+      667s
+      601s)
+    object LocateTab: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Locate'
+      ExplicitSize.cx = 320.000000000000000000
+      ExplicitSize.cy = 24.000000000000000000
+      object Layout1: TLayout
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 205.000000000000000000
+        Size.Width = 627.000000000000000000
+        Size.Height = 96.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Layout3: TLayout
+          Align = Bottom
+          Margins.Left = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 16.000000000000000000
+          Size.Width = 617.000000000000000000
+          Size.Height = 80.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object LocateButton: TButton
+            Align = Right
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 436.000000000000000000
+            Position.Y = 35.000000000000000000
+            Size.Width = 69.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Text = 'Locate'
+            OnClick = LocateButtonClick
+          end
+          object Label18: TLabel
+            Align = Top
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 607.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'RAD Server Configuration File Path'
+            TabOrder = 2
+          end
+          object SettingsEdit: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 3
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 421.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TextPrompt = 'C:\Users\Public\Documents\Embarcadero\EMS\emsserver.ini'
+          end
+          object ConfigureButton: TButton
+            Align = Right
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 515.000000000000000000
+            Position.Y = 35.000000000000000000
+            Size.Width = 97.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'Configure'
+            OnClick = ConfigureButtonClick
+          end
+        end
+      end
+      object Layout4: TLayout
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 100.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 100.000000000000000000
+        Size.Width = 627.000000000000000000
+        Size.Height = 105.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object Label1: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 617.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Local Configuration'
+          TabOrder = 0
+        end
+        object Label2: TLabel
+          Align = Top
+          Margins.Left = 25.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 25.000000000000000000
+          Position.Y = 32.000000000000000000
+          Size.Width = 597.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          Text = 
+            'Locate the EMS Server configuration file that you would like to ' +
+            'edit.'
+          TabOrder = 1
+        end
+      end
+      object Layout2: TLayout
+        Align = Bottom
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 546.000000000000000000
+        Size.Width = 657.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object CloseButton: TButton
+          Align = Right
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 547.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 105.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Close'
+          OnClick = CloseButtonClick
+        end
+      end
+    end
+    object ConfigTab: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Server Config'
+      ExplicitSize.cx = 214.000000000000000000
+      ExplicitSize.cy = 24.000000000000000000
+      object Label4: TLabel
+        Align = Top
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 657.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        Text = 'Server Configuration'
+        TabOrder = 2
+      end
+      object TabControl2: TTabControl
+        Align = Client
+        Size.Width = 667.000000000000000000
+        Size.Height = 514.000000000000000000
+        Size.PlatformDefault = False
+        TabIndex = 0
+        TabOrder = 3
+        TabPosition = PlatformDefault
+        OnChange = TabControlChange
+        Sizes = (
+          667s
+          486s
+          667s
+          486s
+          667s
+          486s
+          667s
+          486s
+          667s
+          486s
+          667s
+          486s
+          667s
+          486s)
+        object DataTab: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 50.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Data'
+          ExplicitSize.cx = 45.000000000000000000
+          ExplicitSize.cy = 24.000000000000000000
+          inline DataFrame1: TDataFrame
+            Align = Client
+            Size.Width = 667.000000000000000000
+            Size.Height = 486.000000000000000000
+            Size.PlatformDefault = False
+            inherited VertScrollBox1: TVertScrollBox
+              Size.Width = 667.000000000000000000
+              Size.Height = 486.000000000000000000
+              Viewport.Width = 667.000000000000000000
+              Viewport.Height = 486.000000000000000000
+              inherited Layout6: TLayout
+                Size.Width = 667.000000000000000000
+                inherited InstanceNameEdit: TEdit
+                  Size.Width = 446.000000000000000000
+                end
+                inherited InstanceNameHelpButton: TButton
+                  Position.X = 611.000000000000000000
+                  Size.Width = 46.000000000000000000
+                end
+              end
+              inherited Layout11: TLayout
+                Size.Width = 667.000000000000000000
+                inherited DatabaseEdit: TEdit
+                  Size.Width = 417.000000000000000000
+                end
+                inherited LocateDBButton: TButton
+                  Position.X = 582.000000000000000000
+                end
+              end
+              inherited Layout10: TLayout
+                Size.Width = 667.000000000000000000
+                inherited UserNameEdit: TEdit
+                  Size.Width = 507.000000000000000000
+                end
+              end
+              inherited Layout9: TLayout
+                Size.Width = 667.000000000000000000
+                inherited PasswordEdit: TEdit
+                  Size.Width = 507.000000000000000000
+                end
+              end
+              inherited Layout8: TLayout
+                Size.Width = 667.000000000000000000
+                inherited SEPasswordEdit: TEdit
+                  Size.Width = 446.000000000000000000
+                end
+                inherited SEPasswordHelpButton: TButton
+                  Position.X = 611.000000000000000000
+                  Size.Width = 46.000000000000000000
+                end
+              end
+              inherited Layout7: TLayout
+                Size.Width = 667.000000000000000000
+                inherited PooledHelpButton: TButton
+                  Position.X = 611.000000000000000000
+                  Size.Width = 46.000000000000000000
+                end
+                inherited Layout4: TLayout
+                  Size.Width = 456.000000000000000000
+                  inherited Label2: TLabel
+                    Position.X = 412.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited Label3: TLabel
+                    Position.X = 310.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited PooledSwitch: TSwitch
+                    Position.X = 363.000000000000000000
+                    Size.Width = 44.000000000000000000
+                  end
+                end
+              end
+              inherited Layout5: TLayout
+                Size.Width = 667.000000000000000000
+                inherited PooledMaxHelpButton: TButton
+                  Position.X = 611.000000000000000000
+                  Size.Width = 46.000000000000000000
+                end
+                inherited PooledMaxSB: TSpinBox
+                  Size.Width = 446.000000000000000000
+                end
+              end
+            end
+            inherited OpenDialog: TOpenDialog
+              Left = 288
+              Top = 400
+            end
+          end
+        end
+        object ServerTab: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 58.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Server'
+          ExplicitSize.cx = 54.000000000000000000
+          ExplicitSize.cy = 24.000000000000000000
+          inline ServerFrame1: TServerFrame
+            Align = Client
+            Size.Width = 667.000000000000000000
+            Size.Height = 486.000000000000000000
+            Size.PlatformDefault = False
+            inherited VertScrollBox3: TVertScrollBox
+              Size.Width = 667.000000000000000000
+              Size.Height = 486.000000000000000000
+              Viewport.Width = 667.000000000000000000
+              Viewport.Height = 486.000000000000000000
+              inherited Label23: TLabel
+                Size.Width = 641.000000000000000000
+              end
+              inherited Label54: TLabel
+                Size.Width = 641.000000000000000000
+              end
+              inherited Label55: TLabel
+                Size.Width = 641.000000000000000000
+              end
+              inherited Label56: TLabel
+                Size.Width = 641.000000000000000000
+              end
+              inherited Label58: TLabel
+                Size.Width = 641.000000000000000000
+              end
+              inherited Label65: TLabel
+                Size.Width = 641.000000000000000000
+              end
+              inherited Label70: TLabel
+                Size.Width = 641.000000000000000000
+              end
+              inherited Label74: TLabel
+                Size.Width = 641.000000000000000000
+              end
+              inherited Layout12: TLayout
+                Size.Width = 651.000000000000000000
+                inherited MaxConnectionsSB: TSpinBox
+                  Size.Width = 460.000000000000000000
+                end
+                inherited MaxConnectionsHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout13: TLayout
+                Size.Width = 651.000000000000000000
+                inherited MaxUsersHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+                inherited MaxUsersSB: TSpinBox
+                  Size.Width = 460.000000000000000000
+                end
+              end
+              inherited Layout14: TLayout
+                Size.Width = 651.000000000000000000
+                inherited MasterSecretEdit: TEdit
+                  Size.Width = 460.000000000000000000
+                end
+                inherited MasterSecretHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout15: TLayout
+                Size.Width = 651.000000000000000000
+                inherited AppSecretEdit: TEdit
+                  Size.Width = 460.000000000000000000
+                end
+                inherited AppSecretHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout16: TLayout
+                Size.Width = 651.000000000000000000
+                inherited ApplicationIDEdit: TEdit
+                  Size.Width = 460.000000000000000000
+                end
+                inherited ApplicationIDHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout17: TLayout
+                Size.Width = 651.000000000000000000
+                inherited PortEdit: TEdit
+                  Size.Width = 491.000000000000000000
+                end
+              end
+              inherited Layout18: TLayout
+                Size.Width = 651.000000000000000000
+                inherited CertFileEdit: TEdit
+                  Size.Width = 401.000000000000000000
+                end
+                inherited LocateCertFileButton: TButton
+                  Position.X = 566.000000000000000000
+                end
+              end
+              inherited Layout19: TLayout
+                Size.Width = 651.000000000000000000
+                inherited KeyFileEdit: TEdit
+                  Size.Width = 401.000000000000000000
+                end
+                inherited KeyFileButton: TButton
+                  Position.X = 566.000000000000000000
+                end
+              end
+              inherited Layout20: TLayout
+                Size.Width = 651.000000000000000000
+                inherited HTTPSHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+                inherited Layout4: TLayout
+                  Size.Width = 470.000000000000000000
+                  inherited Label2: TLabel
+                    Position.X = 426.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited Label3: TLabel
+                    Position.X = 290.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited HTTPSSwitch: TSwitch
+                    Position.X = 343.000000000000000000
+                  end
+                end
+              end
+              inherited Layout21: TLayout
+                Size.Width = 651.000000000000000000
+                inherited RootCertFileEdit: TEdit
+                  Size.Width = 370.000000000000000000
+                end
+                inherited RootCertFileButton: TButton
+                  Position.X = 566.000000000000000000
+                end
+                inherited RootCertFileHelpButton: TButton
+                  Position.X = 535.000000000000000000
+                end
+              end
+              inherited Layout22: TLayout
+                Size.Width = 651.000000000000000000
+                inherited KeyFilePasswordEdit: TEdit
+                  Size.Width = 491.000000000000000000
+                end
+              end
+              inherited Layout24: TLayout
+                Size.Width = 651.000000000000000000
+                inherited ThreadPoolHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+                inherited Layout5: TLayout
+                  Size.Width = 470.000000000000000000
+                  inherited Label4: TLabel
+                    Position.X = 426.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited Label5: TLabel
+                    Position.X = 290.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited ThreadPoolSwitch: TSwitch
+                    Position.X = 343.000000000000000000
+                  end
+                end
+              end
+              inherited Layout25: TLayout
+                Size.Width = 651.000000000000000000
+                inherited ThreadPoolSizeSB: TSpinBox
+                  Size.Width = 460.000000000000000000
+                end
+                inherited ThreadPoolSizeHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout26: TLayout
+                Size.Width = 651.000000000000000000
+                inherited ListenQueueSB: TSpinBox
+                  Size.Width = 460.000000000000000000
+                end
+                inherited ListenQueueHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout46: TLayout
+                Size.Width = 651.000000000000000000
+                inherited CrossDomainEdit: TEdit
+                  Size.Width = 460.000000000000000000
+                end
+                inherited CrossDomainHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout60: TLayout
+                Size.Width = 651.000000000000000000
+                inherited ProxyHostEdit: TEdit
+                  Size.Width = 491.000000000000000000
+                end
+              end
+              inherited Layout61: TLayout
+                Size.Width = 651.000000000000000000
+                inherited ProxyPortEdit: TEdit
+                  Size.Width = 491.000000000000000000
+                end
+              end
+              inherited Layout62: TLayout
+                Size.Width = 651.000000000000000000
+                inherited ProxyUserNameEdit: TEdit
+                  Size.Width = 491.000000000000000000
+                end
+              end
+              inherited Layout63: TLayout
+                Size.Width = 651.000000000000000000
+                inherited ProxyPasswordEdit: TEdit
+                  Size.Width = 491.000000000000000000
+                end
+              end
+              inherited Layout64: TLayout
+                Size.Width = 651.000000000000000000
+                inherited MultiTenantModeHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+                inherited Layout6: TLayout
+                  Size.Width = 470.000000000000000000
+                  inherited Label6: TLabel
+                    Position.X = 426.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited Label7: TLabel
+                    Position.X = 290.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited MultiTenantSwitch: TSwitch
+                    Position.X = 343.000000000000000000
+                  end
+                end
+              end
+              inherited Layout65: TLayout
+                Size.Width = 651.000000000000000000
+                inherited TenantIDCookieName: TEdit
+                  Size.Width = 460.000000000000000000
+                end
+                inherited TenantIDCookieNameHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout66: TLayout
+                Size.Width = 651.000000000000000000
+                inherited DefaultTenantIdEdit: TEdit
+                  Size.Width = 460.000000000000000000
+                end
+                inherited DefaultTenantIdHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout67: TLayout
+                Size.Width = 651.000000000000000000
+                inherited ResourcesEdit: TEdit
+                  Size.Width = 460.000000000000000000
+                end
+                inherited ResourceHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+              end
+              inherited Layout1: TLayout
+                Size.Width = 651.000000000000000000
+                inherited KeepAliveHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+                inherited Label10: TLabel
+                  Position.X = 576.000000000000000000
+                  TextSettings.Font.StyleExt = {00070000000000000004000000}
+                end
+                inherited KeepAliveSwitch: TSwitch
+                  Position.X = 493.000000000000000000
+                end
+                inherited Label11: TLabel
+                  Position.X = 440.000000000000000000
+                  TextSettings.Font.StyleExt = {00070000000000000004000000}
+                end
+              end
+              inherited Label1: TLabel
+                Size.Width = 641.000000000000000000
+              end
+              inherited Layout2: TLayout
+                Size.Width = 651.000000000000000000
+                inherited AppendHelpButton: TButton
+                  Position.X = 625.000000000000000000
+                end
+                inherited Layout7: TLayout
+                  Size.Width = 470.000000000000000000
+                  inherited Label8: TLabel
+                    Position.X = 426.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited Label9: TLabel
+                    Position.X = 290.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited ServerLoggingAppendSwitch: TSwitch
+                    Position.X = 343.000000000000000000
+                  end
+                end
+              end
+              inherited Layout3: TLayout
+                Size.Width = 651.000000000000000000
+                inherited LogFileEdit: TEdit
+                  Size.Width = 401.000000000000000000
+                end
+                inherited FileNameButton: TButton
+                  Position.X = 566.000000000000000000
+                end
+              end
+            end
+          end
+        end
+        object Packages: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 75.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Packages'
+          ExplicitSize.cx = 69.000000000000000000
+          ExplicitSize.cy = 24.000000000000000000
+          inline PackagesFrame1: TPackagesFrame
+            Align = Client
+            Size.Width = 667.000000000000000000
+            Size.Height = 486.000000000000000000
+            Size.PlatformDefault = False
+            inherited ListControlFrame1: TListControlFrame
+              Size.Width = 667.000000000000000000
+              inherited Layout1: TLayout
+                Size.Width = 667.000000000000000000
+                inherited AddButton: TButton
+                  Position.X = 616.000000000000000000
+                  Size.Width = 46.000000000000000000
+                end
+                inherited RemoveButton: TButton
+                  Position.X = 560.000000000000000000
+                  Size.Width = 46.000000000000000000
+                end
+                inherited Layout2: TLayout
+                  Position.X = 453.000000000000000000
+                  inherited DownButton: TButton
+                    Position.X = -5.000000000000000000
+                    Size.Width = 46.000000000000000000
+                  end
+                  inherited UpButton: TButton
+                    Position.X = 51.000000000000000000
+                    Size.Width = 46.000000000000000000
+                  end
+                end
+                inherited HelpButton: TButton
+                  Position.X = 400.000000000000000000
+                end
+              end
+            end
+            inherited ListBox1: TListBox
+              Size.Width = 667.000000000000000000
+              Size.Height = 436.000000000000000000
+              Viewport.Width = 667.000000000000000000
+              Viewport.Height = 436.000000000000000000
+            end
+          end
+        end
+        object PushTab: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 123.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Push Notifications'
+          ExplicitSize.cx = 116.000000000000000000
+          ExplicitSize.cy = 24.000000000000000000
+          inline PushNotificationsFrame1: TPushNotificationsFrame
+            Align = Client
+            Size.Width = 667.000000000000000000
+            Size.Height = 486.000000000000000000
+            Size.PlatformDefault = False
+            inherited VertScrollBox1: TVertScrollBox
+              Size.Width = 667.000000000000000000
+              Size.Height = 486.000000000000000000
+              Viewport.Width = 667.000000000000000000
+              Viewport.Height = 486.000000000000000000
+              inherited Label59: TLabel
+                Size.Width = 657.000000000000000000
+              end
+              inherited Label60: TLabel
+                Size.Width = 657.000000000000000000
+              end
+              inherited Layout48: TLayout
+                Size.Width = 667.000000000000000000
+                inherited ApiKeyEdit: TEdit
+                  Size.Width = 476.000000000000000000
+                end
+                inherited ApiKeyHelpButton: TButton
+                  Position.X = 641.000000000000000000
+                end
+              end
+              inherited Layout49: TLayout
+                Size.Width = 667.000000000000000000
+                inherited CertificateFilePasswordEdit: TEdit
+                  Size.Width = 476.000000000000000000
+                end
+                inherited CertFilePasswordHelpButton: TButton
+                  Position.X = 641.000000000000000000
+                end
+              end
+              inherited Layout50: TLayout
+                Size.Width = 667.000000000000000000
+                inherited Layout7: TLayout
+                  Size.Width = 431.000000000000000000
+                  inherited Label8: TLabel
+                    Position.X = 387.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited Label9: TLabel
+                    Position.X = 251.000000000000000000
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                  end
+                  inherited ProductionEnvironmentSwitch: TSwitch
+                    Position.X = 304.000000000000000000
+                  end
+                end
+                inherited ProductionEnvironmentHelpButton: TButton
+                  Position.X = 641.000000000000000000
+                end
+              end
+              inherited Layout51: TLayout
+                Size.Width = 667.000000000000000000
+                inherited CertificateFileNameEdit: TEdit
+                  Size.Width = 386.000000000000000000
+                end
+                inherited CertFileNameButton: TButton
+                  Position.X = 551.000000000000000000
+                end
+                inherited CertFileNameHelpButton: TButton
+                  Position.X = 641.000000000000000000
+                end
+              end
+              inherited Layout1: TLayout
+                Size.Width = 667.000000000000000000
+                inherited ApiURLEdit: TEdit
+                  Size.Width = 476.000000000000000000
+                end
+                inherited ApiURLHelpButton: TButton
+                  Position.X = 641.000000000000000000
+                end
+              end
+            end
+          end
+        end
+        object AuthTab: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 98.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Authorization'
+          ExplicitSize.cx = 92.000000000000000000
+          ExplicitSize.cy = 24.000000000000000000
+          inline AuthorizationFrame1: TAuthorizationFrame
+            Align = Client
+            Size.Width = 667.000000000000000000
+            Size.Height = 486.000000000000000000
+            Size.PlatformDefault = False
+            inherited TabControl: TTabControl
+              Size.Width = 667.000000000000000000
+              Size.Height = 486.000000000000000000
+              Sizes = (
+                667s
+                486s
+                667s
+                486s)
+              inherited ListItem: TTabItem
+                ExplicitSize.cx = 8.000000000000000000
+                ExplicitSize.cy = 8.000000000000000000
+                inherited ListControlFrame1: TListControlFrame
+                  Size.Width = 667.000000000000000000
+                  inherited Layout1: TLayout
+                    Size.Width = 667.000000000000000000
+                    inherited AddButton: TButton
+                      Position.X = 616.000000000000000000
+                      Size.Width = 46.000000000000000000
+                    end
+                    inherited RemoveButton: TButton
+                      Position.X = 560.000000000000000000
+                      Size.Width = 46.000000000000000000
+                    end
+                    inherited Layout2: TLayout
+                      Position.X = 453.000000000000000000
+                      inherited DownButton: TButton
+                        Position.X = -5.000000000000000000
+                        Size.Width = 46.000000000000000000
+                      end
+                      inherited UpButton: TButton
+                        Position.X = 51.000000000000000000
+                        Size.Width = 46.000000000000000000
+                      end
+                    end
+                    inherited HelpButton: TButton
+                      Position.X = 400.000000000000000000
+                    end
+                  end
+                end
+                inherited ListBox1: TListBox
+                  Size.Width = 667.000000000000000000
+                  Size.Height = 436.000000000000000000
+                  Viewport.Width = 667.000000000000000000
+                  Viewport.Height = 436.000000000000000000
+                end
+              end
+              inherited EditItem: TTabItem
+                ExplicitSize.cx = 8.000000000000000000
+                ExplicitSize.cy = 8.000000000000000000
+                inherited Layout72: TLayout
+                  Position.Y = 431.000000000000000000
+                  Size.Width = 657.000000000000000000
+                  inherited SaveButton: TButton
+                    Position.X = 547.000000000000000000
+                  end
+                  inherited CancelButton: TButton
+                    Position.X = 432.000000000000000000
+                  end
+                end
+                inherited VertScrollBox2: TVertScrollBox
+                  Size.Width = 667.000000000000000000
+                  Size.Height = 426.000000000000000000
+                  Viewport.Width = 667.000000000000000000
+                  Viewport.Height = 426.000000000000000000
+                  inherited Layout1: TLayout
+                    inherited Label2: TLabel
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    end
+                    inherited Label5: TLabel
+                      TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    end
+                  end
+                  inherited Layout4: TLayout
+                    inherited UsersLB: TListBox
+                      Viewport.Width = 378.000000000000000000
+                      Viewport.Height = 110.000000000000000000
+                    end
+                  end
+                  inherited Layout3: TLayout
+                    inherited GroupsLB: TListBox
+                      Viewport.Width = 378.000000000000000000
+                      Viewport.Height = 110.000000000000000000
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+        object RedirectTab: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 69.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Redirect'
+          ExplicitSize.cx = 64.000000000000000000
+          ExplicitSize.cy = 24.000000000000000000
+          inline RedirectFrame1: TRedirectFrame
+            Align = Client
+            Size.Width = 667.000000000000000000
+            Size.Height = 486.000000000000000000
+            Size.PlatformDefault = False
+            inherited TabControl: TTabControl
+              Size.Width = 667.000000000000000000
+              Size.Height = 486.000000000000000000
+              Sizes = (
+                667s
+                486s
+                667s
+                486s)
+              inherited ListItem: TTabItem
+                ExplicitSize.cx = 8.000000000000000000
+                ExplicitSize.cy = 8.000000000000000000
+                inherited ListControlFrame1: TListControlFrame
+                  Size.Width = 667.000000000000000000
+                  inherited Layout1: TLayout
+                    Size.Width = 667.000000000000000000
+                    inherited AddButton: TButton
+                      Position.X = 616.000000000000000000
+                      Size.Width = 46.000000000000000000
+                    end
+                    inherited RemoveButton: TButton
+                      Position.X = 560.000000000000000000
+                      Size.Width = 46.000000000000000000
+                    end
+                    inherited Layout2: TLayout
+                      Position.X = 453.000000000000000000
+                      inherited DownButton: TButton
+                        Position.X = -5.000000000000000000
+                        Size.Width = 46.000000000000000000
+                      end
+                      inherited UpButton: TButton
+                        Position.X = 51.000000000000000000
+                        Size.Width = 46.000000000000000000
+                      end
+                    end
+                    inherited HelpButton: TButton
+                      Position.X = 400.000000000000000000
+                    end
+                  end
+                end
+                inherited ListBox1: TListBox
+                  Size.Width = 667.000000000000000000
+                  Size.Height = 436.000000000000000000
+                  Viewport.Width = 667.000000000000000000
+                  Viewport.Height = 436.000000000000000000
+                end
+              end
+              inherited EditItem: TTabItem
+                ExplicitSize.cx = 8.000000000000000000
+                ExplicitSize.cy = 8.000000000000000000
+                inherited Layout72: TLayout
+                  Position.Y = 431.000000000000000000
+                  Size.Width = 657.000000000000000000
+                  inherited SaveButton: TButton
+                    Position.X = 547.000000000000000000
+                  end
+                  inherited CancelButton: TButton
+                    Position.X = 432.000000000000000000
+                  end
+                end
+                inherited Layout1: TLayout
+                  Size.Width = 667.000000000000000000
+                  inherited DestinationEdit: TEdit
+                    Size.Width = 502.000000000000000000
+                  end
+                end
+              end
+            end
+          end
+        end
+        object PublicPathsTab: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 90.000000000000000000
+          Size.Height = 28.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Public Paths'
+          ExplicitSize.cx = 84.000000000000000000
+          ExplicitSize.cy = 24.000000000000000000
+          inline PublicPathsFrame1: TPublicPathsFrame
+            Align = Client
+            Size.Width = 667.000000000000000000
+            Size.Height = 486.000000000000000000
+            Size.PlatformDefault = False
+            inherited TabControl: TTabControl
+              Size.Width = 667.000000000000000000
+              Size.Height = 486.000000000000000000
+              Sizes = (
+                667s
+                486s
+                667s
+                486s)
+              inherited ListItem: TTabItem
+                ExplicitSize.cx = 8.000000000000000000
+                ExplicitSize.cy = 8.000000000000000000
+                inherited ListControlFrame1: TListControlFrame
+                  Size.Width = 667.000000000000000000
+                  inherited Layout1: TLayout
+                    Size.Width = 667.000000000000000000
+                    inherited AddButton: TButton
+                      Position.X = 616.000000000000000000
+                      Size.Width = 46.000000000000000000
+                    end
+                    inherited RemoveButton: TButton
+                      Position.X = 560.000000000000000000
+                      Size.Width = 46.000000000000000000
+                    end
+                    inherited Layout2: TLayout
+                      Position.X = 453.000000000000000000
+                      inherited DownButton: TButton
+                        Position.X = -5.000000000000000000
+                        Size.Width = 46.000000000000000000
+                      end
+                      inherited UpButton: TButton
+                        Position.X = 51.000000000000000000
+                        Size.Width = 46.000000000000000000
+                      end
+                    end
+                    inherited HelpButton: TButton
+                      Position.X = 400.000000000000000000
+                    end
+                  end
+                end
+                inherited ListBox1: TListBox
+                  Size.Width = 667.000000000000000000
+                  Size.Height = 436.000000000000000000
+                  Viewport.Width = 667.000000000000000000
+                  Viewport.Height = 436.000000000000000000
+                end
+              end
+              inherited EditItem: TTabItem
+                ExplicitSize.cx = 8.000000000000000000
+                ExplicitSize.cy = 8.000000000000000000
+                inherited VertScrollBox2: TVertScrollBox
+                  Size.Width = 667.000000000000000000
+                  Size.Height = 426.000000000000000000
+                  Viewport.Width = 667.000000000000000000
+                  Viewport.Height = 426.000000000000000000
+                  inherited Layout6: TLayout
+                    Size.Width = 624.000000000000000000
+                    inherited DefaultEdit: TEdit
+                      Size.Width = 459.000000000000000000
+                    end
+                  end
+                  inherited Layout5: TLayout
+                    Size.Width = 624.000000000000000000
+                    inherited DirectoryEdit: TEdit
+                      Size.Width = 369.000000000000000000
+                    end
+                    inherited ConfigButton: TButton
+                      Position.X = 539.000000000000000000
+                    end
+                  end
+                  inherited Layout4: TLayout
+                    Size.Width = 624.000000000000000000
+                    inherited ExtensionsLB: TListBox
+                      Size.Width = 409.000000000000000000
+                      Viewport.Width = 409.000000000000000000
+                      Viewport.Height = 110.000000000000000000
+                    end
+                    inherited Layout7: TLayout
+                      Position.X = 574.000000000000000000
+                    end
+                  end
+                  inherited Layout3: TLayout
+                    Size.Width = 624.000000000000000000
+                    inherited MimesLB: TListBox
+                      Size.Width = 409.000000000000000000
+                      Viewport.Width = 409.000000000000000000
+                      Viewport.Height = 110.000000000000000000
+                    end
+                    inherited Layout8: TLayout
+                      Position.X = 574.000000000000000000
+                    end
+                  end
+                  inherited Layout2: TLayout
+                    Size.Width = 624.000000000000000000
+                    inherited PathEdit: TEdit
+                      Size.Width = 459.000000000000000000
+                    end
+                  end
+                end
+                inherited Layout72: TLayout
+                  Position.Y = 431.000000000000000000
+                  Size.Width = 657.000000000000000000
+                  inherited SaveButton: TButton
+                    Position.X = 547.000000000000000000
+                  end
+                  inherited CancelButton: TButton
+                    Position.X = 432.000000000000000000
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+      object SaveLayout: TLayout
+        Align = Bottom
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 546.000000000000000000
+        Size.Width = 657.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object SaveButton: TButton
+          Align = Right
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 376.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 105.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Save'
+          OnClick = SaveButtonClick
+        end
+        object CancelButton: TButton
+          Align = Right
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 261.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 105.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Cancel'
+          OnClick = CancelButtonClick
+        end
+        object SaveAndCloseButton: TButton
+          Align = Right
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 491.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Save And Close'
+          OnClick = SaveAndCloseButtonClick
+        end
+      end
+    end
+  end
+  object OpenDialog: TOpenDialog
+    DefaultExt = 'ini'
+    Filter = 'RAD Server Config Files|*.ini'
+    Options = [ofHideReadOnly, ofFileMustExist, ofEnableSizing]
+    Left = 192
+    Top = 432
+  end
+  object StatusBar1: TStatusBar
+    Position.Y = 601.000000000000000000
+    ShowSizeGrip = True
+    Size.Width = 667.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+  end
+  object BindSourceDB1: TBindSourceDB
+    ScopeMappings = <>
+    Left = 304
+    Top = 464
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 60
+    Top = 69
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = ConfigDM.SettingsMT
+    ScopeMappings = <>
+    Left = 272
+    Top = 120
+  end
+end

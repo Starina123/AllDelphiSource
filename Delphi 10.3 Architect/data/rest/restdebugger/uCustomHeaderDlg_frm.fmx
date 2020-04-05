@@ -1,0 +1,183 @@
+object frm_CustomHeaderDlg: Tfrm_CustomHeaderDlg
+  Left = 0
+  Top = 0
+  ActiveControl = cmb_ParameterKind
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = '{CAPTION}'
+  ClientHeight = 326
+  ClientWidth = 487
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCloseQuery = FormCloseQuery
+  OnDeactivate = FormDeactivate
+  DesignerMasterStyle = 0
+  object btn_Cancel: TButton
+    Anchors = [akRight, akBottom]
+    Cancel = True
+    Position.X = 399.000000000000000000
+    Position.Y = 294.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = '&Cancel'
+    OnClick = btn_CancelClick
+  end
+  object btn_Apply: TButton
+    Anchors = [akRight, akBottom]
+    Default = True
+    Position.X = 311.000000000000000000
+    Position.Y = 294.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = '&Apply'
+    OnClick = btn_ApplyClick
+  end
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = claWhite
+    Size.Width = 487.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+  end
+  object Line1: TLine
+    Anchors = [akLeft, akRight, akBottom]
+    LineType = Diagonal
+    Position.X = 8.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 471.000000000000000000
+    Size.Height = 1.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claLightgray
+  end
+  object lbl_SubTitle: TLabel
+    Position.X = 65.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 353.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'lbl_SubTitle'
+  end
+  object lbl_MainTitle: TLabel
+    StyledSettings = [Family, Style, FontColor]
+    Position.X = 64.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 353.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    Text = 'lbl_MainTitle'
+  end
+  object cmb_ParameterKind: TComboBox
+    ItemIndex = 0
+    Position.X = 64.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnChange = cmb_ParameterKindChange
+    object Label3: TLabel
+      Position.Y = -16.000000000000000000
+      Size.Width = 81.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Kind:'
+    end
+  end
+  object cmb_ParameterName: TComboEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    ItemHeight = 19.000000000000000000
+    Items.Strings = (
+      'Accept'
+      'Accept-Charset'
+      'Accept-Encoding'
+      'Accept-Language'
+      'Accept-Ranges'
+      'Age'
+      'Allow'
+      'Authorization'
+      'Cache-Control'
+      'Connection'
+      'Content-Encoding'
+      'Content-Language'
+      'Content-Length'
+      'Content-Location'
+      'Content-MD5'
+      'Content-Range'
+      'Content-Type'
+      'Date'
+      'ETag'
+      'Expect'
+      'Expires'
+      'From'
+      'Host'
+      'If-Match'
+      'If-Modified-Since'
+      'If-None-Match'
+      'If-Range'
+      'If-Unmodified-Since'
+      'Last-Modified'
+      'Location'
+      'Max-Forwards'
+      'Pragma'
+      'Proxy-Authenticate'
+      'Proxy-Authorization'
+      'Range'
+      'Referer'
+      'Retry-After'
+      'Server'
+      'TE'
+      'Trailer'
+      'Transfer-Encoding'
+      'Upgrade'
+      'User-Agent'
+      'Vary'
+      'Via'
+      'Warning'
+      'WWW-Authenticate')
+    ItemIndex = -1
+    Position.X = 184.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 233.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    object Label1: TLabel
+      Position.X = 1.000000000000000000
+      Position.Y = -15.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Name:'
+    end
+  end
+  object edt_ParameterValue: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Position.X = 64.000000000000000000
+    Position.Y = 184.000000000000000000
+    Size.Width = 353.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    object Label2: TLabel
+      Position.Y = -16.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Value:'
+    end
+  end
+  object cbx_DoNotEncode: TCheckBox
+    Position.X = 64.000000000000000000
+    Position.Y = 224.000000000000000000
+    TabOrder = 3
+    Text = 'Do not encode'
+  end
+end

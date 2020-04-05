@@ -1,0 +1,188 @@
+object ConnectionForm: TConnectionForm
+  Left = 0
+  Top = 0
+  ClientHeight = 539
+  ClientWidth = 527
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  inline SettingsFrame: TSettingsFrame
+    Align = Client
+    Size.Width = 527.000000000000000000
+    Size.Height = 539.000000000000000000
+    Size.PlatformDefault = False
+    inherited ConnectionInfoControl: TTabControl
+      Size.Width = 527.000000000000000000
+      Size.Height = 489.000000000000000000
+      Sizes = (
+        527s
+        463s
+        527s
+        463s
+        527s
+        463s
+        527s
+        463s
+        527s
+        463s)
+      inherited ConnectionTabItem: TTabItem
+        Size.Width = 81.000000000000000000
+        Size.Height = 26.000000000000000000
+        ExplicitSize.cx = 80.000000000000000000
+        ExplicitSize.cy = 24.000000000000000000
+        inherited Layout3: TLayout
+          Size.Width = 487.000000000000000000
+          Size.Height = 423.000000000000000000
+          inherited HostLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited HostEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+          inherited PortLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited PortEdit: TEdit
+              Size.Width = 196.000000000000000000
+            end
+            inherited CheckBoxHTTPS: TCheckBox
+              Position.X = 362.000000000000000000
+            end
+          end
+          inherited URLPathLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited URLEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+          inherited Layout1: TLayout
+            Size.Width = 487.000000000000000000
+            inherited TimeoutEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+        end
+      end
+      inherited ProxyTabItem: TTabItem
+        Size.Width = 50.000000000000000000
+        Size.Height = 26.000000000000000000
+        ExplicitSize.cx = 50.000000000000000000
+        ExplicitSize.cy = 24.000000000000000000
+        inherited Layout5: TLayout
+          Size.Width = 527.000000000000000000
+          Size.Height = 463.000000000000000000
+          inherited ProxyServerLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited ProxyServerEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+          inherited ProxyPortLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited ProxyPortEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+        end
+      end
+      inherited KeysTabItem: TTabItem
+        Size.Width = 44.000000000000000000
+        Size.Height = 26.000000000000000000
+        ExplicitSize.cx = 44.000000000000000000
+        ExplicitSize.cy = 24.000000000000000000
+        inherited Layout7: TLayout
+          Size.Width = 527.000000000000000000
+          Size.Height = 463.000000000000000000
+          inherited AppSecretLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited AppSecretEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+          inherited AppIdLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited AppIDEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+        end
+      end
+      inherited AuthenticateTabItem: TTabItem
+        Size.Width = 88.000000000000000000
+        Size.Height = 26.000000000000000000
+        ExplicitSize.cx = 87.000000000000000000
+        ExplicitSize.cy = 24.000000000000000000
+        inherited Layout9: TLayout
+          Size.Width = 487.000000000000000000
+          Size.Height = 423.000000000000000000
+          inherited UsernameLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited UserEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+          inherited PasswordLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited PassEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+          inherited MasterSecretCBLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited MSecretCheckBox: TCheckBox
+              Size.Width = 324.000000000000000000
+            end
+          end
+          inherited MasterSecretLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited MasterSecretEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+          inherited ButtonsLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited LoginButton: TButton
+              Position.X = 216.000000000000000000
+            end
+            inherited LogoutButton: TButton
+              Position.X = 354.000000000000000000
+            end
+          end
+        end
+      end
+      inherited TabItem1: TTabItem
+        Size.Width = 56.000000000000000000
+        Size.Height = 26.000000000000000000
+        ExplicitSize.cx = 56.000000000000000000
+        ExplicitSize.cy = 26.000000000000000000
+        inherited Layout10: TLayout
+          Size.Width = 527.000000000000000000
+          Size.Height = 463.000000000000000000
+          inherited TenantIdLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited TenantIDEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+          inherited TenantSecretLayout: TLayout
+            Size.Width = 487.000000000000000000
+            inherited TenantSecretEdit: TEdit
+              Size.Width = 326.000000000000000000
+            end
+          end
+        end
+      end
+    end
+    inherited ButtonLayout: TLayout
+      Position.Y = 489.000000000000000000
+      Size.Width = 527.000000000000000000
+      inherited CloseButton: TButton
+        Position.X = 442.000000000000000000
+        OnClick = SettingsFrameCloseButtonClick
+      end
+    end
+  end
+end

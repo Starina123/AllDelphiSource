@@ -1,0 +1,758 @@
+object SettingsFrame: TSettingsFrame
+  Align = Client
+  Size.Width = 571.000000000000000000
+  Size.Height = 544.000000000000000000
+  Size.PlatformDefault = False
+  object ConnectionInfoControl: TTabControl
+    StyleName = 'TabControlstyle'
+    Align = Client
+    Size.Width = 571.000000000000000000
+    Size.Height = 494.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      571s
+      489s
+      571s
+      489s
+      571s
+      489s
+      571s
+      489s
+      571s
+      489s)
+    object ConnectionTabItem: TTabItem
+      StyleName = 'TabItemstyle'
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Height = 5.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Connection'
+      ExplicitSize.cx = 80.000000000000000000
+      ExplicitSize.cy = 24.000000000000000000
+      object Layout3: TLayout
+        Align = Client
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Size.Width = 531.000000000000000000
+        Size.Height = 449.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 14
+        object HostLayout: TLayout
+          Align = Top
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 14
+          object HostLabel: TLabel
+            StyleName = 'Labelstyle'
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Host'
+            TabOrder = 0
+          end
+          object HostEdit: TEdit
+            StyleName = 'Editstyle'
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+        end
+        object PortLayout: TLayout
+          Align = Top
+          Position.Y = 50.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 16
+          object PortEdit: TEdit
+            StyleName = 'Editstyle'
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            KeyboardType = NumberPad
+            Text = '0'
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 240.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+          object PortLabel: TLabel
+            StyleName = 'Labelstyle'
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Port'
+            TabOrder = 1
+          end
+          object CheckBoxHTTPS: TCheckBox
+            StyleName = 'CheckBoxstyle'
+            Align = Right
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 406.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Text = 'HTTPS'
+            OnChange = EditChange
+          end
+        end
+        object URLPathLayout: TLayout
+          Align = Top
+          Position.Y = 100.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 17
+          object URLLabel: TLabel
+            StyleName = 'Labelstyle'
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'URL Path'
+            TabOrder = 0
+          end
+          object URLEdit: TEdit
+            StyleName = 'Editstyle'
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+        end
+        object Layout1: TLayout
+          Align = Top
+          Position.Y = 150.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 15
+          object TimeoutEdit: TEdit
+            StyleName = 'Editstyle'
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            KeyboardType = NumberPad
+            FilterChar = '0123456789'
+            Text = '30000'
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+          object Label1: TLabel
+            StyleName = 'Labelstyle'
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Timeout'
+            TabOrder = 1
+          end
+        end
+      end
+    end
+    object ProxyTabItem: TTabItem
+      StyleName = 'TabItemstyle'
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Height = 5.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Proxy'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 24.000000000000000000
+      object Layout5: TLayout
+        Align = Client
+        Padding.Left = 20.000000000000000000
+        Padding.Top = 20.000000000000000000
+        Padding.Right = 20.000000000000000000
+        Padding.Bottom = 20.000000000000000000
+        Size.Width = 571.000000000000000000
+        Size.Height = 489.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 18
+        object ProxyServerLayout: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 22
+          object ProxyServerLabel: TLabel
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Proxy server'
+            TabOrder = 0
+          end
+          object ProxyServerEdit: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+        end
+        object ProxyPortLayout: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 70.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 23
+          object ProxyPortLabel: TLabel
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Proxy port'
+            TabOrder = 0
+          end
+          object ProxyPortEdit: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            KeyboardType = NumberPad
+            Text = '0'
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+        end
+      end
+    end
+    object KeysTabItem: TTabItem
+      StyleName = 'TabItemstyle'
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Height = 5.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Keys'
+      ExplicitSize.cx = 44.000000000000000000
+      ExplicitSize.cy = 24.000000000000000000
+      object Layout7: TLayout
+        Align = Client
+        Padding.Left = 20.000000000000000000
+        Padding.Top = 20.000000000000000000
+        Padding.Right = 20.000000000000000000
+        Padding.Bottom = 20.000000000000000000
+        Size.Width = 571.000000000000000000
+        Size.Height = 489.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 17
+        object AppSecretLayout: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 17
+          object AppSecretEdit: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+          object AppSecretLabel: TLabel
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'App Secret'
+            TabOrder = 1
+          end
+        end
+        object AppIdLayout: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 70.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 18
+          object AppIDEdit: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+          object ApplicationIDLabel: TLabel
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'ApplicationID'
+            TabOrder = 1
+          end
+        end
+      end
+    end
+    object AuthenticateTabItem: TTabItem
+      StyleName = 'TabItemstyle'
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Height = 5.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Authenticate'
+      ExplicitSize.cx = 87.000000000000000000
+      ExplicitSize.cy = 24.000000000000000000
+      object Layout9: TLayout
+        Align = Client
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Size.Width = 531.000000000000000000
+        Size.Height = 449.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        object UsernameLayout: TLayout
+          Align = Top
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 11
+          object UserLabel: TLabel
+            StyleName = 'Labelstyle'
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'User name'
+            TabOrder = 0
+          end
+          object UserEdit: TEdit
+            StyleName = 'Editstyle'
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = UserEditKeyUp
+          end
+        end
+        object PasswordLayout: TLayout
+          Align = Top
+          Position.Y = 50.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 12
+          object PassEdit: TEdit
+            StyleName = 'Editstyle'
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Password = True
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+          object PassLabel: TLabel
+            StyleName = 'Labelstyle'
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Password'
+            TabOrder = 1
+          end
+        end
+        object MasterSecretCBLayout: TLayout
+          Align = Top
+          Position.Y = 100.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 13
+          object MSecretCheckBox: TCheckBox
+            StyleName = 'CheckBoxstyle'
+            Align = Client
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 368.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'Use Master Secret'
+            OnChange = MSecretCheckBoxChange
+          end
+          object Layout2: TLayout
+            Align = Left
+            Size.Width = 153.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+          end
+        end
+        object MasterSecretLayout: TLayout
+          Align = Top
+          Position.Y = 150.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 14
+          object MasterSecretLabel: TLabel
+            StyleName = 'Labelstyle'
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Master secret'
+            TabOrder = 0
+          end
+          object MasterSecretEdit: TEdit
+            StyleName = 'Editstyle'
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+        end
+        object ButtonsLayout: TLayout
+          Align = Top
+          Position.Y = 200.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 15
+          object LoginButton: TButton
+            StyleName = 'Buttonstyle'
+            Align = Right
+            Enabled = False
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 260.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 128.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'Log in'
+            OnClick = LoginButtonClick
+          end
+          object LogoutButton: TButton
+            StyleName = 'Buttonstyle'
+            Align = MostRight
+            Enabled = False
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 398.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 128.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Text = 'Log out'
+            OnClick = LogoutButtonClick
+          end
+        end
+      end
+    end
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Height = 5.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Tenant'
+      ExplicitSize.cx = 56.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Layout10: TLayout
+        Align = Client
+        Padding.Left = 20.000000000000000000
+        Padding.Top = 20.000000000000000000
+        Padding.Right = 20.000000000000000000
+        Padding.Bottom = 20.000000000000000000
+        Size.Width = 571.000000000000000000
+        Size.Height = 489.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 17
+        object TenantIdLayout: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 17
+          object TenantIDLabel: TLabel
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Tenant ID'
+            TabOrder = 0
+          end
+          object TenantIDEdit: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 1
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+        end
+        object TenantSecretLayout: TLayout
+          Align = Top
+          Position.X = 20.000000000000000000
+          Position.Y = 70.000000000000000000
+          Size.Width = 531.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 18
+          object TenantSecretEdit: TEdit
+            Touch.InteractiveGestures = [LongTap, DoubleTap]
+            Align = Client
+            TabOrder = 0
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 370.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            OnKeyUp = HostEditKeyUp
+          end
+          object TenantSecretLabel: TLabel
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 141.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Tenant Secret'
+            TabOrder = 1
+          end
+        end
+      end
+    end
+  end
+  object ButtonLayout: TLayout
+    Align = Bottom
+    Position.Y = 494.000000000000000000
+    Size.Width = 571.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object TestConnectionButton: TButton
+      StyleName = 'Buttonstyle'
+      Align = Left
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 161.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Test Connection'
+      OnClick = TestConnectionButtonClick
+    end
+    object CloseButton: TButton
+      Align = Right
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 486.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Close'
+      OnClick = CloseButtonClick
+    end
+  end
+end

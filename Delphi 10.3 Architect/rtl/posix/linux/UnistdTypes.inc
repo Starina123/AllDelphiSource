@@ -1,0 +1,945 @@
+{*******************************************************}
+{                                                       }
+{           CodeGear Delphi Runtime Library             }
+{                                                       }
+{ Copyright(c) 1995-2018 Embarcadero Technologies, Inc. }
+{              All rights reserved                      }
+{                                                       }
+{*******************************************************}
+
+{ `sysconf', `pathconf', and `confstr' NAME values.  Generic version.
+   Copyright (C) 1993,1995-1998,2000,2001,2003,2004,2007,2009
+   Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, write to the Free
+   Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+   02111-1307 USA.  }
+
+{ Values for the NAME argument to `pathconf' and `fpathconf'.  }
+const
+  _PC_LINK_MAX           = 0;
+  {$EXTERNALSYM _PC_LINK_MAX}
+  _PC_MAX_CANON          = 1;
+  {$EXTERNALSYM _PC_MAX_CANON}
+  _PC_MAX_INPUT          = 2;
+  {$EXTERNALSYM _PC_MAX_INPUT}
+  _PC_NAME_MAX           = 3;
+  {$EXTERNALSYM _PC_NAME_MAX}
+  _PC_PATH_MAX           = 4;
+  {$EXTERNALSYM _PC_PATH_MAX}
+  _PC_PIPE_BUF           = 5;
+  {$EXTERNALSYM _PC_PIPE_BUF}
+  _PC_CHOWN_RESTRICTED   = 6;
+  {$EXTERNALSYM _PC_CHOWN_RESTRICTED}
+  _PC_NO_TRUNC           = 7;
+  {$EXTERNALSYM _PC_NO_TRUNC}
+  _PC_VDISABLE           = 8;
+  {$EXTERNALSYM _PC_VDISABLE}
+  _PC_SYNC_IO            = 9;
+  {$EXTERNALSYM _PC_SYNC_IO}
+  _PC_ASYNC_IO           = 10;
+  {$EXTERNALSYM _PC_ASYNC_IO}
+  _PC_PRIO_IO            = 11;
+  {$EXTERNALSYM _PC_PRIO_IO}
+  _PC_SOCK_MAXBUF        = 12;
+  {$EXTERNALSYM _PC_SOCK_MAXBUF}
+  _PC_FILESIZEBITS       = 13;
+  {$EXTERNALSYM _PC_FILESIZEBITS}
+  _PC_REC_INCR_XFER_SIZE = 14;
+  {$EXTERNALSYM _PC_REC_INCR_XFER_SIZE}
+  _PC_REC_MAX_XFER_SIZE  = 15;
+  {$EXTERNALSYM _PC_REC_MAX_XFER_SIZE}
+  _PC_REC_MIN_XFER_SIZE  = 16;
+  {$EXTERNALSYM _PC_REC_MIN_XFER_SIZE}
+  _PC_REC_XFER_ALIGN     = 17;
+  {$EXTERNALSYM _PC_REC_XFER_ALIGN}
+  _PC_ALLOC_SIZE_MIN     = 18;
+  {$EXTERNALSYM _PC_ALLOC_SIZE_MIN}
+  _PC_SYMLINK_MAX        = 19;
+  {$EXTERNALSYM _PC_SYMLINK_MAX}
+  _PC_2_SYMLINKS         = 20;
+  {$EXTERNALSYM _PC_2_SYMLINKS}
+
+{ Values for the argument to `sysconf'.  }
+const
+  _SC_ARG_MAX                      = 0;
+  {$EXTERNALSYM _SC_ARG_MAX}
+  _SC_CHILD_MAX                    = 1;
+  {$EXTERNALSYM _SC_CHILD_MAX}
+  _SC_CLK_TCK                      = 2;
+  {$EXTERNALSYM _SC_CLK_TCK}
+  _SC_NGROUPS_MAX                  = 3;
+  {$EXTERNALSYM _SC_NGROUPS_MAX}
+  _SC_OPEN_MAX                     = 4;
+  {$EXTERNALSYM _SC_OPEN_MAX}
+  _SC_STREAM_MAX                   = 5;
+  {$EXTERNALSYM _SC_STREAM_MAX}
+  _SC_TZNAME_MAX                   = 6;
+  {$EXTERNALSYM _SC_TZNAME_MAX}
+  _SC_JOB_CONTROL                  = 7;
+  {$EXTERNALSYM _SC_JOB_CONTROL}
+  _SC_SAVED_IDS                    = 8;
+  {$EXTERNALSYM _SC_SAVED_IDS}
+  _SC_REALTIME_SIGNALS             = 9;
+  {$EXTERNALSYM _SC_REALTIME_SIGNALS}
+  _SC_PRIORITY_SCHEDULING          = 10;
+  {$EXTERNALSYM _SC_PRIORITY_SCHEDULING}
+  _SC_TIMERS                       = 11;
+  {$EXTERNALSYM _SC_TIMERS}
+  _SC_ASYNCHRONOUS_IO              = 12;
+  {$EXTERNALSYM _SC_ASYNCHRONOUS_IO}
+  _SC_PRIORITIZED_IO               = 13;
+  {$EXTERNALSYM _SC_PRIORITIZED_IO}
+  _SC_SYNCHRONIZED_IO              = 14;
+  {$EXTERNALSYM _SC_SYNCHRONIZED_IO}
+  _SC_FSYNC                        = 15;
+  {$EXTERNALSYM _SC_FSYNC}
+  _SC_MAPPED_FILES                 = 16;
+  {$EXTERNALSYM _SC_MAPPED_FILES}
+  _SC_MEMLOCK                      = 17;
+  {$EXTERNALSYM _SC_MEMLOCK}
+  _SC_MEMLOCK_RANGE                = 18;
+  {$EXTERNALSYM _SC_MEMLOCK_RANGE}
+  _SC_MEMORY_PROTECTION            = 19;
+  {$EXTERNALSYM _SC_MEMORY_PROTECTION}
+  _SC_MESSAGE_PASSING              = 20;
+  {$EXTERNALSYM _SC_MESSAGE_PASSING}
+  _SC_SEMAPHORES                   = 21;
+  {$EXTERNALSYM _SC_SEMAPHORES}
+  _SC_SHARED_MEMORY_OBJECTS        = 22;
+  {$EXTERNALSYM _SC_SHARED_MEMORY_OBJECTS}
+  _SC_AIO_LISTIO_MAX               = 23;
+  {$EXTERNALSYM _SC_AIO_LISTIO_MAX}
+  _SC_AIO_MAX                      = 24;
+  {$EXTERNALSYM _SC_AIO_MAX}
+  _SC_AIO_PRIO_DELTA_MAX           = 25;
+  {$EXTERNALSYM _SC_AIO_PRIO_DELTA_MAX}
+  _SC_DELAYTIMER_MAX               = 26;
+  {$EXTERNALSYM _SC_DELAYTIMER_MAX}
+  _SC_MQ_OPEN_MAX                  = 27;
+  {$EXTERNALSYM _SC_MQ_OPEN_MAX}
+  _SC_MQ_PRIO_MAX                  = 28;
+  {$EXTERNALSYM _SC_MQ_PRIO_MAX}
+  _SC_VERSION                      = 29;
+  {$EXTERNALSYM _SC_VERSION}
+  _SC_PAGESIZE                     = 30;
+  {$EXTERNALSYM _SC_PAGESIZE}
+  _SC_RTSIG_MAX                    = 31;
+  {$EXTERNALSYM _SC_RTSIG_MAX}
+  _SC_SEM_NSEMS_MAX                = 32;
+  {$EXTERNALSYM _SC_SEM_NSEMS_MAX}
+  _SC_SEM_VALUE_MAX                = 33;
+  {$EXTERNALSYM _SC_SEM_VALUE_MAX}
+  _SC_SIGQUEUE_MAX                 = 34;
+  {$EXTERNALSYM _SC_SIGQUEUE_MAX}
+  _SC_TIMER_MAX                    = 35;
+  {$EXTERNALSYM _SC_TIMER_MAX}
+
+{ Values for the argument to `sysconf'
+       corresponding to _POSIX2_* symbols.  }
+  _SC_BC_BASE_MAX                  = 36;
+  {$EXTERNALSYM _SC_BC_BASE_MAX}
+  _SC_BC_DIM_MAX                   = 37;
+  {$EXTERNALSYM _SC_BC_DIM_MAX}
+  _SC_BC_SCALE_MAX                 = 38;
+  {$EXTERNALSYM _SC_BC_SCALE_MAX}
+  _SC_BC_STRING_MAX                = 39;
+  {$EXTERNALSYM _SC_BC_STRING_MAX}
+  _SC_COLL_WEIGHTS_MAX             = 40;
+  {$EXTERNALSYM _SC_COLL_WEIGHTS_MAX}
+  _SC_EQUIV_CLASS_MAX              = 41;
+  {$EXTERNALSYM _SC_EQUIV_CLASS_MAX}
+  _SC_EXPR_NEST_MAX                = 42;
+  {$EXTERNALSYM _SC_EXPR_NEST_MAX}
+  _SC_LINE_MAX                     = 43;
+  {$EXTERNALSYM _SC_LINE_MAX}
+  _SC_RE_DUP_MAX                   = 44;
+  {$EXTERNALSYM _SC_RE_DUP_MAX}
+  _SC_CHARCLASS_NAME_MAX           = 45;
+  {$EXTERNALSYM _SC_CHARCLASS_NAME_MAX}
+
+  _SC_2_VERSION                    = 46;
+  {$EXTERNALSYM _SC_2_VERSION}
+  _SC_2_C_BIND                     = 47;
+  {$EXTERNALSYM _SC_2_C_BIND}
+  _SC_2_C_DEV                      = 48;
+  {$EXTERNALSYM _SC_2_C_DEV}
+  _SC_2_FORT_DEV                   = 49;
+  {$EXTERNALSYM _SC_2_FORT_DEV}
+  _SC_2_FORT_RUN                   = 50;
+  {$EXTERNALSYM _SC_2_FORT_RUN}
+  _SC_2_SW_DEV                     = 51;
+  {$EXTERNALSYM _SC_2_SW_DEV}
+  _SC_2_LOCALEDEF                  = 52;
+  {$EXTERNALSYM _SC_2_LOCALEDEF}
+
+  _SC_PII                          = 53;
+  {$EXTERNALSYM _SC_PII}
+  _SC_PII_XTI                      = 54;
+  {$EXTERNALSYM _SC_PII_XTI}
+  _SC_PII_SOCKET                   = 55;
+  {$EXTERNALSYM _SC_PII_SOCKET}
+  _SC_PII_INTERNET                 = 56;
+  {$EXTERNALSYM _SC_PII_INTERNET}
+  _SC_PII_OSI                      = 57;
+  {$EXTERNALSYM _SC_PII_OSI}
+  _SC_POLL                         = 58;
+  {$EXTERNALSYM _SC_POLL}
+  _SC_SELECT                       = 59;
+  {$EXTERNALSYM _SC_SELECT}
+  _SC_UIO_MAXIOV                   = 60;
+  {$EXTERNALSYM _SC_UIO_MAXIOV}
+  _SC_IOV_MAX                      = _SC_UIO_MAXIOV;
+  {$EXTERNALSYM _SC_IOV_MAX}
+  _SC_PII_INTERNET_STREAM          = 61;
+  {$EXTERNALSYM _SC_PII_INTERNET_STREAM}
+  _SC_PII_INTERNET_DGRAM           = 62;
+  {$EXTERNALSYM _SC_PII_INTERNET_DGRAM}
+  _SC_PII_OSI_COTS                 = 63;
+  {$EXTERNALSYM _SC_PII_OSI_COTS}
+  _SC_PII_OSI_CLTS                 = 64;
+  {$EXTERNALSYM _SC_PII_OSI_CLTS}
+  _SC_PII_OSI_M                    = 65;
+  {$EXTERNALSYM _SC_PII_OSI_M}
+  _SC_T_IOV_MAX                    = 66;
+  {$EXTERNALSYM _SC_T_IOV_MAX}
+
+{ Values according to POSIX 1003.1c (POSIX threads).  }
+  _SC_THREADS                      = 67;
+  {$EXTERNALSYM _SC_THREADS}
+  _SC_THREAD_SAFE_FUNCTIONS        = 68;
+  {$EXTERNALSYM _SC_THREAD_SAFE_FUNCTIONS}
+  _SC_GETGR_R_SIZE_MAX             = 69;
+  {$EXTERNALSYM _SC_GETGR_R_SIZE_MAX}
+  _SC_GETPW_R_SIZE_MAX             = 70;
+  {$EXTERNALSYM _SC_GETPW_R_SIZE_MAX}
+  _SC_LOGIN_NAME_MAX               = 71;
+  {$EXTERNALSYM _SC_LOGIN_NAME_MAX}
+  _SC_TTY_NAME_MAX                 = 72;
+  {$EXTERNALSYM _SC_TTY_NAME_MAX}
+  _SC_THREAD_DESTRUCTOR_ITERATIONS = 73;
+  {$EXTERNALSYM _SC_THREAD_DESTRUCTOR_ITERATIONS}
+  _SC_THREAD_KEYS_MAX              = 74;
+  {$EXTERNALSYM _SC_THREAD_KEYS_MAX}
+  _SC_THREAD_STACK_MIN             = 75;
+  {$EXTERNALSYM _SC_THREAD_STACK_MIN}
+  _SC_THREAD_THREADS_MAX           = 76;
+  {$EXTERNALSYM _SC_THREAD_THREADS_MAX}
+  _SC_THREAD_ATTR_STACKADDR        = 77;
+  {$EXTERNALSYM _SC_THREAD_ATTR_STACKADDR}
+  _SC_THREAD_ATTR_STACKSIZE        = 78;
+  {$EXTERNALSYM _SC_THREAD_ATTR_STACKSIZE}
+  _SC_THREAD_PRIORITY_SCHEDULING   = 79;
+  {$EXTERNALSYM _SC_THREAD_PRIORITY_SCHEDULING}
+  _SC_THREAD_PRIO_INHERIT          = 80;
+  {$EXTERNALSYM _SC_THREAD_PRIO_INHERIT}
+  _SC_THREAD_PRIO_PROTECT          = 81;
+  {$EXTERNALSYM _SC_THREAD_PRIO_PROTECT}
+  _SC_THREAD_PROCESS_SHARED        = 82;
+  {$EXTERNALSYM _SC_THREAD_PROCESS_SHARED}
+
+  _SC_NPROCESSORS_CONF             = 83;
+  {$EXTERNALSYM _SC_NPROCESSORS_CONF}
+  _SC_NPROCESSORS_ONLN             = 84;
+  {$EXTERNALSYM _SC_NPROCESSORS_ONLN}
+  _SC_PHYS_PAGES                   = 85;
+  {$EXTERNALSYM _SC_PHYS_PAGES}
+  _SC_AVPHYS_PAGES                 = 86;
+  {$EXTERNALSYM _SC_AVPHYS_PAGES}
+  _SC_ATEXIT_MAX                   = 87;
+  {$EXTERNALSYM _SC_ATEXIT_MAX}
+  _SC_PASS_MAX                     = 88;
+  {$EXTERNALSYM _SC_PASS_MAX}
+
+  _SC_XOPEN_VERSION                = 89;
+  {$EXTERNALSYM _SC_XOPEN_VERSION}
+  _SC_XOPEN_XCU_VERSION            = 90;
+  {$EXTERNALSYM _SC_XOPEN_XCU_VERSION}
+  _SC_XOPEN_UNIX                   = 91;
+  {$EXTERNALSYM _SC_XOPEN_UNIX}
+  _SC_XOPEN_CRYPT                  = 92;
+  {$EXTERNALSYM _SC_XOPEN_CRYPT}
+  _SC_XOPEN_ENH_I18N               = 93;
+  {$EXTERNALSYM _SC_XOPEN_ENH_I18N}
+  _SC_XOPEN_SHM                    = 94;
+  {$EXTERNALSYM _SC_XOPEN_SHM}
+
+  _SC_2_CHAR_TERM                  = 95;
+  {$EXTERNALSYM _SC_2_CHAR_TERM}
+  _SC_2_C_VERSION                  = 96;
+  {$EXTERNALSYM _SC_2_C_VERSION}
+  _SC_2_UPE                        = 97;
+  {$EXTERNALSYM _SC_2_UPE}
+
+  _SC_XOPEN_XPG2                   = 98;
+  {$EXTERNALSYM _SC_XOPEN_XPG2}
+  _SC_XOPEN_XPG3                   = 99;
+  {$EXTERNALSYM _SC_XOPEN_XPG3}
+  _SC_XOPEN_XPG4                   = 100;
+  {$EXTERNALSYM _SC_XOPEN_XPG4}
+
+  _SC_CHAR_BIT                     = 101;
+  {$EXTERNALSYM _SC_CHAR_BIT}
+  _SC_CHAR_MAX                     = 102;
+  {$EXTERNALSYM _SC_CHAR_MAX}
+  _SC_CHAR_MIN                     = 103;
+  {$EXTERNALSYM _SC_CHAR_MIN}
+  _SC_INT_MAX                      = 104;
+  {$EXTERNALSYM _SC_INT_MAX}
+  _SC_INT_MIN                      = 105;
+  {$EXTERNALSYM _SC_INT_MIN}
+  _SC_LONG_BIT                     = 106;
+  {$EXTERNALSYM _SC_LONG_BIT}
+  _SC_WORD_BIT                     = 107;
+  {$EXTERNALSYM _SC_WORD_BIT}
+  _SC_MB_LEN_MAX                   = 108;
+  {$EXTERNALSYM _SC_MB_LEN_MAX}
+  _SC_NZERO                        = 109;
+  {$EXTERNALSYM _SC_NZERO}
+  _SC_SSIZE_MAX                    = 110;
+  {$EXTERNALSYM _SC_SSIZE_MAX}
+  _SC_SCHAR_MAX                    = 111;
+  {$EXTERNALSYM _SC_SCHAR_MAX}
+  _SC_SCHAR_MIN                    = 112;
+  {$EXTERNALSYM _SC_SCHAR_MIN}
+  _SC_SHRT_MAX                     = 113;
+  {$EXTERNALSYM _SC_SHRT_MAX}
+  _SC_SHRT_MIN                     = 114;
+  {$EXTERNALSYM _SC_SHRT_MIN}
+  _SC_UCHAR_MAX                    = 115;
+  {$EXTERNALSYM _SC_UCHAR_MAX}
+  _SC_UINT_MAX                     = 116;
+  {$EXTERNALSYM _SC_UINT_MAX}
+  _SC_ULONG_MAX                    = 117;
+  {$EXTERNALSYM _SC_ULONG_MAX}
+  _SC_USHRT_MAX                    = 118;
+  {$EXTERNALSYM _SC_USHRT_MAX}
+
+  _SC_NL_ARGMAX                    = 119;
+  {$EXTERNALSYM _SC_NL_ARGMAX}
+  _SC_NL_LANGMAX                   = 120;
+  {$EXTERNALSYM _SC_NL_LANGMAX}
+  _SC_NL_MSGMAX                    = 121;
+  {$EXTERNALSYM _SC_NL_MSGMAX}
+  _SC_NL_NMAX                      = 122;
+  {$EXTERNALSYM _SC_NL_NMAX}
+  _SC_NL_SETMAX                    = 123;
+  {$EXTERNALSYM _SC_NL_SETMAX}
+  _SC_NL_TEXTMAX                   = 124;
+  {$EXTERNALSYM _SC_NL_TEXTMAX}
+
+  _SC_XBS5_ILP32_OFF32             = 125;
+  {$EXTERNALSYM _SC_XBS5_ILP32_OFF32}
+  _SC_XBS5_ILP32_OFFBIG            = 126;
+  {$EXTERNALSYM _SC_XBS5_ILP32_OFFBIG}
+  _SC_XBS5_LP64_OFF64              = 127;
+  {$EXTERNALSYM _SC_XBS5_LP64_OFF64}
+  _SC_XBS5_LPBIG_OFFBIG            = 128;
+  {$EXTERNALSYM _SC_XBS5_LPBIG_OFFBIG}
+
+  _SC_XOPEN_LEGACY                 = 129;
+  {$EXTERNALSYM _SC_XOPEN_LEGACY}
+  _SC_XOPEN_REALTIME               = 130;
+  {$EXTERNALSYM _SC_XOPEN_REALTIME}
+  _SC_XOPEN_REALTIME_THREADS       = 131;
+  {$EXTERNALSYM _SC_XOPEN_REALTIME_THREADS}
+
+  _SC_ADVISORY_INFO                = 132;
+  {$EXTERNALSYM _SC_ADVISORY_INFO}
+  _SC_BARRIERS                     = 133;
+  {$EXTERNALSYM _SC_BARRIERS}
+  _SC_BASE                         = 134;
+  {$EXTERNALSYM _SC_BASE}
+  _SC_C_LANG_SUPPORT               = 135;
+  {$EXTERNALSYM _SC_C_LANG_SUPPORT}
+  _SC_C_LANG_SUPPORT_R             = 136;
+  {$EXTERNALSYM _SC_C_LANG_SUPPORT_R}
+  _SC_CLOCK_SELECTION              = 137;
+  {$EXTERNALSYM _SC_CLOCK_SELECTION}
+  _SC_CPUTIME                      = 138;
+  {$EXTERNALSYM _SC_CPUTIME}
+  _SC_THREAD_CPUTIME               = 139;
+  {$EXTERNALSYM _SC_THREAD_CPUTIME}
+  _SC_DEVICE_IO                    = 140;
+  {$EXTERNALSYM _SC_DEVICE_IO}
+  _SC_DEVICE_SPECIFIC              = 141;
+  {$EXTERNALSYM _SC_DEVICE_SPECIFIC}
+  _SC_DEVICE_SPECIFIC_R            = 142;
+  {$EXTERNALSYM _SC_DEVICE_SPECIFIC_R}
+  _SC_FD_MGMT                      = 143;
+  {$EXTERNALSYM _SC_FD_MGMT}
+  _SC_FIFO                         = 144;
+  {$EXTERNALSYM _SC_FIFO}
+  _SC_PIPE                         = 145;
+  {$EXTERNALSYM _SC_PIPE}
+  _SC_FILE_ATTRIBUTES              = 146;
+  {$EXTERNALSYM _SC_FILE_ATTRIBUTES}
+  _SC_FILE_LOCKING                 = 147;
+  {$EXTERNALSYM _SC_FILE_LOCKING}
+  _SC_FILE_SYSTEM                  = 148;
+  {$EXTERNALSYM _SC_FILE_SYSTEM}
+  _SC_MONOTONIC_CLOCK              = 149;
+  {$EXTERNALSYM _SC_MONOTONIC_CLOCK}
+  _SC_MULTI_PROCESS                = 150;
+  {$EXTERNALSYM _SC_MULTI_PROCESS}
+  _SC_SINGLE_PROCESS               = 151;
+  {$EXTERNALSYM _SC_SINGLE_PROCESS}
+  _SC_NETWORKING                   = 152;
+  {$EXTERNALSYM _SC_NETWORKING}
+  _SC_READER_WRITER_LOCKS          = 153;
+  {$EXTERNALSYM _SC_READER_WRITER_LOCKS}
+  _SC_SPIN_LOCKS                   = 154;
+  {$EXTERNALSYM _SC_SPIN_LOCKS}
+  _SC_REGEXP                       = 155;
+  {$EXTERNALSYM _SC_REGEXP}
+  _SC_REGEX_VERSION                = 156;
+  {$EXTERNALSYM _SC_REGEX_VERSION}
+  _SC_SHELL                        = 157;
+  {$EXTERNALSYM _SC_SHELL}
+  _SC_SIGNALS                      = 158;
+  {$EXTERNALSYM _SC_SIGNALS}
+  _SC_SPAWN                        = 159;
+  {$EXTERNALSYM _SC_SPAWN}
+  _SC_SPORADIC_SERVER              = 160;
+  {$EXTERNALSYM _SC_SPORADIC_SERVER}
+  _SC_THREAD_SPORADIC_SERVER       = 161;
+  {$EXTERNALSYM _SC_THREAD_SPORADIC_SERVER}
+  _SC_SYSTEM_DATABASE              = 162;
+  {$EXTERNALSYM _SC_SYSTEM_DATABASE}
+  _SC_SYSTEM_DATABASE_R            = 163;
+  {$EXTERNALSYM _SC_SYSTEM_DATABASE_R}
+  _SC_TIMEOUTS                     = 164;
+  {$EXTERNALSYM _SC_TIMEOUTS}
+  _SC_TYPED_MEMORY_OBJECTS         = 165;
+  {$EXTERNALSYM _SC_TYPED_MEMORY_OBJECTS}
+  _SC_USER_GROUPS                  = 166;
+  {$EXTERNALSYM _SC_USER_GROUPS}
+  _SC_USER_GROUPS_R                = 167;
+  {$EXTERNALSYM _SC_USER_GROUPS_R}
+  _SC_2_PBS                        = 168;
+  {$EXTERNALSYM _SC_2_PBS}
+  _SC_2_PBS_ACCOUNTING             = 169;
+  {$EXTERNALSYM _SC_2_PBS_ACCOUNTING}
+  _SC_2_PBS_LOCATE                 = 170;
+  {$EXTERNALSYM _SC_2_PBS_LOCATE}
+  _SC_2_PBS_MESSAGE                = 171;
+  {$EXTERNALSYM _SC_2_PBS_MESSAGE}
+  _SC_2_PBS_TRACK                  = 172;
+  {$EXTERNALSYM _SC_2_PBS_TRACK}
+  _SC_SYMLOOP_MAX                  = 173;
+  {$EXTERNALSYM _SC_SYMLOOP_MAX}
+  _SC_STREAMS                      = 174;
+  {$EXTERNALSYM _SC_STREAMS}
+  _SC_2_PBS_CHECKPOINT             = 175;
+  {$EXTERNALSYM _SC_2_PBS_CHECKPOINT}
+
+  _SC_V6_ILP32_OFF32               = 176;
+  {$EXTERNALSYM _SC_V6_ILP32_OFF32}
+  _SC_V6_ILP32_OFFBIG              = 177;
+  {$EXTERNALSYM _SC_V6_ILP32_OFFBIG}
+  _SC_V6_LP64_OFF64                = 178;
+  {$EXTERNALSYM _SC_V6_LP64_OFF64}
+  _SC_V6_LPBIG_OFFBIG              = 179;
+  {$EXTERNALSYM _SC_V6_LPBIG_OFFBIG}
+
+  _SC_HOST_NAME_MAX                = 180;
+  {$EXTERNALSYM _SC_HOST_NAME_MAX}
+  _SC_TRACE                        = 181;
+  {$EXTERNALSYM _SC_TRACE}
+  _SC_TRACE_EVENT_FILTER           = 182;
+  {$EXTERNALSYM _SC_TRACE_EVENT_FILTER}
+  _SC_TRACE_INHERIT                = 183;
+  {$EXTERNALSYM _SC_TRACE_INHERIT}
+  _SC_TRACE_LOG                    = 184;
+  {$EXTERNALSYM _SC_TRACE_LOG}
+
+  _SC_LEVEL1_ICACHE_SIZE           = 185;
+  {$EXTERNALSYM _SC_LEVEL1_ICACHE_SIZE}
+  _SC_LEVEL1_ICACHE_ASSOC          = 186;
+  {$EXTERNALSYM _SC_LEVEL1_ICACHE_ASSOC}
+  _SC_LEVEL1_ICACHE_LINESIZE       = 187;
+  {$EXTERNALSYM _SC_LEVEL1_ICACHE_LINESIZE}
+  _SC_LEVEL1_DCACHE_SIZE           = 188;
+  {$EXTERNALSYM _SC_LEVEL1_DCACHE_SIZE}
+  _SC_LEVEL1_DCACHE_ASSOC          = 189;
+  {$EXTERNALSYM _SC_LEVEL1_DCACHE_ASSOC}
+  _SC_LEVEL1_DCACHE_LINESIZE       = 190;
+  {$EXTERNALSYM _SC_LEVEL1_DCACHE_LINESIZE}
+  _SC_LEVEL2_CACHE_SIZE            = 191;
+  {$EXTERNALSYM _SC_LEVEL2_CACHE_SIZE}
+  _SC_LEVEL2_CACHE_ASSOC           = 192;
+  {$EXTERNALSYM _SC_LEVEL2_CACHE_ASSOC}
+  _SC_LEVEL2_CACHE_LINESIZE        = 193;
+  {$EXTERNALSYM _SC_LEVEL2_CACHE_LINESIZE}
+  _SC_LEVEL3_CACHE_SIZE            = 194;
+  {$EXTERNALSYM _SC_LEVEL3_CACHE_SIZE}
+  _SC_LEVEL3_CACHE_ASSOC           = 195;
+  {$EXTERNALSYM _SC_LEVEL3_CACHE_ASSOC}
+  _SC_LEVEL3_CACHE_LINESIZE        = 196;
+  {$EXTERNALSYM _SC_LEVEL3_CACHE_LINESIZE}
+  _SC_LEVEL4_CACHE_SIZE            = 197;
+  {$EXTERNALSYM _SC_LEVEL4_CACHE_SIZE}
+  _SC_LEVEL4_CACHE_ASSOC           = 198;
+  {$EXTERNALSYM _SC_LEVEL4_CACHE_ASSOC}
+  _SC_LEVEL4_CACHE_LINESIZE        = 199;
+  {$EXTERNALSYM _SC_LEVEL4_CACHE_LINESIZE}
+{ Leave room here, maybe we need a few more cache levels some day.  }
+
+  _SC_IPV6                         = _SC_LEVEL1_ICACHE_SIZE;
+  {$EXTERNALSYM _SC_IPV6}
+{!!!     _SC_IPV6 = _SC_LEVEL1_ICACHE_SIZE + 50, }
+  _SC_RAW_SOCKETS                  = 200;
+  {$EXTERNALSYM _SC_RAW_SOCKETS}
+
+  _SC_V7_ILP32_OFF32               = 201;
+  {$EXTERNALSYM _SC_V7_ILP32_OFF32}
+  _SC_V7_ILP32_OFFBIG              = 202;
+  {$EXTERNALSYM _SC_V7_ILP32_OFFBIG}
+  _SC_V7_LP64_OFF64                = 203;
+  {$EXTERNALSYM _SC_V7_LP64_OFF64}
+  _SC_V7_LPBIG_OFFBIG              = 204;
+  {$EXTERNALSYM _SC_V7_LPBIG_OFFBIG}
+
+  _SC_SS_REPL_MAX                  = 205;
+  {$EXTERNALSYM _SC_SS_REPL_MAX}
+
+  _SC_TRACE_EVENT_NAME_MAX         = 206;
+  {$EXTERNALSYM _SC_TRACE_EVENT_NAME_MAX}
+  _SC_TRACE_NAME_MAX               = 207;
+  {$EXTERNALSYM _SC_TRACE_NAME_MAX}
+  _SC_TRACE_SYS_MAX                = 208;
+  {$EXTERNALSYM _SC_TRACE_SYS_MAX}
+  _SC_TRACE_USER_EVENT_MAX         = 209;
+  {$EXTERNALSYM _SC_TRACE_USER_EVENT_MAX}
+
+  _SC_XOPEN_STREAMS                = 210;
+  {$EXTERNALSYM _SC_XOPEN_STREAMS}
+
+  _SC_THREAD_ROBUST_PRIO_INHERIT   = 211;
+  {$EXTERNALSYM _SC_THREAD_ROBUST_PRIO_INHERIT}
+  _SC_THREAD_ROBUST_PRIO_PROTECT   = 212;
+  {$EXTERNALSYM _SC_THREAD_ROBUST_PRIO_PROTECT}
+
+{ Values for the NAME argument to `confstr'.  }
+const
+  _CS_PATH                            = 0; { The default search path.  }
+  {$EXTERNALSYM _CS_PATH}
+
+  _CS_V6_WIDTH_RESTRICTED_ENVS        = 1;
+  {$EXTERNALSYM _CS_V6_WIDTH_RESTRICTED_ENVS}
+
+  _CS_GNU_LIBC_VERSION                = 2;
+  {$EXTERNALSYM _CS_GNU_LIBC_VERSION}
+  _CS_GNU_LIBPTHREAD_VERSION          = 3;
+  {$EXTERNALSYM _CS_GNU_LIBPTHREAD_VERSION}
+
+  _CS_V5_WIDTH_RESTRICTED_ENVS        = 4;
+  {$EXTERNALSYM _CS_V5_WIDTH_RESTRICTED_ENVS}
+
+  _CS_V7_WIDTH_RESTRICTED_ENVS        = 5;
+  {$EXTERNALSYM _CS_V7_WIDTH_RESTRICTED_ENVS}
+
+  _CS_LFS_CFLAGS                      = 1000;
+  {$EXTERNALSYM _CS_LFS_CFLAGS}
+  _CS_LFS_LDFLAGS                     = 1001;
+  {$EXTERNALSYM _CS_LFS_LDFLAGS}
+  _CS_LFS_LIBS                        = 1002;
+  {$EXTERNALSYM _CS_LFS_LIBS}
+  _CS_LFS_LINTFLAGS                   = 1003;
+  {$EXTERNALSYM _CS_LFS_LINTFLAGS}
+  _CS_LFS64_CFLAGS                    = 1004;
+  {$EXTERNALSYM _CS_LFS64_CFLAGS}
+  _CS_LFS64_LDFLAGS                   = 1005;
+  {$EXTERNALSYM _CS_LFS64_LDFLAGS}
+  _CS_LFS64_LIBS                      = 1006;
+  {$EXTERNALSYM _CS_LFS64_LIBS}
+  _CS_LFS64_LINTFLAGS                 = 1007;
+  {$EXTERNALSYM _CS_LFS64_LINTFLAGS}
+
+  _CS_XBS5_ILP32_OFF32_CFLAGS         = 1100;
+  {$EXTERNALSYM _CS_XBS5_ILP32_OFF32_CFLAGS}
+  _CS_XBS5_ILP32_OFF32_LDFLAGS        = 1101;
+  {$EXTERNALSYM _CS_XBS5_ILP32_OFF32_LDFLAGS}
+  _CS_XBS5_ILP32_OFF32_LIBS           = 1102;
+  {$EXTERNALSYM _CS_XBS5_ILP32_OFF32_LIBS}
+  _CS_XBS5_ILP32_OFF32_LINTFLAGS      = 1103;
+  {$EXTERNALSYM _CS_XBS5_ILP32_OFF32_LINTFLAGS}
+  _CS_XBS5_ILP32_OFFBIG_CFLAGS        = 1104;
+  {$EXTERNALSYM _CS_XBS5_ILP32_OFFBIG_CFLAGS}
+  _CS_XBS5_ILP32_OFFBIG_LDFLAGS       = 1105;
+  {$EXTERNALSYM _CS_XBS5_ILP32_OFFBIG_LDFLAGS}
+  _CS_XBS5_ILP32_OFFBIG_LIBS          = 1106;
+  {$EXTERNALSYM _CS_XBS5_ILP32_OFFBIG_LIBS}
+  _CS_XBS5_ILP32_OFFBIG_LINTFLAGS     = 1107;
+  {$EXTERNALSYM _CS_XBS5_ILP32_OFFBIG_LINTFLAGS}
+  _CS_XBS5_LP64_OFF64_CFLAGS          = 1108;
+  {$EXTERNALSYM _CS_XBS5_LP64_OFF64_CFLAGS}
+  _CS_XBS5_LP64_OFF64_LDFLAGS         = 1109;
+  {$EXTERNALSYM _CS_XBS5_LP64_OFF64_LDFLAGS}
+  _CS_XBS5_LP64_OFF64_LIBS            = 1110;
+  {$EXTERNALSYM _CS_XBS5_LP64_OFF64_LIBS}
+  _CS_XBS5_LP64_OFF64_LINTFLAGS       = 1111;
+  {$EXTERNALSYM _CS_XBS5_LP64_OFF64_LINTFLAGS}
+  _CS_XBS5_LPBIG_OFFBIG_CFLAGS        = 1112;
+  {$EXTERNALSYM _CS_XBS5_LPBIG_OFFBIG_CFLAGS}
+  _CS_XBS5_LPBIG_OFFBIG_LDFLAGS       = 1113;
+  {$EXTERNALSYM _CS_XBS5_LPBIG_OFFBIG_LDFLAGS}
+  _CS_XBS5_LPBIG_OFFBIG_LIBS          = 1114;
+  {$EXTERNALSYM _CS_XBS5_LPBIG_OFFBIG_LIBS}
+  _CS_XBS5_LPBIG_OFFBIG_LINTFLAGS     = 1115;
+  {$EXTERNALSYM _CS_XBS5_LPBIG_OFFBIG_LINTFLAGS}
+
+  _CS_POSIX_V6_ILP32_OFF32_CFLAGS     = 1116;
+  {$EXTERNALSYM _CS_POSIX_V6_ILP32_OFF32_CFLAGS}
+  _CS_POSIX_V6_ILP32_OFF32_LDFLAGS    = 1117;
+  {$EXTERNALSYM _CS_POSIX_V6_ILP32_OFF32_LDFLAGS}
+  _CS_POSIX_V6_ILP32_OFF32_LIBS       = 1118;
+  {$EXTERNALSYM _CS_POSIX_V6_ILP32_OFF32_LIBS}
+  _CS_POSIX_V6_ILP32_OFF32_LINTFLAGS  = 1119;
+  {$EXTERNALSYM _CS_POSIX_V6_ILP32_OFF32_LINTFLAGS}
+  _CS_POSIX_V6_ILP32_OFFBIG_CFLAGS    = 1120;
+  {$EXTERNALSYM _CS_POSIX_V6_ILP32_OFFBIG_CFLAGS}
+  _CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS   = 1121;
+  {$EXTERNALSYM _CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS}
+  _CS_POSIX_V6_ILP32_OFFBIG_LIBS      = 1122;
+  {$EXTERNALSYM _CS_POSIX_V6_ILP32_OFFBIG_LIBS}
+  _CS_POSIX_V6_ILP32_OFFBIG_LINTFLAGS = 1123;
+  {$EXTERNALSYM _CS_POSIX_V6_ILP32_OFFBIG_LINTFLAGS}
+  _CS_POSIX_V6_LP64_OFF64_CFLAGS      = 1124;
+  {$EXTERNALSYM _CS_POSIX_V6_LP64_OFF64_CFLAGS}
+  _CS_POSIX_V6_LP64_OFF64_LDFLAGS     = 1125;
+  {$EXTERNALSYM _CS_POSIX_V6_LP64_OFF64_LDFLAGS}
+  _CS_POSIX_V6_LP64_OFF64_LIBS        = 1126;
+  {$EXTERNALSYM _CS_POSIX_V6_LP64_OFF64_LIBS}
+  _CS_POSIX_V6_LP64_OFF64_LINTFLAGS   = 1127;
+  {$EXTERNALSYM _CS_POSIX_V6_LP64_OFF64_LINTFLAGS}
+  _CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS    = 1128;
+  {$EXTERNALSYM _CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS}
+  _CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS   = 1129;
+  {$EXTERNALSYM _CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS}
+  _CS_POSIX_V6_LPBIG_OFFBIG_LIBS      = 1130;
+  {$EXTERNALSYM _CS_POSIX_V6_LPBIG_OFFBIG_LIBS}
+  _CS_POSIX_V6_LPBIG_OFFBIG_LINTFLAGS = 1131;
+  {$EXTERNALSYM _CS_POSIX_V6_LPBIG_OFFBIG_LINTFLAGS}
+
+  _CS_POSIX_V7_ILP32_OFF32_CFLAGS     = 1132;
+  {$EXTERNALSYM _CS_POSIX_V7_ILP32_OFF32_CFLAGS}
+  _CS_POSIX_V7_ILP32_OFF32_LDFLAGS    = 1133;
+  {$EXTERNALSYM _CS_POSIX_V7_ILP32_OFF32_LDFLAGS}
+  _CS_POSIX_V7_ILP32_OFF32_LIBS       = 1134;
+  {$EXTERNALSYM _CS_POSIX_V7_ILP32_OFF32_LIBS}
+  _CS_POSIX_V7_ILP32_OFF32_LINTFLAGS  = 1135;
+  {$EXTERNALSYM _CS_POSIX_V7_ILP32_OFF32_LINTFLAGS}
+  _CS_POSIX_V7_ILP32_OFFBIG_CFLAGS    = 1136;
+  {$EXTERNALSYM _CS_POSIX_V7_ILP32_OFFBIG_CFLAGS}
+  _CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS   = 1137;
+  {$EXTERNALSYM _CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS}
+  _CS_POSIX_V7_ILP32_OFFBIG_LIBS      = 1138;
+  {$EXTERNALSYM _CS_POSIX_V7_ILP32_OFFBIG_LIBS}
+  _CS_POSIX_V7_ILP32_OFFBIG_LINTFLAGS = 1139;
+  {$EXTERNALSYM _CS_POSIX_V7_ILP32_OFFBIG_LINTFLAGS}
+  _CS_POSIX_V7_LP64_OFF64_CFLAGS      = 1140;
+  {$EXTERNALSYM _CS_POSIX_V7_LP64_OFF64_CFLAGS}
+  _CS_POSIX_V7_LP64_OFF64_LDFLAGS     = 1141;
+  {$EXTERNALSYM _CS_POSIX_V7_LP64_OFF64_LDFLAGS}
+  _CS_POSIX_V7_LP64_OFF64_LIBS        = 1142;
+  {$EXTERNALSYM _CS_POSIX_V7_LP64_OFF64_LIBS}
+  _CS_POSIX_V7_LP64_OFF64_LINTFLAGS   = 1143;
+  {$EXTERNALSYM _CS_POSIX_V7_LP64_OFF64_LINTFLAGS}
+  _CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS    = 1144;
+  {$EXTERNALSYM _CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS}
+  _CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS   = 1145;
+  {$EXTERNALSYM _CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS}
+  _CS_POSIX_V7_LPBIG_OFFBIG_LIBS      = 1146;
+  {$EXTERNALSYM _CS_POSIX_V7_LPBIG_OFFBIG_LIBS}
+  _CS_POSIX_V7_LPBIG_OFFBIG_LINTFLAGS = 1147;
+  {$EXTERNALSYM _CS_POSIX_V7_LPBIG_OFFBIG_LINTFLAGS}
+
+{ Define POSIX options for Linux.
+   Copyright (C) 1996-2004, 2006, 2008, 2009 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public License as
+   published by the Free Software Foundation; either version 2.1 of the
+   License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; see the file COPYING.LIB.  If not,
+   write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.  }
+
+const
+  _BITS_POSIX_OPT_H = 1;
+  {$EXTERNALSYM _BITS_POSIX_OPT_H}
+
+{ Job control is supported.  }
+  _POSIX_JOB_CONTROL = 1;
+  {$EXTERNALSYM _POSIX_JOB_CONTROL}
+
+{ Processes have a saved set-user-ID and a saved set-group-ID.  }
+  _POSIX_SAVED_IDS = 1;
+  {$EXTERNALSYM _POSIX_SAVED_IDS}
+
+{ Priority scheduling is supported.  }
+  _POSIX_PRIORITY_SCHEDULING = 200809;
+  {$EXTERNALSYM _POSIX_PRIORITY_SCHEDULING}
+
+{ Synchronizing file data is supported.  }
+  _POSIX_SYNCHRONIZED_IO = 200809;
+  {$EXTERNALSYM _POSIX_SYNCHRONIZED_IO}
+
+{ The fsync function is present.  }
+  _POSIX_FSYNC = 200809;
+  {$EXTERNALSYM _POSIX_FSYNC}
+
+{ Mapping of files to memory is supported.  }
+  _POSIX_MAPPED_FILES = 200809;
+  {$EXTERNALSYM _POSIX_MAPPED_FILES}
+
+{ Locking of all memory is supported.  }
+  _POSIX_MEMLOCK = 200809;
+  {$EXTERNALSYM _POSIX_MEMLOCK}
+
+{ Locking of ranges of memory is supported.  }
+  _POSIX_MEMLOCK_RANGE = 200809;
+  {$EXTERNALSYM _POSIX_MEMLOCK_RANGE}
+
+{ Setting of memory protections is supported.  }
+  _POSIX_MEMORY_PROTECTION = 200809;
+  {$EXTERNALSYM _POSIX_MEMORY_PROTECTION}
+
+{ Some filesystems allow all users to change file ownership.  }
+  _POSIX_CHOWN_RESTRICTED = 0;
+  {$EXTERNALSYM _POSIX_CHOWN_RESTRICTED}
+
+{ `c_cc' member of 'struct termios' structure can be disabled by
+   using the value _POSIX_VDISABLE.  }
+  _POSIX_VDISABLE = '\0';
+  {$EXTERNALSYM _POSIX_VDISABLE}
+
+{ Filenames are not silently truncated.  }
+  _POSIX_NO_TRUNC = 1;
+  {$EXTERNALSYM _POSIX_NO_TRUNC}
+
+{ X/Open realtime support is available.  }
+  _XOPEN_REALTIME = 1;
+  {$EXTERNALSYM _XOPEN_REALTIME}
+
+{ X/Open thread realtime support is available.  }
+  _XOPEN_REALTIME_THREADS = 1;
+  {$EXTERNALSYM _XOPEN_REALTIME_THREADS}
+
+{ XPG4.2 shared memory is supported.  }
+  _XOPEN_SHM = 1;
+  {$EXTERNALSYM _XOPEN_SHM}
+
+{ Tell we have POSIX threads.  }
+  _POSIX_THREADS = 200809;
+  {$EXTERNALSYM _POSIX_THREADS}
+
+{ We have the reentrant functions described in POSIX.  }
+  _POSIX_REENTRANT_FUNCTIONS = 1;
+  {$EXTERNALSYM _POSIX_REENTRANT_FUNCTIONS}
+  _POSIX_THREAD_SAFE_FUNCTIONS = 200809;
+  {$EXTERNALSYM _POSIX_THREAD_SAFE_FUNCTIONS}
+
+{ We provide priority scheduling for threads.  }
+  _POSIX_THREAD_PRIORITY_SCHEDULING = 200809;
+  {$EXTERNALSYM _POSIX_THREAD_PRIORITY_SCHEDULING}
+
+{ We support user-defined stack sizes.  }
+  _POSIX_THREAD_ATTR_STACKSIZE = 200809;
+  {$EXTERNALSYM _POSIX_THREAD_ATTR_STACKSIZE}
+
+{ We support user-defined stacks.  }
+  _POSIX_THREAD_ATTR_STACKADDR = 200809;
+  {$EXTERNALSYM _POSIX_THREAD_ATTR_STACKADDR}
+
+{ We support priority inheritence.  }
+  _POSIX_THREAD_PRIO_INHERIT = 200809;
+  {$EXTERNALSYM _POSIX_THREAD_PRIO_INHERIT}
+
+{ We support priority inheritence for robust mutexes.  }
+  _POSIX_THREAD_ROBUST_PRIO_INHERIT = 200809;
+  {$EXTERNALSYM _POSIX_THREAD_ROBUST_PRIO_INHERIT}
+
+{ We support priority protection, though only for non-robust
+   mutexes.  }
+  _POSIX_THREAD_PRIO_PROTECT = 200809;
+  {$EXTERNALSYM _POSIX_THREAD_PRIO_PROTECT}
+
+{ We do not support priority protection for robust mutexes.  }
+  _POSIX_THREAD_ROBUST_PRIO_PROTECT = -1;
+  {$EXTERNALSYM _POSIX_THREAD_ROBUST_PRIO_PROTECT}
+
+{ We support POSIX.1b semaphores.  }
+  _POSIX_SEMAPHORES = 200809;
+  {$EXTERNALSYM _POSIX_SEMAPHORES}
+
+{ Real-time signals are supported.  }
+  _POSIX_REALTIME_SIGNALS = 200809;
+  {$EXTERNALSYM _POSIX_REALTIME_SIGNALS}
+
+{ We support asynchronous I/O.  }
+  _POSIX_ASYNCHRONOUS_IO = 200809;
+  {$EXTERNALSYM _POSIX_ASYNCHRONOUS_IO}
+  _POSIX_ASYNC_IO = 1;
+  {$EXTERNALSYM _POSIX_ASYNC_IO}
+{ Alternative name for Unix98.  }
+  _LFS_ASYNCHRONOUS_IO = 1;
+  {$EXTERNALSYM _LFS_ASYNCHRONOUS_IO}
+{ Support for prioritization is also available.  }
+  _POSIX_PRIORITIZED_IO = 200809;
+  {$EXTERNALSYM _POSIX_PRIORITIZED_IO}
+
+{ The LFS support in asynchronous I/O is also available.  }
+  _LFS64_ASYNCHRONOUS_IO = 1;
+  {$EXTERNALSYM _LFS64_ASYNCHRONOUS_IO}
+
+{ The rest of the LFS is also available.  }
+  _LFS_LARGEFILE = 1;
+  {$EXTERNALSYM _LFS_LARGEFILE}
+  _LFS64_LARGEFILE = 1;
+  {$EXTERNALSYM _LFS64_LARGEFILE}
+  _LFS64_STDIO = 1;
+  {$EXTERNALSYM _LFS64_STDIO}
+
+{ POSIX shared memory objects are implemented.  }
+  _POSIX_SHARED_MEMORY_OBJECTS = 200809;
+  {$EXTERNALSYM _POSIX_SHARED_MEMORY_OBJECTS}
+
+{ CPU-time clocks support needs to be checked at runtime.  }
+  _POSIX_CPUTIME = 0;
+  {$EXTERNALSYM _POSIX_CPUTIME}
+
+{ Clock support in threads must be also checked at runtime.  }
+  _POSIX_THREAD_CPUTIME = 0;
+  {$EXTERNALSYM _POSIX_THREAD_CPUTIME}
+
+{ GNU libc provides regular expression handling.  }
+  _POSIX_REGEXP = 1;
+  {$EXTERNALSYM _POSIX_REGEXP}
+
+{ Reader/Writer locks are available.  }
+  _POSIX_READER_WRITER_LOCKS = 200809;
+  {$EXTERNALSYM _POSIX_READER_WRITER_LOCKS}
+
+{ We have a POSIX shell.  }
+  _POSIX_SHELL = 1;
+  {$EXTERNALSYM _POSIX_SHELL}
+
+{ We support the Timeouts option.  }
+  _POSIX_TIMEOUTS = 200809;
+  {$EXTERNALSYM _POSIX_TIMEOUTS}
+
+{ We support spinlocks.  }
+  _POSIX_SPIN_LOCKS = 200809;
+  {$EXTERNALSYM _POSIX_SPIN_LOCKS}
+
+{ The `spawn' function family is supported.  }
+  _POSIX_SPAWN = 200809;
+  {$EXTERNALSYM _POSIX_SPAWN}
+
+{ We have POSIX timers.  }
+  _POSIX_TIMERS = 200809;
+  {$EXTERNALSYM _POSIX_TIMERS}
+
+{ The barrier functions are available.  }
+  _POSIX_BARRIERS = 200809;
+  {$EXTERNALSYM _POSIX_BARRIERS}
+
+{ POSIX message queues are available.  }
+  _POSIX_MESSAGE_PASSING = 200809;
+  {$EXTERNALSYM _POSIX_MESSAGE_PASSING}
+
+{ Thread process-shared synchronization is supported.  }
+  _POSIX_THREAD_PROCESS_SHARED = 200809;
+  {$EXTERNALSYM _POSIX_THREAD_PROCESS_SHARED}
+
+{ The monotonic clock might be available.  }
+  _POSIX_MONOTONIC_CLOCK = 0;
+  {$EXTERNALSYM _POSIX_MONOTONIC_CLOCK}
+
+{ The clock selection interfaces are available.  }
+  _POSIX_CLOCK_SELECTION = 200809;
+  {$EXTERNALSYM _POSIX_CLOCK_SELECTION}
+
+{ Advisory information interfaces are available.  }
+  _POSIX_ADVISORY_INFO = 200809;
+  {$EXTERNALSYM _POSIX_ADVISORY_INFO}
+
+{ IPv6 support is available.  }
+  _POSIX_IPV6 = 200809;
+  {$EXTERNALSYM _POSIX_IPV6}
+
+{ Raw socket support is available.  }
+  _POSIX_RAW_SOCKETS = 200809;
+  {$EXTERNALSYM _POSIX_RAW_SOCKETS}
+
+{ We have at least one terminal.  }
+  _POSIX2_CHAR_TERM = 200809;
+  {$EXTERNALSYM _POSIX2_CHAR_TERM}
+
+{ Neither process nor thread sporadic server interfaces is available.  }
+  _POSIX_SPORADIC_SERVER = -1;
+  {$EXTERNALSYM _POSIX_SPORADIC_SERVER}
+  _POSIX_THREAD_SPORADIC_SERVER = -1;
+  {$EXTERNALSYM _POSIX_THREAD_SPORADIC_SERVER}
+
+{ trace.h is not available.  }
+  _POSIX_TRACE = -1;
+  {$EXTERNALSYM _POSIX_TRACE}
+  _POSIX_TRACE_EVENT_FILTER = -1;
+  {$EXTERNALSYM _POSIX_TRACE_EVENT_FILTER}
+  _POSIX_TRACE_INHERIT = -1;
+  {$EXTERNALSYM _POSIX_TRACE_INHERIT}
+  _POSIX_TRACE_LOG = -1;
+  {$EXTERNALSYM _POSIX_TRACE_LOG}
+
+{ Typed memory objects are not available.  }
+  _POSIX_TYPED_MEMORY_OBJECTS = -1;
+  {$EXTERNALSYM _POSIX_TYPED_MEMORY_OBJECTS}
+
+const
+  STDIN_FILENO         = 0;
+  {$EXTERNALSYM STDIN_FILENO}
+
+  STDOUT_FILENO        = 1;
+  {$EXTERNALSYM STDOUT_FILENO}
+  
+  STDERR_FILENO        = 2;
+  {$EXTERNALSYM STDERR_FILENO}
+  
+  F_OK = 0;
+  {$EXTERNALSYM F_OK}
+  X_OK = 1 shl 0;
+  {$EXTERNALSYM X_OK}
+  W_OK = 1 shl 1;
+  {$EXTERNALSYM W_OK}
+  R_OK = 1 shl 2;
+  {$EXTERNALSYM R_OK}
+
+type
+  TPipeDescriptors = {packed} record
+    ReadDes: Integer;
+    WriteDes: Integer;
+  end;
+

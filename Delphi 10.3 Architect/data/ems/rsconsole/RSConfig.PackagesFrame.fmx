@@ -1,0 +1,40 @@
+object PackagesFrame: TPackagesFrame
+  Size.Width = 528.000000000000000000
+  Size.Height = 442.000000000000000000
+  Size.PlatformDefault = False
+  inline ListControlFrame1: TListControlFrame
+    Align = Top
+    Size.Width = 528.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    inherited Layout1: TLayout
+      Size.Width = 528.000000000000000000
+      inherited AddButton: TButton
+        Position.X = 480.000000000000000000
+      end
+      inherited RemoveButton: TButton
+        Position.X = 369.000000000000000000
+      end
+      inherited Layout2: TLayout
+        Position.X = 262.000000000000000000
+      end
+      inherited HelpButton: TButton
+        Position.X = 422.000000000000000000
+      end
+    end
+  end
+  object ListBox1: TListBox
+    Align = Client
+    Size.Width = 528.000000000000000000
+    Size.Height = 392.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    AlternatingRowBackground = True
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 528.000000000000000000
+    Viewport.Height = 392.000000000000000000
+  end
+end

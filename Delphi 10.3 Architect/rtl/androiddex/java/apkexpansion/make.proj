@@ -1,0 +1,19 @@
+
+<Project DefaultTargets="default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+    
+    <PropertyGroup>
+        <JarName>apk-expansion</JarName>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <JavaFiles
+            Include="$(ProjectPath)\src\**\*.java"
+        />
+    </ItemGroup>
+    
+    <Import Project="..\..\java.targets"/>
+    
+    <Target Name="default" DependsOnTargets="buildjar"/>
+    <Target Name="clean" DependsOnTargets="cleanfiles"/>
+</Project>

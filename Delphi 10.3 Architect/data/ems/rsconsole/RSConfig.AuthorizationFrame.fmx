@@ -1,0 +1,348 @@
+object AuthorizationFrame: TAuthorizationFrame
+  Size.Width = 593.000000000000000000
+  Size.Height = 477.000000000000000000
+  Size.PlatformDefault = False
+  object TabControl: TTabControl
+    Align = Client
+    Size.Width = 593.000000000000000000
+    Size.Height = 477.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = None
+    Sizes = (
+      593s
+      477s
+      593s
+      477s)
+    object ListItem: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'ListItem'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inline ListControlFrame1: TListControlFrame
+        Align = Top
+        Size.Width = 593.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        inherited Layout1: TLayout
+          Size.Width = 593.000000000000000000
+          inherited AddButton: TButton
+            Position.X = 545.000000000000000000
+          end
+          inherited RemoveButton: TButton
+            Position.X = 492.000000000000000000
+          end
+          inherited Layout2: TLayout
+            Position.X = 327.000000000000000000
+          end
+          inherited HelpButton: TButton
+            Position.X = 434.000000000000000000
+          end
+        end
+      end
+      object ListBox1: TListBox
+        Align = Client
+        Size.Width = 593.000000000000000000
+        Size.Height = 427.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        AlternatingRowBackground = True
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 593.000000000000000000
+        Viewport.Height = 427.000000000000000000
+      end
+    end
+    object EditItem: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'EditItem'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Layout72: TLayout
+        Align = Bottom
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Position.Y = 422.000000000000000000
+        Size.Width = 583.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object SaveButton: TButton
+          Align = MostRight
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 473.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 105.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Save'
+          OnClick = SaveButtonClick
+        end
+        object CancelButton: TButton
+          Align = Right
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 358.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 105.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Cancel'
+          OnClick = CancelButtonClick
+        end
+      end
+      object VertScrollBox2: TVertScrollBox
+        Align = Client
+        Size.Width = 593.000000000000000000
+        Size.Height = 417.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Viewport.Width = 593.000000000000000000
+        Viewport.Height = 417.000000000000000000
+        object Layout1: TLayout
+          Align = Top
+          Size.Width = 593.000000000000000000
+          Size.Height = 60.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Label1: TLabel
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 145.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Public'
+            TabOrder = 2
+          end
+          object Label2: TLabel
+            Align = Right
+            StyledSettings = [Family, Size, FontColor]
+            Position.X = 403.000000000000000000
+            Size.Width = 53.000000000000000000
+            Size.Height = 60.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.HorzAlign = Center
+            Text = 'FALSE'
+            TabOrder = 0
+          end
+          object PublicSwitch: TSwitch
+            Align = Right
+            IsChecked = False
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 461.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 78.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            OnSwitch = PublicSwitchSwitch
+          end
+          object Label5: TLabel
+            Align = Right
+            StyledSettings = [Family, Size, FontColor]
+            Position.X = 544.000000000000000000
+            Size.Width = 49.000000000000000000
+            Size.Height = 60.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.HorzAlign = Center
+            Text = 'TRUE'
+            TabOrder = 1
+          end
+        end
+        object Layout4: TLayout
+          Align = Top
+          Position.Y = 60.000000000000000000
+          Size.Width = 593.000000000000000000
+          Size.Height = 120.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          object Label4: TLabel
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 145.000000000000000000
+            Size.Height = 110.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Users'
+            TabOrder = 0
+          end
+          object UsersLB: TListBox
+            Align = Client
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 378.000000000000000000
+            Size.Height = 110.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            DisableFocusEffect = True
+            DefaultItemStyles.ItemStyle = ''
+            DefaultItemStyles.GroupHeaderStyle = ''
+            DefaultItemStyles.GroupFooterStyle = ''
+            Viewport.Width = 378.000000000000000000
+            Viewport.Height = 110.000000000000000000
+          end
+          object Layout7: TLayout
+            Align = Right
+            Position.X = 543.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 120.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object RemoveUsersButton: TButton
+              Align = Top
+              Margins.Left = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Position.Y = 43.000000000000000000
+              Size.Width = 40.000000000000000000
+              Size.Height = 37.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'deleteitembutton'
+              TabOrder = 0
+              Text = 'Remove'
+              OnClick = RemoveUsersButtonClick
+            end
+            object AddUsersButton: TButton
+              Align = MostTop
+              Margins.Left = 5.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Position.Y = 5.000000000000000000
+              Size.Width = 40.000000000000000000
+              Size.Height = 38.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'additembutton'
+              TabOrder = 1
+              Text = 'Add'
+              OnClick = AddUsersButtonClick
+            end
+          end
+        end
+        object Layout3: TLayout
+          Align = Top
+          Position.Y = 180.000000000000000000
+          Size.Width = 593.000000000000000000
+          Size.Height = 120.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          object Label3: TLabel
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 5.000000000000000000
+            Size.Width = 145.000000000000000000
+            Size.Height = 110.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Groups'
+            TabOrder = 0
+          end
+          object GroupsLB: TListBox
+            Align = Client
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 378.000000000000000000
+            Size.Height = 110.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            DisableFocusEffect = True
+            DefaultItemStyles.ItemStyle = ''
+            DefaultItemStyles.GroupHeaderStyle = ''
+            DefaultItemStyles.GroupFooterStyle = ''
+            Viewport.Width = 378.000000000000000000
+            Viewport.Height = 110.000000000000000000
+          end
+          object Layout8: TLayout
+            Align = Right
+            Position.X = 543.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 120.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object RemoveGroupsButton: TButton
+              Align = Top
+              Margins.Left = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Position.Y = 43.000000000000000000
+              Size.Width = 40.000000000000000000
+              Size.Height = 37.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'deleteitembutton'
+              TabOrder = 0
+              Text = 'Remove'
+              OnClick = RemoveGroupsButtonClick
+            end
+            object AddGroupsButton: TButton
+              Align = MostTop
+              Margins.Left = 5.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 5.000000000000000000
+              Position.X = 5.000000000000000000
+              Position.Y = 5.000000000000000000
+              Size.Width = 40.000000000000000000
+              Size.Height = 38.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'additembutton'
+              TabOrder = 1
+              Text = 'Add'
+              OnClick = AddGroupsButtonClick
+            end
+          end
+        end
+      end
+    end
+  end
+end

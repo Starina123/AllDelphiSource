@@ -1,0 +1,595 @@
+object ViewsFrame: TViewsFrame
+  Align = Client
+  Size.Width = 758.000000000000000000
+  Size.Height = 578.000000000000000000
+  Size.PlatformDefault = False
+  object ViewsControl: TTabControl
+    StyleName = 'TabControlstyle'
+    Align = Client
+    Size.Width = 758.000000000000000000
+    Size.Height = 578.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 1
+    TabOrder = 0
+    TabPosition = None
+    OnChange = ViewsControlChange
+    Sizes = (
+      758s
+      578s
+      758s
+      578s)
+    object PushTabItem: TTabItem
+      StyleName = 'TabItemstyle'
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Push'
+      ExplicitSize.cx = 45.000000000000000000
+      ExplicitSize.cy = 24.000000000000000000
+      inline PushFrame1: TPushFrame
+        Align = Client
+        Size.Width = 758.000000000000000000
+        Size.Height = 578.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        inherited Layout1: TLayout
+          Position.X = 637.000000000000000000
+          Size.Height = 411.000000000000000000
+          inherited ButtonPushData: TButton
+            StyleName = 'Buttonstyle'
+          end
+          inherited ButtonTargetChannels: TButton
+            StyleName = 'Buttonstyle'
+          end
+          inherited ButtonTargetWhere: TButton
+            StyleName = 'Buttonstyle'
+          end
+          inherited SendButton: TButton
+            StyleName = 'Buttonstyle'
+          end
+        end
+        inherited Layout2: TLayout
+          Size.Width = 637.000000000000000000
+          Size.Height = 411.000000000000000000
+          inherited LayoutPushData: TLayout
+            Size.Height = 411.000000000000000000
+            inherited DataMemo: TMemo
+              StyleName = 'Memostyle'
+              Size.Height = 388.000000000000000000
+              Viewport.Width = 225.000000000000000000
+              Viewport.Height = 388.000000000000000000
+            end
+            inherited TitleLabel: TLabel
+              StyleName = 'Labelstyle'
+            end
+          end
+          inherited LayoutPushTarget: TLayout
+            Size.Width = 396.000000000000000000
+            Size.Height = 411.000000000000000000
+            inherited TargetMemo: TMemo
+              StyleName = 'Memostyle'
+              Size.Width = 396.000000000000000000
+              Size.Height = 388.000000000000000000
+              Viewport.Width = 396.000000000000000000
+              Viewport.Height = 388.000000000000000000
+            end
+            inherited Label4: TLabel
+              StyleName = 'Labelstyle'
+              Size.Width = 396.000000000000000000
+            end
+          end
+          inherited Splitter1: TSplitter
+            StyleName = 'Splitterstyle'
+            Size.Height = 411.000000000000000000
+          end
+        end
+        inherited Layout3: TLayout
+          Position.Y = 411.000000000000000000
+          Size.Width = 758.000000000000000000
+          inherited ListView1: TListView
+            StyleName = 'listviewstyle'
+            Size.Width = 758.000000000000000000
+          end
+          inherited ToolBar1: TToolBar
+            StyleName = 'ToolBarstyle'
+            Size.Width = 758.000000000000000000
+            inherited Label1: TLabel
+              StyleName = 'Labelstyle'
+            end
+            inherited ClearButton: TButton
+              StyleName = 'Buttonstyle'
+              Position.X = 669.000000000000000000
+            end
+          end
+        end
+      end
+    end
+    object ExplorerTabItem: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Endpoints'
+      ExplicitSize.cx = 73.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      inline ExplorerFrame: TExplorerFrame
+        Align = Client
+        Size.Width = 758.000000000000000000
+        Size.Height = 578.000000000000000000
+        Size.PlatformDefault = False
+        inherited gb_Response: TGroupBox
+          Size.Width = 758.000000000000000000
+          Size.Height = 327.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited tc_Response: TTabControl
+            Size.Width = 738.000000000000000000
+            Size.Height = 253.000000000000000000
+            Sizes = (
+              738s
+              248s
+              738s
+              248s
+              738s
+              248s)
+            inherited ti_Response_Headers: TTabItem
+              ExplicitSize.cx = 63.000000000000000000
+              ExplicitSize.cy = 24.000000000000000000
+              inherited memo_ResponseHeader: TMemo
+                Size.Width = 738.000000000000000000
+                Size.Height = 248.000000000000000000
+                Viewport.Width = 738.000000000000000000
+                Viewport.Height = 248.000000000000000000
+              end
+            end
+            inherited ti_Response_Body: TTabItem
+              ExplicitSize.cx = 47.000000000000000000
+              ExplicitSize.cy = 24.000000000000000000
+              inherited memo_ResponseBody: TMemo
+                Size.Width = 738.000000000000000000
+                Size.Height = 215.000000000000000000
+                Viewport.Width = 738.000000000000000000
+                Viewport.Height = 215.000000000000000000
+              end
+              inherited ToolBar1: TToolBar
+                Size.Width = 738.000000000000000000
+                inherited ButtonRootElement: TButton
+                  Position.X = 614.000000000000000000
+                end
+                inherited EditRootElement: TClearingEdit
+                  Size.Width = 284.000000000000000000
+                end
+              end
+            end
+            inherited ti_Response_TableView: TTabItem
+              ExplicitSize.cx = 87.000000000000000000
+              ExplicitSize.cy = 24.000000000000000000
+              inherited StringGrid1: TGrid
+                Size.Width = 738.000000000000000000
+                Size.Height = 215.000000000000000000
+                Viewport.Width = 738.000000000000000000
+                Viewport.Height = 215.000000000000000000
+              end
+              inherited ToolBar2: TToolBar
+                Size.Width = 738.000000000000000000
+                inherited ButtonRootElementTab: TButton
+                  Position.X = 614.000000000000000000
+                end
+                inherited EditRootElementTab: TClearingEdit
+                  Size.Width = 186.000000000000000000
+                end
+                inherited cb_NestedFields: TCheckBox
+                  Position.X = 516.000000000000000000
+                end
+              end
+            end
+          end
+          inherited lbl_LastRequestStats: TLabel
+            Size.Width = 738.000000000000000000
+          end
+          inherited lbl_LastRequestURL: TLabel
+            Size.Width = 738.000000000000000000
+          end
+        end
+        inherited Splitter1: TSplitter
+          Size.Width = 758.000000000000000000
+        end
+        inherited layout_Request: TLayout
+          Size.Width = 758.000000000000000000
+          inherited gb_Request: TGroupBox
+            Size.Width = 758.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            inherited Layout1: TLayout
+              Size.Width = 758.000000000000000000
+              inherited GridPanelLayout3: TGridPanelLayout
+                Size.Width = 758.000000000000000000
+                ControlCollection = <
+                  item
+                    Column = 0
+                    Control = ExplorerFrame.Layout2
+                    Row = 0
+                  end
+                  item
+                    Column = 1
+                    Control = ExplorerFrame.Layout5
+                    Row = 0
+                  end>
+                inherited Layout2: TLayout
+                  Size.Width = 473.750000000000000000
+                  inherited lb_CustomParameters: TListBox
+                    Size.Width = 359.750000000000000000
+                    Viewport.Width = 359.800000000000000000
+                    Viewport.Height = 89.000000000000000000
+                  end
+                  inherited lbl_CustomHeadersCaption: TLabel
+                    Size.Width = 463.750000000000000000
+                  end
+                  inherited Layout3: TLayout
+                    Position.X = 369.750000000000000000
+                  end
+                end
+                inherited Layout5: TLayout
+                  Size.Width = 284.250000000000000000
+                  inherited lbl_RequestBodyCaption: TLabel
+                    Size.Width = 274.250000000000000000
+                  end
+                  inherited memo_RequestBody: TMemo
+                    Size.Width = 274.250000000000000000
+                    Viewport.Width = 274.200000000000000000
+                    Viewport.Height = 94.000000000000000000
+                  end
+                end
+              end
+              inherited GridPanelLayout4: TGridPanelLayout
+                Size.Width = 758.000000000000000000
+                ControlCollection = <
+                  item
+                    Column = 0
+                    Control = ExplorerFrame.Layout4
+                    Row = 0
+                  end
+                  item
+                    Column = 1
+                    Control = ExplorerFrame.CenterLayout
+                    Row = 0
+                  end
+                  item
+                    Column = 2
+                    Control = ExplorerFrame.Layout12
+                    Row = 0
+                  end>
+                inherited Layout4: TLayout
+                  Size.Width = 113.694725036621100000
+                  inherited cmb_RequestMethod: TComboBox
+                    Size.Width = 103.694725036621100000
+                  end
+                  inherited lbl_RequestMethodCaption: TLabel
+                    Size.Width = 103.694725036621100000
+                  end
+                end
+                inherited CenterLayout: TLayout
+                  Size.Width = 531.496154785156300000
+                  inherited edt_Resource: TComboEdit
+                    Size.Width = 531.496154785156300000
+                  end
+                  inherited Label10: TLabel
+                    Size.Width = 521.496154785156300000
+                  end
+                end
+                inherited Layout12: TLayout
+                  Size.Width = 112.809143066406300000
+                  inherited edt_ContentType: TComboEdit
+                    Size.Width = 102.809143066406300000
+                  end
+                  inherited Label16: TLabel
+                    Size.Width = 102.809143066406300000
+                  end
+                end
+              end
+            end
+          end
+        end
+        inherited ToolBar3: TToolBar
+          Size.Width = 758.000000000000000000
+          inherited GridPanelLayout1: TGridPanelLayout
+            ControlCollection = <
+              item
+                Column = 0
+                Control = ExplorerFrame.Layout6
+                Row = 0
+              end
+              item
+                Column = 1
+                Control = ExplorerFrame.Layout7
+                Row = 0
+              end
+              item
+                Column = 2
+                Control = ExplorerFrame.Layout8
+                Row = 0
+              end
+              item
+                Column = 3
+                Control = ExplorerFrame.Layout9
+                Row = 0
+              end
+              item
+                Column = 4
+                Control = ExplorerFrame.Layout10
+                Row = 0
+              end>
+            inherited Layout6: TLayout
+              inherited btn_ExecuteRequest: TButton
+                inherited Image1: TImage
+                  MultiResBitmap.Height = 36
+                  MultiResBitmap.Width = 36
+                  MultiResBitmap.LoadSize = 2
+                  MultiResBitmap = <
+                    item
+                      Width = 96
+                      Height = 96
+                      PNG = {
+                        89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                        38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                        03E549444154785EED9D3D8B144110866F3FD81539F517A80882995E72066A60
+                        A8289889B93FC9542333118C04053531D244303339D17FA007C7EDED87BE2DB3
+                        B27BBADB5B3D3D5D35DDEFC07070DBD355F5BC5DDD75BD7BBD5B5BBC48800448
+                        80044880044880044880044880044880044880044A21D0A91BE86C363B8B3E1E
+                        743A9D3BF8B983FB4CDD3E25CFC3EEDA187EE192F457B7ADCF9FE3FD070B80B8
+                        B601FFE96432B937180C82FB693AE02C0500F821EE8FBD5EEF725D80759FF78D
+                        38EB0274430020A84716E087F86EED19F1D481917F713C1E7FC1B413245E6C00
+                        C5650046FF432BF0638BA9D19F78144380DB1A8EE66A532CC0743ABD942B8C56
+                        C4E5AA8A75572B82F03889756E77341AEDFB62FDDFEBD2F8C5192035D0B6F60E
+                        3E8A8C7758E7B653F84E011628A786EF4C53804A000DF81440193E050001C9C8
+                        3F3A3A1AC55E178A9E82A4F0B130DF8A2D80B83F5F6926EE50E90149A98992F4
+                        1071DF74AEAAC7AFEE4004C142E1530065F814A0A6007546FEDCB4FA0CA0EE40
+                        A00831E0330394E15380000130F2AF6DBAB1B658EDAC32A53E03A83B2010A182
+                        7FE0F3D9BDBE097C6680327C0AB0A1004D8C7C564106E033033C223439F29901
+                        06E0330356889062E46F380336DFCC57D235EFC1B205217C5792FED9D56CED65
+                        4900297CD7BEB5E0CD2C42952345C237B108C18962E15B10A068F8DA02140F5F
+                        5300C2AF163F8D2AC8127C8DF8972AB7D40EB8BA1D5BC59B6E291F345D6AA68E
+                        FF9FB239A503157CF79110EFE5446A1ABEE614FC57081F89587FE858845F8C00
+                        56E117218065F8D90B601D7ED602B4017EB602B4057E960208E1EFA72835D755
+                        72A9AAC0953EC4742000FE6EAC3237B49F98F107F910D301FCCFF1735F7FD587
+                        A6DCC857879FDD1404B80388F0769D08EE638556E067274015D089552258839F
+                        A500731170F0D3FBC54CB0083F5B01AAC04ECE45B00A3F6B01E622603A7A6369
+                        CE3F5EA9F88A066965233EB0C939B0CE88EF0025A983D6DAC78EBFE8FF13B620
+                        2E055056810250006502CAE6990114409980B2796600055026A06C9E19400194
+                        09289B176F4560A3EC274E8E3AA5ECB749F338D26C7F381C9E9638279E82706A
+                        FA9EC440496DC1E6AB345EB100D86C7B2D35524A7BB079258D553C0561ABF83C
+                        4E96DDE309EACBA831FDCCC0E40244F82E11419C01DD6EF75BBFDF7F2C315242
+                        5B30792285EFB88833C03D842C705F61F20173DE9512E0FA62C49B489F3130AF
+                        E2169F2B2ACE00E78C3304F83720C20BA45ED26F29F2C148F9BA8BDD31008BEB
+                        21F08333603148BC43740EF77DA4DF5DFC7E0777D2AFB14A09BCB2F503D03F21
+                        DE97B89F854C3B0A3ED324099000099000099000099000099000099000099000
+                        0990800102BF011A247E0C8A1EAD240000000049454E44AE426082}
+                      FileName = 'C:\Users\embt\Desktop\baseline_launch_white_48dp.png'
+                    end>
+                end
+              end
+            end
+            inherited Layout7: TLayout
+              inherited btn_Newrequest: TButton
+                inherited Image3: TImage
+                  MultiResBitmap.Height = 36
+                  MultiResBitmap.Width = 36
+                  MultiResBitmap.LoadSize = 2
+                  MultiResBitmap = <
+                    item
+                      Width = 96
+                      Height = 96
+                      PNG = {
+                        89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                        38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                        039D49444154785EED9DBDAA14411085EFEC2E2B88981B089A186A6622988B0F
+                        E013F8043E80DE6730168C453051D0CCCC480413C14041332345B83AFB33EB19
+                        B98B17D1AD9939DD53DDBD6761A2EEEAAA3A5F5777EFF6C01E1CE82305A48014
+                        900252400A4801292005A480142015689AE63C9E3B9BCDE6259EAF78BC3FF7C8
+                        94F23087CA67D6EBF5E3BAAE1B6FC5FFE1BF6C0898F1A756ABD5EB04853F1952
+                        B91030F3EF272EFE36BCE42054EC0287D97F6EB95C7E9ECFE75376AC91EC0FAB
+                        AA4A06C42440D2B73312BF4DF72ECAA11C00A8801B0120861CE2B0C3604941E8
+                        10EFFFBBE0D4F325A5F5BF8DB49DE11D634AA61206430080A38EC98ED26D9BC8
+                        DE404815C0DE5442CA00F60242EA008A87900380A22100C08F5176D78E4E769D
+                        268ADC987302506425E406A038083902280A42AE008A81903380222000C0CF8E
+                        079451BA0DF94D25EBD3510900B2AE845200640BA124005942280DC0D810E83B
+                        6100A87125391FB2F9C5B0C17D2F9DD316427B7D69C5C8FA0B71276CC59865FB
+                        F1C57D97EB4D2A3F01D821DF181004C098BFB121D0EB656A7B00B51E0C304E61
+                        0FA0210EC8BB18132D41CE280540009C157076AF0A100067059CDD87A8009D82
+                        0888210010EEFB9BB6E7EE5D9FFE23FA5A6407C057AEF0DE0520BCA6BD461480
+                        5E7285EF1C02803661824B0800847B990A80F31C1000017056C0D97D880AD026
+                        4C400C0180702F5301709E03F4F2813BE1355E0B1A0C92BD5365F56BDF1866C6
+                        60E31F2C1C13B46CFF282000CEB32104007A1973D6C0D57D0800AE09E4EE5C00
+                        9C090A8000382BE0EC9EDE40D97374DFFCAD73776AF158F96909B2148ADC2E00
+                        9105B68617004BA1C8ED021059606B7801B0148ADC2E009105B68617004BA1C8
+                        ED021059606B7801B0148ADC2E009105B686A700E06B3FFD53861560E9ED9480
+                        C7009AD245DA959FF5DB94A50D5501D6E06AB71510005BA3A83D0420AABCF6E0
+                        1400AC7F9BC562F1DD7653668F10B953005A59A7D3E98732E5B5B342EE1FED5E
+                        BB7BD00050052FD82072B547EECFD9D8A96368EB1C7FE273097F63F58E793D91
+                        4DC2C31ECB4F839C2F02C227C63F5D0193C9E4FD6C367BC80491A32D727EC08A
+                        DFE64D57403B08BE909DC6BFE9BDC29A78394731FBC68C5CDF62E25DC553F7B5
+                        FDBB3F5D01BF2956D511C4BF8EE5E8294A937ADB984D28A67D9B1B727C825CAF
+                        85103F58059C4C1AD57001CF2D047A1333E50AD6C9B331451961EC6FC8E50D26
+                        D9333C8F422C3B23C42C1752400A4801292005A48014900252400A24ACC02F61
+                        90641E0AD1468C0000000049454E44AE426082}
+                      FileName = 'C:\Users\embt\Desktop\baseline_note_add_white_48dp.png'
+                    end>
+                end
+              end
+            end
+            inherited Layout8: TLayout
+              inherited btn_LoadRequest: TButton
+                inherited Image4: TImage
+                  MultiResBitmap.Height = 36
+                  MultiResBitmap.Width = 36
+                  MultiResBitmap.LoadSize = 2
+                  MultiResBitmap = <
+                    item
+                      Width = 96
+                      Height = 96
+                      PNG = {
+                        89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                        38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                        037B49444154785EED9DBF8A144110C677769715E43037103431D4CCE4C05C7C
+                        009FC027F001F49EC1583016C14441B3CB2E12C1443050D0CC48114E67FFCCFA
+                        B5B87088DECECD573BD5D5F31D4C74535D55DFAFABBA677A971D8DF42705A480
+                        14900252400A4801292005A480142015689AE612AE7BEBF5FA10D7575CDE7F0F
+                        C894629843E5BDD56AF5B4AEEBC65BF17FF82F1B0266FCB9E572F93A43E14F86
+                        542E04CCFC87998BBF092F3B0815DBE030FB2F2E168BCFB3D96CC28ED593FD41
+                        5555D980181B247D3790F829DDFB28877200A0026E1940B41CE2A0C560594168
+                        11EFFF6FC1AEE74B4EFD3F459A6678CB98B2A984CE1000E0B865B2BDDCB64964
+                        3010720530984AC819C02020E40EA078081100140D01007EF4B2BAB67472DA6E
+                        A2C885391280222B211A80E2204404501484A8008A81101940111000E067CB0D
+                        4A2FB77579A7127A77540280D095500A80B0104A021012426900FA86409F0903
+                        408D23C95997C56F173638EFA573DA4048C797DB6264FD599C096F8B31E4FFFF
+                        1CDCB739DEA4F2138053E4EB0382006C99BFBB8640F7CBDCD600AA1F7430CE61
+                        0DA02176C8BB1813B5206794022000CE0A38BB57050880B302CEEE2D2A40BB20
+                        02A20500C2BD4C05C0790E088000382BE0EC9E5E40F12E68C97C45897D97C2EA
+                        973E29C08CC1C6AF16C4A86F602B00062232430800A39E81AD001888C80C6101
+                        805EC89904A2DB5A0088AE816BFC02E02AFF6844B70F3C07ACF01C3058907A0E
+                        709EC1ACFBC1CE5C56382B7B0B00741BB34A26E238160022E69D4DCC02E08C42
+                        0004C0590167F7F402EAFD3E9DD5CF3B7EB5209620692F00A480ACB900B00A92
+                        F602400AC89A0B00AB20692F00A480ACB900B00A92F6EECF0164FCEEE63A0F70
+                        47C005A016C4E9475B5300F0184FB7303A83E003500082E79E45F802E08C4100
+                        04C0590167F75405600FBC9ECFE7DF9D7370736F913B0520653E994C3EB829E0
+                        EC18B97F6443A001A00A5EB14144B547EE2FD9D8E97D3C7EC4E72A7EC6EADDD0
+                        3E9E88F6D320E72B80F089814057C0783C7E3F9D4E1F334144B445CE8F58F153
+                        DE7405A441F0447C1EBFA677849E782DA298678D19B9BEC5C4BB81AB3EABEDDF
+                        F7D315F09B62551D43FC9B6847CF519AD4B70ED98476699F72438ECF90EBBE85
+                        F8661570326954C3655C7710E86DCC94EBE8931776294A0F637F432E6F30C95E
+                        E07A62D1767A88592EA48014900252400A4801292005A48014C858815F48A767
+                        FC9FBC3C340000000049454E44AE426082}
+                      FileName = 'C:\Users\embt\Desktop\baseline_description_white_48dp.png'
+                    end>
+                end
+              end
+            end
+            inherited Layout9: TLayout
+              inherited btn_SaveRequest: TButton
+                inherited Image5: TImage
+                  MultiResBitmap.Height = 36
+                  MultiResBitmap.Width = 36
+                  MultiResBitmap.LoadSize = 2
+                  MultiResBitmap = <
+                    item
+                      Width = 96
+                      Height = 96
+                      PNG = {
+                        89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                        38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                        029A49444154785EEDD9BF4AC44010C771B9434405C1C2CE47D0C246DFCD4A2B
+                        0B110BC1C2F71041B4D06B6C6C6C7C0A41B03AEE4F9C3D1208F1626637C90EDC
+                        7E0551702F9BFDFC663773DEDA1A5F0820800002082080000208208000020820
+                        8000020820800002082080000208208000020820800002082C04E6F3F99E7C9F
+                        C261209065D9EE6432F9949FD96C36BB35B88574A774F8D3E9F4C3E1175F12C2
+                        75BA221157BE0C9F102205F01F7E29848B48B793D6341AFC5208E7BE3A03DF17
+                        A434DEE1CB19FF321C0E0F35EB1E0C0699661C6314023E959FEF8033C56519A2
+                        11005FA3D4D3187983B5536D35CB6DE792DFA9FCAEB2C8F1DF1BC0CB7F061FFC
+                        AE040CAF43E5836F28603835950FBEA180E1D4543EF8860286534BE56FCB9B2C
+                        FA7C8B0C72FC37DE6419E8836F805E4C093EF88602865353F9E01B0A184E9D6C
+                        E5CBC24FE4F3D32769F3B6ACFCE51E36A5CF4FAFD594851F8FC7E31FD7630BC0
+                        C841C40E21C71F25D7E7CBC28F0AFC62F1B143481A5FD0BF97555DAC1052C63F
+                        A8C38FB51352C6DF9763E74B73DECA4E78EDE3C1ECAE995F5B731B6ECC6A7D80
+                        2E1DCF9D76E55D1F47C9567EB5B3090861A36D77047E45D0270419FB2C80C121
+                        805F53BE314270C1B9A34C7BECADDC99DF7474F41982C377BB07FC8614FA0801
+                        FCA6D2EFF19900BE277E315C76C28DF6B8A87B30831F881F1A8204B65EFA1891
+                        33BFA5FFE2E59E3BE1C18540E577215FBA868470E5711CDDCBF847EDF8E45ACD
+                        D06C7C7602F8A1CACD2DAAFAC1AC0861B5FEB1D693F99FCB76B413C06F139884
+                        70A9A8F0BA21E0B7C12FB5A8212180DF057E6008E07789EF1902F87DE02B4300
+                        BF4FFC8610C08F815F1302F831F12B21806F81CF9C0820800002082080000208
+                        2080000208208000020820800002082080000208208000029D0BFC022A038858
+                        17D786C20000000049454E44AE426082}
+                      FileName = 'C:\Users\embt\Desktop\baseline_done_white_48dp.png'
+                    end>
+                end
+              end
+            end
+            inherited Layout10: TLayout
+              inherited btn_CopyToClipboard: TButton
+                inherited Image6: TImage
+                  MultiResBitmap.Height = 36
+                  MultiResBitmap.Width = 36
+                  MultiResBitmap.LoadSize = 2
+                  MultiResBitmap = <
+                    item
+                      Width = 96
+                      Height = 96
+                      PNG = {
+                        89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                        38000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                        06D349444154785EED9C5B881C4514403333EB9A6854744174E3230F83014184
+                        08118CA8C40FC59068C028823F8A89F893447CC6DF80E6434144F457E2034125
+                        E02B3E89E087821F4A246AF0916812352F757D657676673C37F4C0EE303BD5B7
+                        BA6AD99E5B0BC5CE4CDDBADD756E75F5AD5BB77BD6ACF4970824028940229008
+                        240289402290082402D60854AC75B8577F9BCDE610F537B55AAD357C5E44398F
+                        EFAD6AB57A80F25DA552D94E798DF27BE2169000A02F1C1F1F7FB65EAF8F02BF
+                        E71F327591CD8C13F02C8CAA02E46A98FEE702DF592F6DA4AD516C61BA0DC00D
+                        5AF09DF2A223CCD918D302B8958CE2665103880EFE5619C357ACBB001B06DC3F
+                        45E1B7DBA3EB5F74CE2B7656865A73137D2114FCB61ED1E983D09C1BCA485D80
+                        1BF9830F2C571B8CB11077F54797DCC4FAAA46B84F646F8ED80FB56E73066094
+                        5E1FCB00E8BE41ABDB9C01640AD242CA2B8FEEF97965DB72160D30AC8594571E
+                        039C9B57D6AC01E8784D0B29A6BCB92B000FE8702CA07840BF6A759B3380D64D
+                        D40045F75E8DBCC89A31001ECA92B1B1B14F6AB5DA555A4879E5B9BADEC92B6B
+                        460EF067B24A7D9A70C158E8D56F97C0DC2233605D1D054E15AF643DE08FC506
+                        2FFA31F28BAE7332530FF8654C375F4D077839460AC665434B22928CC497A60B
+                        7CFB3812DA3633BABB7514002753366B43CCC81F921DC62206E3B81BADC35F3D
+                        3A3ABA570331DBD7DD0ABC5369B79CEF0735EDB369C7F69624F0160362A7161C
+                        53D49B12369E386AC5109447F8FD0F97BECC78CF99DD94A7E3A703F10940345C
+                        B026D6371A8DEF69BBA2D77441FD1CCA5AF4BF8EFC6E8EF137E52F3E7FCB6F6F
+                        507797B8B526A71C3A5E01C09D0039AC018FFC08ED1EA4CD4926C185E834F096
+                        E2567EA104DF64D43E0FFCB3439C83491D003F47206AB31732632D35092D44A7
+                        65BA60E43E2073B072D4FF96CDD3E6F6BA4F70A7F343028051FB1637AE6FB29B
+                        D8089FBFE6B75781790B65B6E346B8426E984AF00DF43FC9B14F0B31004AA783
+                        8E6B722B8F02F761CA291DAEE0E2CC45D4B09718CC07E292960E5AA813A6F35E
+                        B9952C9E7EA2ED15D09E4B793C4F626C17B7D2766E260037A8866B87B0848825
+                        1CA0D121D31AC77D54C20FA1065129F548004AEB9D6840779395401BC7556F7C
+                        9712B0E3461934B7D26518092D037E59DF81F4ED508CDCCA6E46E00A3B02F87B
+                        A833B375EAB4094016B8466CD17AB937C836227ACE709E9035010C705F51C0BD
+                        DACBC639F54BAC71CDDD5F46E67BB10C00FC8F739F489F08AAE756998262F51D
+                        DD93E2F4B18E3393F4FA18205A6E255796B9A74CD40660F4B4228EA0E31175CF
+                        48D56A03F8E43FE6ED39BA0FE695ED17391F03A81EC1D1801A1818D8AF91EF07
+                        59B501C87FDC11B1E357731F908DF6E4864E0519380B63B9A16DBDB2E18EBBFB
+                        94D9F8BE6B844B1E646C23887ED980C70877F3D1E60ED7548600CA3C6D165A11
+                        83A53DDE2E96C008AB8A40D5B695D077CA72E8300446D8A4053951DE734346F2
+                        7CEE47CF806BAA34510F8C358054BFEE45B62481B89C329791BDD5634B720FC7
+                        EE99E966C200D249205EA078E1914C25F2C2A349190CE25DC906BBF68AA2CD76
+                        490A3003BB574701715697B414C9AD94B414C9ADDC0CE0CB1C3A567A643B1F47
+                        FF16744FCAB44846F124201BEE622CADA785E17EA6DDAD9E874DCD3A0988BBEB
+                        F3C44BDAD4093C9630C495DA67BED2B666602330BFD730C4BDFC773E44D1E1EA
+                        1EE1FBBA99BA9A2EDD121F230C01730B57C4BAC1C1C1DCC144A6B22F0977AFA7
+                        7CD623CE25FA2E45FF35948BF83C9FD2A41C2008B987FFAF580C9977E585212E
+                        C1089F7AB8ADDB683BE9990174C833C5777013DFE7D287213F44E6BAC0177879
+                        D501EE76ED4376F2D811ED4E3C3543990DD4B75DE03BEB69F32EBFA5B4996C21
+                        28ABE9C73C56D39206FFB9167E5B5E9E1DC390E79777F8063E73DFD5B4AF01A4
+                        1DD3E02E8C30277057CAAD0E20376A1FF2286204AEBE6DE52616E1EC013A8821
+                        1ED2AEA67D0DC1B12E8FD08DF2AB04CCF0742413738CF4AE2047902FEA1B5464
+                        E59DBC22C7052BFE3E23F519DF69C6D58EABED36ED9C917B25A9553C13E559CD
+                        CAAA7624D6B9A15F9D4E63CA0019F868F9A73E6B028B06A8C7BA02D0ABCE9BB5
+                        688098F9A7E9BDA1AED1CD3CBDDB25E35B8FEE7DDAB6A50B476B3BD8292FAE22
+                        51CFA384B283BFC218DDC384AB7FD19CA3B9298851FA2759D8EF6B20E591CDF6
+                        1B54F0F3E8ED4B19091BB87C7A6D3D3AAFED4B58B13A2501342DE4A9E4257120
+                        D679F6AD5E09214B28B9A8115238BAC01091B41779AF91AF11B20D99680BBB02
+                        5D2B4F53F18A984276688D90B62403DB5836DA293B7BBD01264B91FF28E4A6BC
+                        B97580CB6EB27F80CC5A205FCC7FD9EF95F0C27E494BA1BC4C51AF765DC74CF5
+                        8940229008240289402290082402894022608BC0FFBE5766AEF4DB876C000000
+                        0049454E44AE426082}
+                      FileName = 'C:\Users\embt\Desktop\baseline_share_white_48dp.png'
+                    end>
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="../../libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-ads.17.2.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-ads-base.17.2.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-ads-identifier.16.0.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-ads-lite.17.2.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-analytics.16.0.8.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-analytics-impl.16.0.8.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-base.16.0.1.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-basement.16.2.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-gass.17.2.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-identity.16.0.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-maps.16.1.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-measurement-base.16.4.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-measurement-sdk-api.16.4.0.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-stats.16.0.1.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-tasks.16.0.1.jar"/>
+	<classpathentry kind="lib" path="../../libs/gms/com-google-android-gms.play-services-wallet.16.0.1.jar"/>
+	<classpathentry kind="lib" path="../fmx/bin/fmx.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
