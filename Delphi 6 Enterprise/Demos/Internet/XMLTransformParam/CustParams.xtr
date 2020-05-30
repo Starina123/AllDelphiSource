@@ -1,0 +1,18 @@
+<XmlTransformation Version="1.0"><Transform Direction="ToCds"><SelectEach dest="DATAPACKET\ROWDATA\ROW" from="\CustomerParams"><Select dest="@CustNoMin" from="\MinimumCustomerNumber"/><Select dest="@CustNoMax" from="\MaximumCustomerNumber"/></SelectEach></Transform><XmlSchema RootName="CustomerParams"><![CDATA[<xs:schema xmlns:xs="http://www.w3.org/2000/10/XMLSchema">
+  <xs:element name="CustomerParams" type="CustomerParamsType"/>
+  <xs:complexType name="CustomerParamsType">
+    <xs:sequence>
+      <xs:element name="MinimumCustomerNumber" type="MinimumCustomerNumberType"/>
+      <xs:element name="MaximumCustomerNumber" type="MaximumCustomerNumberType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MinimumCustomerNumber" type="MinimumCustomerNumberType"/>
+  <xs:simpleType name="MinimumCustomerNumberType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:element name="MaximumCustomerNumber" type="MaximumCustomerNumberType"/>
+  <xs:simpleType name="MaximumCustomerNumberType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+</xs:schema>]]></XmlSchema><CdsSkeleton/><XslTransform/><Skeleton><![CDATA[<?xml version="1.0"?><DATAPACKET Version="2.0"><METADATA><FIELDS><FIELD attrname="CustNoMin" fieldtype="r8"/><FIELD attrname="CustNoMax" fieldtype="r8"/></FIELDS><PARAMS/></METADATA><ROWDATA></ROWDATA></DATAPACKET>
+]]></Skeleton></XmlTransformation>

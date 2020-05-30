@@ -1,0 +1,96 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+
+<body>
+
+<center><b><font size=+1>Visual CLX <font color="#CC0000">TTextBrowser</font> Demo</font></b></center>
+
+<p>This demonstrates a component called TTextBrowser, which allows browsing of simple HTML documents.
+<p>
+A related control, TTextViewer, loads an HTML file, but doesn't support jumping to links nor returning link info.
+
+<ul>
+<li>
+<a href="#Navigation Buttons">Navigation Buttons</a>
+</li>
+<li>
+<a href="#Text Color">Text Color Radiobuttons</a>
+</li>
+<li>
+<a href="#Reload button">Reload Button</a>
+</li>
+<li>
+<a href="#Link Color">Link Color Radiobuttons</a>
+</li>
+<li>
+<a href="#Text Format">Text Format Radiobuttons</a>
+</li>
+<li>
+<a href="#Underline Links">Underline Links checkbox</a>
+</li>
+<li>
+<a href="#Source Path">Source Path edit</a>
+</li>
+<li>
+<a href="#Link Info">Link Information</a>
+</li>
+</ul>
+<p>
+
+<a href="Page2.html#Second page">Link to second page...</a>
+
+<p>
+<a NAME="Navigation Buttons"></a>
+<h3><font color="#0000FF">Navigation Buttons</font></h3>
+The <b>Home, Back</b>, and <b>Forward</b> buttons can be used to navigate through the pages that you have viewed and linked to.  The <b><i>Home</i></b> button will return you to the first document viewed with the control.  Note that the TTextBrowser component will not display HTTP-based URL's.  It will only link and display files on the local machine.
+
+<p>
+<a NAME="Text Color"></a>
+<h3><font color="#0000FF">Text Color</font></h3>
+The "<b><font color="Red">Red</font></b>" and "<b><font color="Blue">Blue</font></b>" radiobuttons allow the setting of the text color in the viewed document. This setting will give the selected color to all text in the document that is not already colored with a &lt;FONT&gt; tag or that is not a link.  
+
+<p>
+<a NAME="Reload button"></a>
+<h3><font color="#0000FF">Reload Button</font></h3>
+The <b>Reload</b> button causes the document to be reloaded into the viewer. This calls the <i>LoadFromFile</i> method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<a NAME="Link Color"></a>
+<h3><font color="#0000FF">Link Color</font></h3>
+The <b>Link Color</b> radiobuttons control whether the color setting is applied to links or other text. This causes the <i>LinkColor</i> property to be set. See <a href="#Text Color">Text Color</a>.
+
+<p>
+<a NAME="Text Format"></a>
+<h3><font color="#0000FF">Text</font></h3>
+The <b>Plain Text</b> radiobutton causes the document to be viewed as plain text, thus showing HTML syntax. This is set by assigning <font face="Courier New,Courier"><font size=-1>tfPlainText</font></font> to the <i>TextFormat</i> property.  The <b>Formatted</b> radiobutton shows the text as formatted HTML.
+
+<p>
+<a NAME="Underline Links"></a>
+<h3><font color="#0000FF">Underline Links</font></h3>
+The <b>Underline Links</b> checkbox causes the links in the document to be shown with underlines. This sets the <i>UnderlineLink</i> property, which is of type <i>Boolean</i>.
+
+<p>
+<h3><font color="#0000FF">Source Path</font></h3>
+<a NAME="Source Path"></a>The <b>Link Source Path</b> editbox tells the TTextBrowser control where to search for files referenced in links. This path setting is used by the <i>Factory.FilePath </i>property.  By default, the demo application looks for files named <i>index.html</i> within the directory.  Note that as you change the directory values, the TTextBrowser keeps these directories in the PathList file, which is stored in the <i>Factory.FilePath</i> property to maintain a list of places that you have been.  Use the Button to the right to select a path.
+
+<p>
+<h3><font color="#0000FF">Link Information</font></h3>
+<a NAME="Link Info"></a>The Statusbar at the bottom of the form shows link references
+as the mouse moves over them in the document. These references are supplied
+by the <i>OnHighlightText</i> handler.
+
+</body>
+</html>

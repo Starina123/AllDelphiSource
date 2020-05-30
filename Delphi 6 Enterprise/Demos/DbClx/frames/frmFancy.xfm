@@ -1,0 +1,31 @@
+object FancyFrame: TFancyFrame
+  Left = 0
+  Top = 0
+  Width = 530
+  Height = 240
+  HorzScrollBar.Range = 188
+  BorderStyle = bsSunken3d
+  TabOrder = 0
+  object Splitter1: TSplitter
+    Left = 185
+    Top = 0
+    Height = 240
+  end
+  object DBMemo1: TDBMemo
+    Left = 0
+    Top = 0
+    Width = 185
+    Height = 240
+    Align = alLeft
+    TabOrder = 0
+  end
+  object DBImage1: TDBImage
+    Left = 188
+    Top = 0
+    Width = 342
+    Height = 240
+    Align = alClient
+    Color = clBackground
+    TabOrder = 1
+  end
+end

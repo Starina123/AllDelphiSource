@@ -1,0 +1,68 @@
+<!-- #include file="StdTutorialHeader.html" -->
+
+<P></P>
+<P><FONT>Follow these instructions to create a simple WebSnap application
+and test with webappdbg.exe</FONT></P>
+<P><FONT SIZE="+1">Create a New WebSnap Application</FONT></P>
+<BLOCKQUOTE><P><I><B>File/New/Other.../WebSnap/Web Application </B>
+</I></P>
+<UL>
+<LI>Check Web App Debugger executable</LI>
+<LI>CoClass Name: MinApp3 (to avoid a conflict with the example)</LI>
+<LI>Page Name: Home</LI>
+<LI>OK</LI>
+</UL>
+<P><I><B>View/Project Manager</B> </I></P>
+<UL>
+<LI>Expand the project so that the units are visible</LI>
+<LI>Expand each unit</LI>
+<LI>Double click on the .html file to show in the editor</LI>
+<LI>Click on the Preview tab to preview the page</LI>
+</UL>
+<BLOCKQUOTE> <P>The html file contains server-side script that generates HTML
+when evaluated.&nbsp; The default script generates HTML containing the title of
+the application, title of the page and links to other published pages in the
+application.&nbsp; The links will not be displayed when the page is previewed at design time, but you will see them when
+the application is run.
+</P>
+<P>The application title is blank by default. You can change the application
+title by editing the ApplicationAdapter.ApplicationTitle property of the web app module (Home). </P>
+<P>The page title defaults to the name of the page (Home).</P>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<P><FONT SIZE="+1">Configure Delphi</FONT></P>
+<BLOCKQUOTE><P>Typically, WebSnap applications contain HTML files that must be
+saved to disk before running the application.  As a convenience, configure Delphi to
+autosave editor files.</P>
+<P>See <A HREF="<%=Pages.ConfigureDelphi.HREF%>"><%=Pages.ConfigureDelphi.Title%></A>
+</P>
+</BLOCKQUOTE>
+<P><FONT SIZE="+1">Configure the Web App Debugger </FONT> </P>
+<BLOCKQUOTE><P>If
+the Web App Debugger has not been configured. </P>
+<P>See <A HREF="<%=Pages.TestSvr.HREF%>"><%=Pages.TestSvr.Title%></A></P>
+</BLOCKQUOTE>
+<P><FONT SIZE="+1">Run the Application</FONT></P>
+<BLOCKQUOTE><P><B><I>Run/Run<FONT SIZE="+1"> </FONT></I></B></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P>You have turned on Autosave so you'll be prompted to save the
+project.&nbsp;  Be sure to save the units in the same directory as the project file.  Otherwise,
+the running application will be unable to find html template files.</P>
+<P>You will see a form displayed.&nbsp; Web App Debugger  executables are
+COM servers.&nbsp; This is the console window of the COM server.&nbsp;&nbsp; 
+</P>
+<P>The first time that your project is run, it will register a COM object
+that can be accessed directly by the Web App Debugger.</P>
+<P>Start webappdbg.exe (See Tools/Web App Debugger).</P>
+  <P>Click on the Web App Debugger hyperlink display the serverinfo page.&nbsp;
+  Serverinfo
+should display the name of your application. &nbsp;Use the browser's refresh command if your
+application is not listed.</P>
+<P>Select your application name and click the Go button to display the
+default page of your application. &nbsp;To access the home page directly, append &quot;/Home&quot; to the
+browser's address line. </P>
+</BLOCKQUOTE>
+
+<!-- #include file="StdTutorialFooter.html" -->
+
+

@@ -1,0 +1,31 @@
+// Account.idl
+
+module Bank {
+
+ struct errStruct {
+    short myInt;
+    string myStr;
+ };
+
+  exception AccountOverRun {
+    float value;
+  };
+
+  exception Foo {
+    errStruct myStruct;
+  };
+
+
+  exception ThrowOne {
+    string st;
+  };
+
+
+  interface Account {
+    float balance();
+    void deposit(in float value);
+    void withdrawl(in float value) raises (AccountOverRun);
+    void DoException() raises (ThrowOne, Foo);
+  };
+
+};

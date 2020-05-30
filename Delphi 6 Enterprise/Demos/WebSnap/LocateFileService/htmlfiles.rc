@@ -1,0 +1,16 @@
+/****************************************************************************
+
+htmlfiles.rc
+
+produced by Borland Resource Workshop
+
+
+*****************************************************************************/
+#define HTML 23  // HTML resource identifier
+
+page1unit HTML page1unit.html
+page2unit HTML page2unit.html
+page3unit HTML page3unit.html
+header HTML header.html
+footer HTML footer.html
+

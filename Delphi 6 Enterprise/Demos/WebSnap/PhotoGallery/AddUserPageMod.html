@@ -1,0 +1,122 @@
+<!-- #include file="GeneralTemplateTop.html" -->
+
+<P><%
+  // Display server-side errors that may have occured.
+
+   e = new Enumerator(Adapter.Errors)
+   if (!e.atEnd())
+     Response.Write('<p>The following error(s) happened:');
+   for (; !e.atEnd(); e.moveNext())
+   {
+    Response.Write("<li>" + e.item().Message)
+   }
+%>
+
+
+<%
+  // Display any messages, such as a new user was successfully added.
+	if (Adapter.Messages.DisplayText != '') 
+	  Response.Write('<P>' + Adapter.Messages.DisplayText);
+	
+%>
+<center>
+<FORM METHOD=POST name="AddUserForm">
+<table width="60%" border=1 cellspacing=0 cellpadding=3 bordercolor="#0099FF">
+<tr>
+	<td colspan=2 align="middle"><font face="Arial" size="2"><b>Add a New User</b></font></td>
+</tr>
+<tr>
+	<td align="right"><font face="Arial" size="2"><%=Adapter.Name.DisplayLabel%>:</font></td>
+	<td><input type="text" name="<%=Adapter.Name.InputName%>" value="<%=Adapter.Name.EditText%>" size="30">
+</td>
+</tr>
+<tr>
+	<td align="right"><font face="Arial" size="2"><%=Adapter.Password.DisplayLabel%>:</font></td>
+	<td><input type="password" name="<%=Adapter.Password.InputName%>" value="<%=Adapter.Password.EditText%>" size="30"></td>
+</tr>
+<tr>
+	<td align="right"><font face="Arial" size="2"><%=Adapter.PasswordVerify.DisplayLabel%>:</font></td>
+	<td><input type="password" name="<%=Adapter.PasswordVerify.InputName%>" value="<%=Adapter.PasswordVerify.EditText%>" size="30"></td>
+</tr>
+<tr>
+	<td align="right"><font face="Arial" size="2"><%=Adapter.AccessRights.DisplayLabel%>:</font></td>
+	<td><select name="<%=Adapter.AccessRights.InputName%>">
+  <% 
+    rights = new Enumerator(trvlsAccessRights.Records);
+    i = 0;
+    for (; !rights.atEnd(); rights.moveNext())
+    {
+      Response.Write('<option');
+      if (i == 0)
+        Response.Write(' selected');
+      Response.Write('>' + trvlsAccessRights.Value);
+      i++
+    }
+  %>
+  </select>
+  </td>
+</tr>
+<tr>
+	<td colspan=2 align="middle">
+	<input TYPE=HIDDEN NAME="__action" VALUE="<%=Adapter.AddUser.AsFieldValue%>">
+	<input TYPE=SUBMIT VALUE="<%=Adapter.AddUser.DisplayLabel%>" class=submitButton>
+	</td>
+</tr>
+</table>
+</FORM>
+<script>
+// <!-- 
+document.forms["AddUserForm"].elements["<%=Adapter.Name.InputName%>"].focus(); // -->
+</script>
+
+<table width="80%" border=1 cellspacing=0 cellpadding=3 bordercolor="#0099FF">
+<tr>
+  <td colspan="1"><font face="Arial" size="2"><b>Name</b></font></td>
+  <td colspan="1"><font face="Arial" size="2"><b>Access Rights</b></font></td>    
+  <td colspan="2"><font face="Arial" size="2"><b>New Password (leave blank to not change it)</b></font></td>  
+</tr>
+<% 
+	// Display the current user's (there must be one!)
+  e = new Enumerator(UserListAdapter.Records);
+  for (; !e.atEnd(); e.moveNext())
+  {
+		%>
+    <tr>
+   	  <td><font face="Arial" size="2"><%=UserListAdapter.UserName.Value%></font></td>
+   	  
+        <form method=post><input type=hidden name="<%=Adapter.Name.InputName%>" value="<%=UserListAdapter.UserName.Value%>"><input type=hidden name="__action" value="<%=Adapter.UpdateUser.AsFieldValue%>">      
+      <td>
+      
+      
+<select name="<%=Adapter.AccessRights.InputName%>">
+  <% 
+    rights = new Enumerator(trvlsAccessRights.Records);
+    for (; !rights.atEnd(); rights.moveNext())
+    {
+      Response.Write('<option');
+      if (UserListAdapter.UserRights.Value == trvlsAccessRights.Value) 
+        Response.Write(' selected');
+      Response.Write('>' + trvlsAccessRights.Value);
+      i++
+    }
+  %>
+</select>
+      </td>      
+      
+   	  <td align="middle"><input type="password" name="<%=Adapter.Password.InputName%>" value="<%=Adapter.Password.EditText%>" size="15">&nbsp;&nbsp;<input type=submit value="<%=Adapter.UpdateUser.DisplayLabel%>" class=submitButton>
+      </td>
+        </form>
+
+   	    <form method=post><input type=hidden name="<%=Adapter.Name.InputName%>" value="<%=UserListAdapter.UserName.Value%>"><td align="middle"><input type=hidden name="__action" value="<%=Adapter.DeleteUser.AsFieldValue%>"><input type=submit value="<%=Adapter.DeleteUser.DisplayLabel%>" class=submitButton>
+      </td>
+        </form>
+    </tr>
+		<%
+  }
+%>
+</table>
+</center>	
+
+<#STYLES><#WARNINGS><#SERVERSCRIPT>
+
+<!-- #include file="GeneralTemplateBottom.html" -->

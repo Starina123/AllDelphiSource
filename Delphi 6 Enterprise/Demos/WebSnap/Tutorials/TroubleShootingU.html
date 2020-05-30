@@ -1,0 +1,83 @@
+<!-- #include file="StdTutorialHeader.html" -->
+
+<P><FONT SIZE="+1">Serverinfo.exe does not work</FONT></P>
+<BLOCKQUOTE><P> <I><B>Symptom</B></I></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P>Internal error 500. Interface not supported. </P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P><I><B>Solution</B></I></P>
+<UL>
+<LI>Register the weblib.tlb typelib using tregsvr (i.e., tregsvr weblib.tlb). 
+</LI>
+</UL>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P> <I><B></B></I></P>
+<P><I><B>Symptoms</B></I></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P>The server returned an invalid response.</P>
+<P>Object factory for TWebResponse Missing.</P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P><I><B>Solution</B></I></P>
+<UL>
+<LI>Register the webbrokerscript typelib using tregsvr (i.e., tregsvr
+webbrokerscript.tlb). Shut down and restart serverinfo.exe.</LI>
+</UL>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P> <I><B></B></I></P>
+<P><I><B>Symptom</B></I></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P>The requested URL was not found. HTTP status code 404. </P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P><I><B>Solutions</B></I></P>
+<UL>
+<LI>Run serverinfo.exe at least once to register the COM object.</LI>
+<LI>Check the spelling of the URL. Try
+<A HREF="http://localhost:1024/Serverinfo.serverinfo"
+ TARGET="_blank">http://localhost:1024/serverinfo.serverinfo</A> </LI>
+</UL>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P> <I><B></B></I></P>
+<P><I><B>Symptoms</B></I></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE>A connection with the server could not be established</BLOCKQUOTE>
+<BLOCKQUOTE><P> Cannot find server</P>
+<P>The page cannot be displayed</P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P><I><B>Solutions</B></I></P>
+<UL>
+<LI>Start webappdbg.exe, configure the port number, and be sure it is listening
+on the specified port</LI>
+<LI>When specifying a URL to access the Web App Debugger be sure to include the port
+unless the Web App Debugger is listening on port 80.&nbsp; For example, the following URL is
+correct if the Web App Debugger is listening on port 1024:
+<A HREF="http://localhost:1024/Serverinfo.serverinfo"
+ TARGET="_blank">http://localhost:1024/serverinfo.serverinfo</A> </LI>
+</UL>
+</BLOCKQUOTE>
+<P><FONT SIZE="+1">Problems in Delphi</FONT></P>
+<BLOCKQUOTE><P> <I><B> Symptom</B></I></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE>After clicking on the Preview tab in the Delphi Editor, the preview
+is blank even though the HTML file has content. </BLOCKQUOTE>
+<BLOCKQUOTE><P><I><B>Solution</B></I></P>
+<UL>
+    <LI>Look in the editor's Message View, &nbsp;you may see an error message that indicates 
+      a problem with the script.&nbsp; 
+    </LI>
+</UL>
+<P> <I><B> </B></I></P>
+<P><I><B>Symptom</B></I></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE>After clicking on the Preview tab in the Delphi Editor, the Message
+View displays the following message: Object factory for TWebResponse Missing. 
+</BLOCKQUOTE>
+<BLOCKQUOTE><P><I><B>Solution</B></I></P>
+<UL>
+<LI>Register the webbrokerscript typelib using tregsvr (i.e., tregsvr
+webbrokerscript.tlb). Shut down and restart Delphi.</LI>
+</UL>
+</BLOCKQUOTE>
+
+<!-- #include file="StdTutorialFooter.html" -->
+
+

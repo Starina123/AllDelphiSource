@@ -1,0 +1,177 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = TemplateRes.bpl XMLBuilder.bpl DclSvrInfoComponents.bpl \
+  DclActionField.bpl DclDispHandlers.bpl DclDemoTemplate.bpl \
+  DclImgBtnProducer.bpl DclSampleScriptObject.bpl DclXMLBuilder.bpl \
+  ActionFieldTestSvr.exe ActionFieldISAPI.dll biolifetestsvr.exe biolifeisapi.dll \
+  CountryEditorTestSvr.exe CountryEditorIsapi.dll CountryReportTestSvr.exe \
+  CountryReportIsapi.dll DBExpressTestSvr.exe DBExpressISAPI.dll \
+  DumpModulesTestSvr.exe ImgBtnCountryEditorTestSvr.exe \
+  ImgBtnCountryEditorISAPI.dll InternetExpressTestSvr.exe \
+  InternetExpressISAPI.dll LocateFileServiceTestSvr.exe LocateFileServiceISAPI.dll \
+  MasterDetailTestSvr.exe MasterDetailISAPI.dll MinAppTestSvr.exe MinAppIsapi.dll \
+  PhotoGalleryTestSvr.exe PhotoGalleryISAPI.dll ScriptObjectTestSvr.exe \
+  ScriptObjectTestISAPI.dll SessionTestTestSvr.exe SessionTestISAPI.dll \
+  SimpleAdapterIsapi.dll SimpleAdapterTestSvr.exe TestSvrInfo.exe \
+  TutorialIsapi.dll TutorialTestSvr.exe WebDispatcherTestSvr.exe \
+  WebDispatcherISAPI.dll WebMailApp.exe XMLBiolifeTestSvr.exe XMLBiolifeISAPI.dll \
+  XSLPageProducerTestSvr.exe XSLPageProducerISAPI.dll
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+
+TestSvrInfo.exe: TestSvrInfo\TestSvrInfo.dpr
+  $(DCC)
+
+MinAppIsapi.dll: MinApp\MinAppIsapi.dpr
+  $(DCC)
+
+MinAppTestSvr.exe: MinApp\MinAppTestSvr.dpr
+  $(DCC)
+
+SimpleAdapterIsapi.dll: SimpleAdapter\SimpleAdapterIsapi.dpr
+  $(DCC)
+
+SimpleAdapterTestSvr.exe: SimpleAdapter\SimpleAdapterTestSvr.dpr
+  $(DCC)
+
+TutorialIsapi.dll: Tutorials\TutorialIsapi.dpr
+  $(DCC)
+
+TutorialTestSvr.exe: Tutorials\TutorialTestSvr.dpr
+  $(DCC)
+
+WebDispatcherTestSvr.exe: WebDispatcher\WebDispatcherTestSvr.dpr
+  $(DCC)
+
+CountryEditorIsapi.dll: CountryEditor\CountryEditorIsapi.dpr
+  $(DCC)
+
+CountryEditorTestSvr.exe: CountryEditor\CountryEditorTestSvr.dpr
+  $(DCC)
+
+DBExpressTestSvr.exe: DbExpress\DBExpressTestSvr.dpr
+  $(DCC)
+
+DumpModulesTestSvr.exe: DumpModules\DumpModulesTestSvr.dpr
+  $(DCC)
+
+LocateFileServiceTestSvr.exe: LocateFileService\LocateFileServiceTestSvr.dpr
+  $(DCC)
+
+CountryReportIsapi.dll: CountryReport\CountryReportIsapi.dpr
+  $(DCC)
+
+CountryReportTestSvr.exe: CountryReport\CountryReportTestSvr.dpr
+  $(DCC)
+
+DclSvrInfoComponents.bpl: TestSvrInfo\DclSvrInfoComponents.dpk
+  $(DCC)
+
+biolifetestsvr.exe: BioLife\biolifetestsvr.dpr
+  $(DCC)
+
+biolifeisapi.dll: BioLife\biolifeisapi.dpr
+  $(DCC)
+
+SessionTestTestSvr.exe: SessionTest\SessionTestTestSvr.dpr
+  $(DCC)
+
+PhotoGalleryTestSvr.exe: PhotoGallery\PhotoGalleryTestSvr.dpr
+  $(DCC)
+
+InternetExpressTestSvr.exe: InternetExpress\InternetExpressTestSvr.dpr
+  $(DCC)
+
+TemplateRes.bpl: Util\TemplateRes.dpk
+  $(DCC)
+
+DclDemoTemplate.bpl: ProducerTemplates\DclDemoTemplate.dpk
+  $(DCC)
+
+XSLPageProducerTestSvr.exe: XSLProducer\XSLPageProducerTestSvr.dpr
+  $(DCC)
+
+DclXMLBuilder.bpl: XMLBuilder\DclXMLBuilder.dpk
+  $(DCC)
+
+XMLBuilder.bpl: XMLBuilder\XMLBuilder.dpk
+  $(DCC)
+
+XMLBiolifeTestSvr.exe: XMLBiolife\XMLBiolifeTestSvr.dpr
+  $(DCC)
+
+DclDispHandlers.bpl: DispHandlers\DclDispHandlers.dpk
+  $(DCC)
+
+DclActionField.bpl: ActionField\DclActionField.dpk
+  $(DCC)
+
+DclImgBtnProducer.bpl: ImgBtnProducer\DclImgBtnProducer.dpk
+  $(DCC)
+
+ImgBtnCountryEditorTestSvr.exe: ImgBtnCountryEditor\ImgBtnCountryEditorTestSvr.dpr
+  $(DCC)
+
+MasterDetailTestSvr.exe: MasterDetail\MasterDetailTestSvr.dpr
+  $(DCC)
+
+DclSampleScriptObject.bpl: ScriptObject\DclSampleScriptObject.dpk
+  $(DCC)
+
+ScriptObjectTestSvr.exe: ScriptObjectTest\ScriptObjectTestSvr.dpr
+  $(DCC)
+
+WebMailApp.exe: WebMail\WebMailApp.dpr
+  $(DCC)
+
+ActionFieldTestSvr.exe: ActionFieldTest\ActionFieldTestSvr.dpr
+  $(DCC)
+
+SessionTestISAPI.dll: SessionTest\SessionTestISAPI.dpr
+  $(DCC)
+
+XMLBiolifeISAPI.dll: XMLBiolife\XMLBiolifeISAPI.dpr
+  $(DCC)
+
+WebDispatcherISAPI.dll: WebDispatcher\WebDispatcherISAPI.dpr
+  $(DCC)
+
+InternetExpressISAPI.dll: InternetExpress\InternetExpressISAPI.dpr
+  $(DCC)
+
+XSLPageProducerISAPI.dll: XSLProducer\XSLPageProducerISAPI.dpr
+  $(DCC)
+
+MasterDetailISAPI.dll: MasterDetail\MasterDetailISAPI.dpr
+  $(DCC)
+
+LocateFileServiceISAPI.dll: LocateFileService\LocateFileServiceISAPI.dpr
+  $(DCC)
+
+ActionFieldISAPI.dll: ActionFieldTest\ActionFieldISAPI.dpr
+  $(DCC)
+
+ImgBtnCountryEditorISAPI.dll: ImgBtnCountryEditor\ImgBtnCountryEditorISAPI.dpr
+  $(DCC)
+
+ScriptObjectTestISAPI.dll: ScriptObjectTest\ScriptObjectTestISAPI.dpr
+  $(DCC)
+
+PhotoGalleryISAPI.dll: PhotoGallery\PhotoGalleryISAPI.dpr
+  $(DCC)
+
+DBExpressISAPI.dll: DBExpress\DBExpressISAPI.dpr
+  $(DCC)
+
+

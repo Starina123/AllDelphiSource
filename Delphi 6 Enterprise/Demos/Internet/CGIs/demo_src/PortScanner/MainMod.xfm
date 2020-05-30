@@ -1,0 +1,18 @@
+object WebModule1: TWebModule1
+  OldCreateOrder = False
+  Actions = <
+    item
+      Default = True
+      MethodType = mtGet
+      Name = 'actnScan'
+      OnAction = WebModule1actnScanAction
+    end>
+  Left = 190
+  Top = 117
+  Height = 150
+  Width = 215
+  object TcpClient1: TTcpClient
+    Left = 72
+    Top = 56
+  end
+end

@@ -1,0 +1,45 @@
+<!-- #include file="GeneralTemplateTop.html" -->
+
+<%
+  // Display server-side errors that may have occured.
+
+   e = new Enumerator(UploadAdapter.Errors)
+   if (!e.atEnd())
+     Response.Write('<p>The following error(s) happened:');
+   for (; !e.atEnd(); e.moveNext())
+   {
+    Response.Write("<li>" + e.item().Message)
+   }
+%>
+
+<% // Display successful upload's 
+
+  files = new Enumerator(UploadedFiles.Records);
+  if (!files.atEnd())
+    Response.Write('<P>The following files were uploaded to your directory with no problems:<br>');
+  for (; !files.atEnd(); files.moveNext())
+  {
+    Response.Write('<li>"' + UploadedFiles.ValueName + '" (' + UploadedFiles.Value + ' bytes)<br>');
+  }
+%>
+
+<P>
+<center>
+<form method="post" enctype="multipart/form-data">
+<table width="60%" border=1 cellspacing=0 cellpadding=3 bordercolor="#0099FF">
+<tr>
+	<td colspan=2 align="middle"><font face="Arial" size="2"><b>Upload your pictures</b></font></td>
+</tr>
+<tr>
+  <td align="right"><font face="Arial" size="2">Select a picture:</font></td><td><input type=file name="<%=UploadAdapter.UploadFile.InputName%>" class=submitButton></td>
+</tr>
+<tr>
+  <td colspan="2" align="middle"><input type="submit" value="Upload" class=submitButton><input type="hidden" name="__action" value="<%=UploadAdapter.Upload.AsFieldValue%>"></td>
+</tr>
+</table>
+</form><i><font color="#A0A0A0">Note: if you upload a file with the same name, it will be replaced!</font></i><br>
+</center>
+
+
+<#STYLES><#WARNINGS><#SERVERSCRIPT>
+<!-- #include file="GeneralTemplateBottom.html" -->

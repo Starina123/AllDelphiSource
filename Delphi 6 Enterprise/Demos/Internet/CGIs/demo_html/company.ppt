@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+	<TITLE>untitled</TITLE>
+</HEAD>
+
+<BODY>
+
+<P>
+<TABLE BORDER="0" WIDTH="100%" HEIGHT="633" <#BACKGROUNDCOLOR> >
+	<TR>
+		<TD WIDTH="16%" HEIGHT="62">&nbsp;<IMG SRC="/kylix_sample_html/linux.gif" WIDTH="137" HEIGHT="106" ALIGN="BOTTOM" BORDER="0"></TD>
+		<TD WIDTH="84%" HEIGHT="62" VALIGN="TOP">
+			<TABLE BORDER="0" CELLPADDING="2" CELLSPACING="0" WIDTH="55%" HEIGHT="26">
+				<TR>
+					<TD WIDTH="28%" <#TITLECOLOR>><A HREF="/kylix_sample_html/">Home</a></TD>
+					<TD WIDTH="2%">&nbsp;</TD>
+					<TD WIDTH="28%" <#CELLCOLOR>>
+						<P ALIGN="CENTER"><A HREF="/kylix_sample_html/">Products</a>
+					</TD>
+					<TD WIDTH="2%">&nbsp;</TD>
+					<TD WIDTH="28%" <#CELLCOLOR>>
+						<P ALIGN="CENTER"><A HREF="/kylix_sample_html/">Investors</a>
+					</TD>
+				</TR>
+			</TABLE>
+
+			<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+				<TR>
+					<TD WIDTH="100%" <#TITLECOLOR>>&nbsp;</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH="16%" VALIGN="TOP">
+			<TABLE BORDER="0" WIDTH="100%" HEIGHT="474">
+				<TR>
+					<TD <#TITLECOLOR> WIDTH="100%" HEIGHT="20">
+						<P ALIGN="CENTER">&nbsp;On Sale
+					</TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" HEIGHT="145" VALIGN="TOP" <#CELLCOLOR> >
+
+						<A HREF="/kylix_sample_html/"> Cars<BR></a>
+						<A HREF="/kylix_sample_html/">Software<BR></a>
+						<A HREF="/kylix_sample_html/">Wood<BR></a>
+						<A HREF="/kylix_sample_html/">Socks<BR></a>
+						<A HREF="/kylix_sample_html/">Candles<BR></a>
+						<A HREF="/kylix_sample_html/">Coffee Beans</a></TD>
+				</TR>
+				<TR>
+					<TD  <#TITLECOLOR> WIDTH="100%" HEIGHT="20">
+						<P ALIGN="CENTER">&nbsp;How to
+					</TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" HEIGHT="132" VALIGN="TOP" <#CELLCOLOR>>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" HEIGHT="20" <#TITLECOLOR> >
+						<P ALIGN="CENTER">&nbsp;Tools
+					</TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" VALIGN="TOP" <#CELLCOLOR>>&nbsp;</TD>
+				</TR>
+			</TABLE>
+		</TD>
+		<TD WIDTH="84%" VALIGN="TOP">
+			<TABLE BORDER="0" WIDTH="100%" HEIGHT="537">
+				<TR>
+					<TD WIDTH="100%" HEIGHT="2" <#TITLECOLOR> >Life on the Incline - <I>Last Article Posted :</I> <I><FONT COLOR="maroon">yesterday 9:34 pm</FONT></I></TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" HEIGHT="70" VALIGN="TOP">
+<UL>
+							<A HREF="/kylix_sample_html/"><LI>We Live on Caffiene</a>
+							<A HREF="/kylix_sample_html/"><LI>Bit Chompers</a>
+							<A HREF="/kylix_sample_html/"><LI>Phat Widgets</a>
+						</UL>
+</TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" HEIGHT="2" <#TITLECOLOR> >About the Staff - <I>Last Article Posted : <FONT COLOR="maroon">1 hour and 24 minutes ago</FONT></I></TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" HEIGHT="111" VALIGN="TOP">
+<UL>
+							<A HREF="/kylix_sample_html/"><LI>Swims with Sharks</a>
+							<A HREF="/kylix_sample_html/"><LI>Two Wheels and a bucket of Mud, sweat and Gears</a>
+							<A HREF="/kylix_sample_html/"><LI>Two Foo's and the Bar that could</a>
+						</UL>
+
+</TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" HEIGHT="2" <#TITLECOLOR> >&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD WIDTH="100%" VALIGN="TOP">&nbsp;</TD>
+				</TR>
+			</TABLE>
+&nbsp;</TD>
+	</TR>
+</TABLE>
+
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,17 @@
+
+<% { var Adapter = Modules.Home.ApplicationAdapter %>
+<form name="F" method="post">
+  <input type="hidden" name=__act>
+  <table>
+    <tr><td colspan="2">
+      <table>
+      <tr><td>SessionValue</td><td ><input type="text" name="<%=Adapter.SessionValue.InputName%>" value="<%= Adapter.SessionValue.EditText %>" ></td>
+      </table>
+    <tr><td colspan="2">
+        <table>
+        <tr><td colspan="2">
+        <input type="submit" value="Update Value" onclick="F.__act.value='<%=Adapter.UpdateSessionValue.LinkToPage(Page.Name, Page.Name).AsFieldValue%>'">
+        </table>
+  </table>
+</form>
+<% } %>

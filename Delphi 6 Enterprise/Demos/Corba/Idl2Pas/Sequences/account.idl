@@ -1,0 +1,7 @@
+// Account.IDL - demonstrates a simple sequence
+
+typedef sequence<unsigned long, 5> IntSeq;
+
+interface Account {
+	float balance(in IntSeq mySeq);
+};

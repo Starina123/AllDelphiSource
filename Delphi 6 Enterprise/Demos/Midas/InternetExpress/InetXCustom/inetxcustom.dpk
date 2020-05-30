@@ -1,0 +1,47 @@
+package InetXCustom;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'InternetExpress Sample Components (runtime package)'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+{$LIBSUFFIX '60'}
+
+requires
+  rtl,
+  vcl,
+  webdsnap;
+
+contains
+  ShowXML in 'ShowXML.pas',
+  QueryComps in 'QueryComps.pas',
+  WebCombo in 'WebCombo.pas',
+  FieldAttr in 'FieldAttr.pas',
+  ReconcileProd in 'ReconcileProd.pas',
+  LinkFlds in 'LinkFlds.pas',
+  SortFlds in 'SortFlds.pas',
+  imgbuttons in 'imgbuttons.pas',
+  RowSetStatus in 'RowSetStatus.pas',
+  CustLayout in 'CustLayout.pas';
+
+end.

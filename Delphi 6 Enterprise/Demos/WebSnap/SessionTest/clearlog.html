@@ -1,0 +1,6 @@
+<% { var Adapter = Modules.Home.Log %>
+<form method="post">
+  <input type="hidden" name=__act value="<%= Adapter.ClearLog.LinkToPage(Page.Name, Page.Name).AsFieldValue%>">
+  <input type="submit" value="Clear Log">
+</form>
+<% } %>

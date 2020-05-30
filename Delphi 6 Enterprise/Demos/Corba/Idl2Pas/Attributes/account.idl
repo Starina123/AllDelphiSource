@@ -1,0 +1,8 @@
+// Account.idl
+
+interface Account {
+  attribute short YearOpened;
+  readonly attribute boolean GotToaster;
+  float balance();
+};
+

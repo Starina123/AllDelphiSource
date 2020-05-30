@@ -1,0 +1,13 @@
+// Account.idl
+
+module Bank {
+
+	interface Rates {
+		float get_interest_rate();
+	};
+
+	interface Account {
+   float balance();
+		float get_rates( in Rates myRates );
+	};
+};

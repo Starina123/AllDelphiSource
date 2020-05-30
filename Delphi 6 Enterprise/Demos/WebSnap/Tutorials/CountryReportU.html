@@ -1,0 +1,186 @@
+<!-- #include file="StdTutorialHeader.html" -->
+
+<P><font>This WebSnap application demonstrates how JavaScript is used with a
+TDataSetAdapter component to publish the content of the country table.</font></P>
+<P><FONT SIZE="+1">Create a New WebSnap Application</FONT></P>
+<BLOCKQUOTE><P><I><B>File/New/Other.../WebSnap/Web Application </B>
+</I></P>
+<UL>
+<LI>Check Web App Debugger executable</LI>
+<LI>CoClass Name: CountryTable3 (to avoid a conflict with the example)</LI>
+<LI>Page Name: Home</LI>
+<LI>OK</LI>
+</UL>
+  <P><i><b>File/Save All</b></i></P>
+  <ul>
+    <li>Save the unit containing a TForm as ConsoleU.pas</li>
+    <li>Save the unit containing a TWebAppPageModule as HomeU.pas</li>
+    <li>Save the project as CountryEditor.dpr</li>
+  </ul>
+  <blockquote>
+    <p>The application will look for the HomeU.html file in the same directory
+    as the executable so save the unit and the project to the same directory.</p>
+  </blockquote>
+  <P><i><b>Set the ApplicationTitle</b></i></P>
+  <ul>
+    <li>Activate the Home module by double clicking on HomeU in the project
+      manager</li>
+    <li>In the object inspector, set ApplicationAdapter.ApplicationTitle
+      property to Country Report</li>
+  </ul>
+  <blockquote>
+    <p>Click on the Preview tab in the editor window.&nbsp; The application 
+    title is displayed at the top of the page.</p> 
+  </blockquote> 
+  <p><i><b>Run the Application</b></i></p> 
+    <p>If you would like to see what you have so far,&nbsp;<A HREF=#RUN>Run the application</A>.</p> 
+</BLOCKQUOTE> 
+<P><font size="+1">Create a New WebSnap Module</font></P> 
+<BLOCKQUOTE><P><I><B>File/New/Other.../WebSnap/Web Page Module </B> 
+</I></P> 
+<UL> 
+<LI>Select PageProducer</LI> 
+<LI>Page Name: Report</LI> 
+<LI>OK</LI> 
+</UL> 
+<P><i><b>File/Save</b></i></P> 
+<UL> 
+<LI>Save unit as ReportU.pas</LI> 
+</UL> 
+  <p>The application will look for the ReportU.html file in the same directory 
+  as the executable so save the unit to the project directory.</p> 
+  <p><i><b>Run the Application</b></i></p> 
+    <p>If you would like to see what you have so far,&nbsp;<A HREF=#RUN>Run the application</A>.</p> 
+</BLOCKQUOTE> 
+<P><font size="+1">Add components to the Report module</font></P> 
+<BLOCKQUOTE><P><i><b>View the Object Tree View</b></i></P> 
+<UL> 
+<LI>Activate the Report module by double clicking ReportU in the project manager</LI> 
+<LI>View/Object TreeView</LI> 
+</UL> 
+<P><i><b>Add Data Aware Components</b></i></P> 
+<UL> 
+<LI>Select the Data Access tab in the tool palette</LI> 
+<LI>Drop a TTable and a TSession on the Object TreeView</LI> 
+<LI>Set Session properties:</LI> 
+</UL> 
+  <blockquote> 
+    <ul> 
+      <li>AutoSessionName:&nbsp; True</li> 
+    </ul> 
+  </blockquote> 
+  <ul> 
+    <li>Set Table properties</li> 
+  </ul> 
+  <blockquote> 
+<UL> 
+<LI>DatabaseName:&nbsp; DBDEMOS</LI> 
+<LI>TableName:&nbsp; country.db</LI> 
+<LI>Name:&nbsp; Country</LI> 
+<LI>Active:&nbsp; True&nbsp;</LI> 
+</UL> 
+  </blockquote> 
+  <p>Note that the Session component is needed because we are using BDE 
+  components (TTable) in a multithreaded application.&nbsp;&nbsp;</p> 
+<P><i><b>Add an Adapter</b></i></P> 
+<UL> 
+<LI>Select the WebSnap tab in the tool palette</LI> 
+<LI>Drop a TDataSetAdapter on the Object TreeView</LI> 
+<LI>Set DataSetAdapter properties</LI> 
+</UL> 
+  <blockquote> 
+    <ul> 
+      <li>DataSet:&nbsp; Country</li> 
+      <li>Name:&nbsp; Adapter</li> 
+    </ul> 
+  </blockquote> 
+  <p>The purpose of the DataSetAdapter is to expose the data in our application 
+  to server-side scripting.&nbsp;&nbsp;</p> 
+</BLOCKQUOTE> 
+<P><font size="+1">Add Server- Side Scripting</font></P> 
+<BLOCKQUOTE><P><i><b>View ReportU.html</b></i></P> 
+<UL> 
+<LI>In the Project Manager, expand the ReportU node</LI> 
+<LI>Double click on ReportU.html</LI> 
+</UL> 
+  <P><i><b>Insert Script</b></i></P> 
+  <p>Insert the following block before the &lt;/BODY&gt; element.</p> 
+<PRE>
+&lt;TABLE BORDER=1&gt;
+  &lt;TR&gt;
+    &lt;TH&gt;
+       Name
+    &lt;/TH&gt;
+    &lt;TH&gt;
+       Details
+    &lt;/TH&gt;
+  &lt;/TR&gt;
+  &lt;% i = 0 %&gt;
+  &lt;% e = new Enumerator(Adapter.Records) %&gt;
+  &lt;% for (; !e.atEnd(); e.moveNext()) %&gt;
+  &lt;% { %&gt;
+    &lt;% if ((i % 2) == 0) bgcolor = 'red'; else bgcolor = 'blue'; %&gt;
+    &lt;% td = 'style=&quot;color: ' + bgcolor + '&quot;' %&gt;
+    &lt;TR &gt;
+      &lt;TD align=center &lt;%=td%&gt;&gt;
+        &lt;%= Adapter.Name.DisplayText %&gt;
+      &lt;/TD&gt;
+      &lt;TD&gt;
+        &lt;TABLE&gt;
+          &lt;TR&gt;
+            &lt;TH align=left&gt;Capital:&amp;nbsp&lt;/TH&gt;
+            &lt;TD &lt;%=td%&gt;&gt;
+              &lt;%= Adapter.Capital.DisplayText %&gt;
+            &lt;/TD&gt;
+          &lt;/TR&gt;
+          &lt;TR&gt;
+            &lt;TH align=left&gt;Continent:&amp;nbsp&lt;/TH&gt;
+            &lt;TD &lt;%=td%&gt;&gt;
+              &lt;%= Adapter.Continent.DisplayText %&gt;
+            &lt;/TD&gt;
+          &lt;/TR&gt;
+          &lt;TR&gt;
+            &lt;TH align=left&gt;Area:&amp;nbsp&lt;/TH&gt;
+            &lt;TD &lt;%=td%&gt;&gt;
+              &lt;%= Adapter.Area.DisplayText %&gt;
+            &lt;/TD&gt;
+          &lt;/TR&gt;
+          &lt;TR align=left&gt;
+            &lt;TH&gt;Population:&amp;nbsp&lt;/TH&gt;
+            &lt;TD &lt;%=td%&gt;&gt;
+              &lt;%= Adapter.Population.DisplayText %&gt;
+            &lt;/TD&gt;
+          &lt;/TR&gt;
+        &lt;/TABLE&gt;
+      &lt;/TD&gt;
+     &lt;/TR&gt;
+     &lt;% i = i + 1 %&gt;
+  &lt;% } %&gt;
+&lt;/TABLE&gt;
+</pre> 
+  <P><i><b>Preview the Page</b></i></P> 
+  <p>Select the Preview tab.&nbsp; If the page is blank then some errors occurred 
+  while evaluating the script.&nbsp; Script errors are listed in the Editor's 
+  message view.</p> 
+</BLOCKQUOTE> 
+<P><B><I><A NAME=RUN></A></I></B><FONT SIZE="+1">Run the Application</FONT></P> 
+<blockquote> 
+  <P>If you haven't followed the instructions for configuring Delphi then see <A HREF="<%=Pages.ConfigureDelphi.HREF%>"><%=Pages.ConfigureDelphi.Title%></A> 
+ </P> 
+  <P>If you haven't following the instructions for configuring the Web App Debugger then see <A HREF="<%=Pages.TestSvr.HREF%>"><%=Pages.TestSvr.Title%></A> </P> 
+  <P><B><I>Run/Run</I></B></P> 
+</blockquote> 
+<BLOCKQUOTE> 
+<P>You will see a form displayed.&nbsp; Web App Debugger executables are 
+COM servers.&nbsp; This is the console window of the COM server.&nbsp;&nbsp;  
+</P> 
+<P>The first time that your project is run, it will register the COM object 
+that can be accessed directly by the Web App Debugger.</P> 
+<P>Start webappdbg.exe (See Tools/Web App Debugger).</P> 
+<P>Click on the default URL link to display the serverinfo page. Serverinfo should display the name of your application. </P> 
+<P>Select on the progid link associated with your application and click Go to display the 
+default page. </P> 
+</BLOCKQUOTE> 
+ 
+<!-- #include file="StdTutorialFooter.html" --> 
+ 

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<purchaseOrders>
+	<purchaseOrder orderDate="20000610">
+		<shipTo country="US">
+			<name>Alice Smith</name>
+			<street>123 Maple Street</street>
+			<city>Aptos</city>
+			<state>CA</state>
+			<zip>95060</zip>
+		</shipTo>
+		<billTo country="US">
+			<name>Alice Smith</name>
+			<street>123 Maple Street</street>
+			<city>Santa Cruz</city>
+			<state>CA</state>
+			<zip>95060</zip>
+		</billTo>
+		<comment>Hurry, my lawn is going wild!</comment>
+		<items>
+			<item partNum="872-AA">
+				<productName>Lawnmower</productName>
+				<quantity>3</quantity>
+				<price>148.95</price>
+				<comment>Confirm this is electric</comment>
+				<shipDate>20000611</shipDate>
+			</item>
+			<item partNum="926-AA">
+				<productName>Baby Monitor</productName>
+				<quantity>4</quantity>
+				<price>39.98</price>
+				<comment></comment>
+				<shipDate>20000611</shipDate>
+			</item>
+		</items>
+	</purchaseOrder>
+</purchaseOrders>

@@ -1,0 +1,151 @@
+object Form1: TForm1
+  Left = 223
+  Top = 153
+  Width = 570
+  Height = 352
+  HorzScrollBar.Range = 521
+  VertScrollBar.Range = 321
+  ActiveControl = DBImage1
+  Caption = 'Fish Facts'
+  Color = clBackground
+  OnCreate = FormCreate
+  PixelsPerInch = 75
+  TextHeight = 15
+  TextWidth = 7
+  object Panel1: TPanel
+    Left = 6
+    Top = 8
+    Width = 267
+    Height = 233
+    TabOrder = 0
+    object DBImage1: TDBImage
+      Left = 5
+      Top = 8
+      Width = 248
+      Height = 162
+      Color = clBackground
+      DataField = 'Graphic'
+      DataSource = DataSource1
+      TabOrder = 1
+    end
+    object DBText1: TDBText
+      Left = 4
+      Top = 184
+      Width = 249
+      Height = 24
+      DataField = 'Common_Name'
+      DataSource = DataSource1
+      Font.CharSet = fcsLatin1
+      Font.Color = clRed
+      Font.Height = 15
+      Font.Name = 'adobe-new century schoolbook'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 275
+    Top = 8
+    Width = 246
+    Height = 22
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 7
+      Top = 4
+      Width = 53
+      Height = 13
+      Caption = 'About the'
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlue
+      Font.Height = 10
+      Font.Name = 'adobe-new century schoolbook'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object DBText2: TDBText
+      Left = 67
+      Top = 4
+      Width = 47
+      Height = 13
+      AutoSize = True
+      DataField = 'Common_Name'
+      DataSource = DataSource1
+      Font.CharSet = fcsLatin1
+      Font.Color = clBlue
+      Font.Height = 10
+      Font.Name = 'adobe-new century schoolbook'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object Panel3: TPanel
+    Left = 276
+    Top = 32
+    Width = 245
+    Height = 209
+    BevelOuter = bvLowered
+    TabOrder = 2
+    object DBMemo1: TDBMemo
+      Left = 8
+      Top = 8
+      Width = 225
+      Height = 193
+      Color = clGray
+      DataField = 'Notes'
+      DataSource = DataSource1
+      ScrollBars = ssAutoVertical
+      TabOrder = 0
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Top = 272
+    Width = 570
+    Height = 80
+    Align = alBottom
+    TabOrder = 3
+    object DBGrid1: TDBGrid
+      Left = 12
+      Top = 8
+      Width = 386
+      Height = 60
+      Hint = 'Scroll up or down to see other fish!'
+      DataSource = DataSource1
+      Font.Color = clBlack
+      Font.Height = 10
+      Font.Name = 'Helvetica'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      TitleFont.Color = clBlack
+      TitleFont.Height = 13
+      TitleFont.Name = 'Helvetica'
+      TitleFont.Pitch = fpVariable
+      TitleFont.Style = []
+    end
+    object BitBtn1: TBitBtn
+      Left = 424
+      Top = 20
+      Width = 62
+      Height = 29
+      Color = clAqua
+      TabOrder = 1
+      Kind = bkClose
+    end
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 184
+    Top = 184
+  end
+  object DataSource1: TDataSource
+    DataSet = ClientDataSet1
+    Left = 224
+    Top = 184
+  end
+end

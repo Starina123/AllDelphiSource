@@ -1,0 +1,14 @@
+<!-- #include file="..\include\StdDemoHeader.html" -->
+
+<#STYLES><#WARNINGS><#SERVERSCRIPT>
+
+
+<% if( DataSetInfo.ContinentName.Value != null) {
+  var S = DataSetInfo.ContinentName.DisplayText;
+  if (S=="") S = '""';  %>
+  <h2>Query results for <%= S %></h2>
+<% } %>
+<#INCLUDES><#STYLES><#WARNINGS><#FORMS><#SCRIPT>
+
+<!-- #include file="..\include\StdDemoFooter.html" -->
+

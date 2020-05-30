@@ -1,0 +1,87 @@
+
+<HTML>
+<HEAD>
+<TITLE>
+<%= Page.Title %>
+</TITLE>
+</HEAD>
+<BODY>
+<H1><%= Application.Title %></H1>
+
+<% if (EndUser.Logout != null) { %>
+<%   if (EndUser.DisplayName != '') { %>
+  <H1>Welcome <%=EndUser.DisplayName %></H1>
+<%   } %>
+<%   if (EndUser.Logout.Enabled) { %>
+  <A HREF="<%=EndUser.Logout.AsHREF%>">Logout</A>
+<%   } %>
+<%   if (EndUser.LoginForm.Enabled) { %>
+  <A HREF=<%=EndUser.LoginForm.AsHREF%>>Login</A>
+<%   } %>
+<% } %>
+
+<H2><%= Page.Title %></H2>
+
+<TABLE CELLSPACING=0 CELLPADDING=0>
+<TD>
+<%  e = new Enumerator(Pages)
+     s = ''
+     c = 0
+     for (; !e.atEnd(); e.moveNext())
+     {
+       if (e.item().Published)
+       {
+         if (c>0) s += '&nbsp;|&nbsp;'
+         if (Page.Name != e.item().Name)
+           s += '<A HREF="' + e.item().HREF + '">' + e.item().Title + '</A>'
+         else
+           s += e.item().Title
+         c++
+       }
+     }
+     if (c>1) Response.Write(s)
+%>
+</TD>
+</TABLE>
+
+<P>
+<%
+  // First, see if we can view the message
+  if (EmailMessage.StartMessage.Value)
+  {
+%>
+<table width="100%">
+<tr>
+  <td bgcolor="#DCDCDC"><b>From:</b> <%=EmailMessage.MessageFromName.DisplayText%>
+    <a href="mailto:<%=EmailMessage.MessageFromEmail.DisplayText%>"
+      ><%=EmailMessage.MessageFromEmail.DisplayText%></a>
+  </td>
+  <td bgcolor="#DCDCDC"><b>Date:</b> <%=EmailMessage.MessageDate.DisplayText%></td>
+</tr>
+<tr>
+  <td bgcolor="#DCDCDC" colspan="2"><b>Subject:</b> <%=EmailMessage.MessageSubject.DisplayText%></td>
+</tr>
+<tr>
+  <td colspan="2">
+<pre>
+<%=EmailMessage.MessageBody.DisplayText%>
+</pre>
+  </td>
+</tr>
+
+</table>
+<%
+  }
+  else
+    Response.Write('Can not display the given email message id<br>');
+
+  errors = new Enumerator(EmailMessage.Errors)
+  if (!errors.atEnd())
+   Response.Write('<p>The following error(s) happened:');
+  for (; !errors.atEnd(); errors.moveNext())
+    Response.Write("<li>" + errors.item().Message)    
+%>
+
+</BODY>
+</HTML>
+ 

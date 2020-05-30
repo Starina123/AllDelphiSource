@@ -1,0 +1,7 @@
+<% { var Adapter = Modules.Home.ApplicationAdapter %>
+<form method="post">
+  <input type="hidden" name=__act value="<%= Adapter.TerminateSession.LinkToPage(Page.Name, Page.Name).AsFieldValue %>"/>
+  Redirect<input type="checkbox" name="<%= Adapter.RedirectFlag.InputName %>" value="true" <%= Adapter.RedirectFlag.IsEqual(true) ? 'checked' : ''%> />
+  <input type="submit" value="Terminate Session">
+</form>
+<% } %>

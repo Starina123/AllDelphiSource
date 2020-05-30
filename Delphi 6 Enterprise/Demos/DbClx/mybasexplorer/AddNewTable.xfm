@@ -1,0 +1,130 @@
+object Form2: TForm2
+  Left = 212
+  Top = 171
+  Width = 553
+  Height = 166
+  BorderIcons = []
+  BorderStyle = fbsDialog
+  Caption = 'Create New MyBase XML Table'
+  Color = clBackground
+  OnShow = FormShow
+  PixelsPerInch = 75
+  TextHeight = 15
+  TextWidth = 7
+  object ComboDataType: TComboBox
+    Left = 264
+    Top = 8
+    Width = 140
+    Height = 23
+    Hint = 'There are many more datatypes you could add'
+    ItemHeight = 17
+    Items.Strings = (
+      'ftString'
+      'ftInteger')
+    ItemIndex = 0
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    Text = 'ftString'
+    OnChange = ComboDataTypeChange
+  end
+  object EditFieldName: TEdit
+    Left = 80
+    Top = 8
+    Width = 100
+    Height = 23
+    Hint = 'Field Name'
+    TabOrder = 1
+    Text = 'Field1'
+  end
+  object EditFieldSize: TEdit
+    Left = 488
+    Top = 8
+    Width = 25
+    Height = 25
+    TabOrder = 2
+    Text = '15'
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 8
+    Width = 64
+    Height = 15
+    Caption = 'Field Name'
+  end
+  object Label2: TLabel
+    Left = 200
+    Top = 8
+    Width = 58
+    Height = 15
+    Caption = 'Data Type'
+  end
+  object Label3: TLabel
+    Left = 424
+    Top = 8
+    Width = 56
+    Height = 15
+    Caption = 'Field Size'
+  end
+  object ButtonAddField: TButton
+    Left = 304
+    Top = 136
+    Width = 75
+    Height = 25
+    Caption = 'Add Field'
+    TabOrder = 6
+    OnClick = ButtonAddFieldClick
+  end
+  object ButtonCreateTable: TButton
+    Left = 464
+    Top = 136
+    Width = 83
+    Height = 25
+    Caption = 'Create Table'
+    TabOrder = 7
+    OnClick = ButtonCreateTableClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 48
+    Width = 545
+    Height = 81
+    DataSource = DataSource1
+    ReadOnly = True
+    TabOrder = 8
+    TitleFont.Color = clBlack
+    TitleFont.Height = 13
+    TitleFont.Name = 'Helvetica'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Style = []
+  end
+  object ButtonCancel: TButton
+    Left = 384
+    Top = 136
+    Width = 75
+    Height = 25
+    Caption = 'Cancel'
+    TabOrder = 9
+    OnClick = ButtonCancelClick
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 32
+    Top = 136
+  end
+  object DataSource1: TDataSource
+    DataSet = ClientDataSet1
+    Top = 136
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = 'xml'
+    Filter = '*.xml'
+    Title = 'Save As'
+    Left = 64
+    Top = 136
+  end
+end

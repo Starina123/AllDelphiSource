@@ -1,0 +1,125 @@
+object Form1: TForm1
+  Left = 185
+  Top = 169
+  Width = 1087
+  Height = 750
+  VertScrollBar.Range = 347
+  ActiveControl = SimpleFrame.FancyFrame1.DBMemo1
+  Caption = 'Form1'
+  Color = clBackground
+  OnCreate = FormCreate
+  PixelsPerInch = 75
+  TextHeight = 15
+  TextWidth = 7
+  object Splitter1: TSplitter
+    Left = 0
+    Top = 342
+    Width = 1087
+    Height = 5
+    Cursor = crVSplit
+    Align = alTop
+  end
+  inline SimpleFrame: TDataFrame
+    Left = 0
+    Top = 0
+    Width = 1087
+    Height = 342
+    VertScrollBar.Range = 158
+    Align = alTop
+    BorderStyle = bsSunken3d
+    TabOrder = 0
+    inherited Splitter1: TSplitter
+      Width = 1087
+    end
+    inherited DBNavigator1: TDBNavigator
+      Width = 1087
+      Hints.Strings = ()
+    end
+    inherited FancyFrame1: TFancyFrame
+      Width = 1087
+      inherited DBImage1: TDBImage
+        Width = 832
+      end
+    end
+    inherited DBGrid1: TDBGrid
+      Width = 1087
+    end
+    inherited ClientDataSet1: TClientDataSet
+      StoreDefs = True
+    end
+  end
+  inline MDFrame: TMasterDetailFrame
+    Left = 0
+    Top = 347
+    Width = 1087
+    Height = 403
+    HorzScrollBar.Range = 405
+    Align = alClient
+    BorderStyle = bsSunken3d
+    TabOrder = 1
+    inherited Splitter1: TSplitter
+      Height = 403
+    end
+    inherited MasterFrame: TDataFrame
+      Height = 403
+      VertScrollBar.Range = 156
+      inherited Splitter1: TSplitter
+        Top = 274
+        Height = 3
+      end
+      inherited DBNavigator1: TDBNavigator
+        Hints.Strings = ()
+      end
+      inherited FancyFrame1: TFancyFrame
+        Top = 277
+        HorzScrollBar.Range = 190
+        inherited Splitter1: TSplitter
+          Left = 185
+        end
+        inherited DBMemo1: TDBMemo
+          Width = 185
+        end
+        inherited DBImage1: TDBImage
+          Left = 190
+          Width = 210
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Height = 247
+      end
+    end
+    inherited DetailFrame: TDataFrame
+      Width = 682
+      Height = 403
+      VertScrollBar.Range = 156
+      inherited Splitter1: TSplitter
+        Top = 274
+        Width = 682
+        Height = 3
+      end
+      inherited DBNavigator1: TDBNavigator
+        Width = 682
+        Hints.Strings = ()
+      end
+      inherited FancyFrame1: TFancyFrame
+        Top = 277
+        Width = 682
+        HorzScrollBar.Range = 190
+        inherited Splitter1: TSplitter
+          Left = 185
+        end
+        inherited DBMemo1: TDBMemo
+          Width = 185
+        end
+        inherited DBImage1: TDBImage
+          Left = 190
+          Width = 492
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Width = 682
+        Height = 247
+      end
+    end
+  end
+end

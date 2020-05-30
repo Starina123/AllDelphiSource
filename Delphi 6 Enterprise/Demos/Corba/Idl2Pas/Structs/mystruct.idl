@@ -1,0 +1,14 @@
+struct MyStructType
+{
+	short  s;
+ 	long   l;
+ 	string st;
+};
+
+interface Account
+{
+	float balance (in    MyStructType inMyStruct,
+                       out   MyStructType outMyStruct,
+                       inout MyStructType inoutMyStruct );
+};
+

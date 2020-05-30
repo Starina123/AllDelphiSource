@@ -1,0 +1,10 @@
+/****************************************************************************
+
+htmlfiles.rc
+
+*****************************************************************************/
+#define HTML 23  // HTML resource identifier
+
+DetailsU HTML DetailsU.html
+HomeU HTML HomeU.html
+

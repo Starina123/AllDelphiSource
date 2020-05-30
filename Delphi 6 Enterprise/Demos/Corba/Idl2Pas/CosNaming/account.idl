@@ -1,0 +1,8 @@
+// Account.idl
+
+module Bank {
+
+	interface Account {
+        	float balance();
+	};
+};

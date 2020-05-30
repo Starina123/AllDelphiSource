@@ -1,0 +1,12 @@
+<TABLE>
+  <TH align=left>SessionValue</TH><TD>&nbsp;
+  <% if (Session.Values('Foo') != null)
+  {%>
+  <%= Session.Values('Foo') %>
+  <%} else { %>
+    null
+  <% } %>
+  <TR><TH align=left>StartTime</TH><TD>&nbsp;
+  <%= Session.Values('StartTime') %>
+</TABLE>
+

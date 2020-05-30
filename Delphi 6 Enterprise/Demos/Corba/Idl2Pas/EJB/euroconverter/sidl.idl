@@ -1,0 +1,99 @@
+// sidl.idl
+
+#pragma prefix "borland.com"
+
+module sidl {
+
+  module java {
+
+    module lang {
+      struct Class {
+        string idlName;
+        string javaName;
+      };
+    };
+
+    module math {
+      struct BigDecimal {
+        string value;
+      };
+    };
+
+    module util {
+      typedef sequence<any> Collection;
+      typedef sequence<any> Enumeration;
+      typedef sequence<any> List;
+      typedef sequence<any> Vector;
+      struct Date {
+        // milliseconds since January 1, 1970, 00:00:00 GMT. 
+        long long time;
+      };
+    };
+
+    module sql {
+      struct Date {
+        long long time;
+      };
+      struct Time {
+        // Can't use "time" in IDL, as this is the name of the type itself
+        long long time1;
+      };
+      struct Timestamp {
+        long long time;
+      };
+    };
+
+  };
+
+  module javax {
+
+    module ejb {
+      
+      interface EJBObject;
+      interface EJBHome;
+       
+      struct EJBMetaData {
+        javax::ejb::EJBHome home;
+        java::lang::Class homeInterfaceClass;
+        java::lang::Class primaryKeyClass;
+        java::lang::Class remoteInterfaceClass;
+        boolean session;
+        boolean statelessSession;
+      };
+
+      exception CreateException {
+        string message;
+      };
+      
+      exception RemoveException {
+        string message;
+      };
+
+      exception FinderException {
+        string message;
+      };
+
+      interface EJBHome {
+	EJBMetaData getEJBMetaData();
+        // getHomeHandle replaced by org.omg.CORBA.ORB.object_to_string
+        void remove(in any primaryKey) raises(RemoveException);
+        // remove(Handle h) not needed: use EJBObject.remove instead.
+	string getSimplifiedIDL();
+      };
+
+      interface EJBObject {
+        EJBHome getEJBHome();
+        // getHandle() replaced by org.omg.CORBA.ORB.object_to_string
+        any getPrimaryKey();
+        // isIdentical replaced by org.omg.CORBA.Object._is_equivalent
+	void remove() raises(RemoveException);
+      };
+      
+    };
+
+  };
+
+};
+
+#pragma prefix ""
+

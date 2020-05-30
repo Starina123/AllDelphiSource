@@ -1,0 +1,4 @@
+<CustomerParams>
+  <MinimumCustomerNumber>2000</MinimumCustomerNumber>
+  <MaximumCustomerNumber>3000</MaximumCustomerNumber>
+</CustomerParams>

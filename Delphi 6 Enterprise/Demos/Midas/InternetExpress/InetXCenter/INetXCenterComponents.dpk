@@ -1,0 +1,47 @@
+{ See INetXCenterProd for comments
+}
+package INetXCenterComponents;
+
+{$R *.RES}
+{$R 'InetxCenterProd.dcr'}
+{$R 'ReadFileClientDataSet.dcr'}
+{$ALIGN ON}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'InternetExpress WebSite components'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+{$LIBSUFFIX '60'}
+
+requires
+  rtl,
+  vcl,
+  webdsnap,
+  dclwbm,
+  dclstd,
+  dbrtl,
+  dsnap;
+
+contains
+  InetXCenterProd in 'InetXCenterProd.pas',
+  ReadFileClientDataSet in 'ReadFileClientDataSet.pas';
+
+end.

@@ -1,0 +1,16 @@
+typedef string Identifier;
+
+
+union UnionType switch (long)
+{
+ case -1: short s;
+ case  0: long l;
+ case  1: Identifier i;
+};
+
+
+interface Account
+{
+   float balance(in UnionType myUnion);
+};
+

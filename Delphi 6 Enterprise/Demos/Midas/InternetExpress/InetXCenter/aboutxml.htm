@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad Software//DTD HoTMetaL PRO 5.0::19981217::extensions to HTML 4.0//EN" "hmpro5.dtd">
+ 
+<HTML>
+ 
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+
+<BODY>
+<P><A HREF="#XMLPackets">XML Packets<BR>
+</A><A HREF="#DataPacket"></A></P>
+<DIV STYLE="margin-left:20">
+<A HREF="#DataPacket">Data Packet</A><BR>
+<A HREF="#DeltaPacket">Delta Packet</A><BR>
+<A HREF="#ErrorPacket">Error Packet</A><BR>
+</DIV>
+<BR>
+<P><A HREF="#IAppServer">IAppServer</A><BR>
+</P>
+<DIV STYLE="margin-left:20">
+<A HREF="#AS_GetRecords">AS_GetRecods</A><BR>
+<A HREF="#AS_ApplyUpdates">AS_ApplyUpdates</A> 
+</DIV>
+<BR>
+<P><A HREF="#XMLParsing">Parsing XML</A><BR>
+</P>
+<DIV STYLE="margin-left:20">
+<A HREF="#xmldom">xmldom.js</A><BR>
+<A HREF="#XMLIslands">XML Islands</A> 
+</DIV>
+<P><A NAME="XMLPackets"></A></P>
+<H2>XML Packets</H2>
+<P>XML Packets are passed between the MIDAS server and the InternetExpress
+application. There are three types of packets.</P>
+<P><A NAME="DataPacket"></A></P>
+<H3>Data Packet</H3>
+<P>When an InternetExpress page is requested, the InternetExpress application
+calls the MIDAS server to get an XML representation of database data associated
+with a provider defined by MIDAS server. The web page is formulated by
+combining JavaScript, the XML data packet, and HTML forms. </P>
+<P><A HREF="ComponentsList?ClassName=TXMLBroker">TXMLBroker</A> is the
+InternetExpress component responsible for making the request. It has a property
+for specifying the provider name. TXMLBroker also has a property used to limit
+the number of rows that will be retrieved. </P>
+<P><A NAME="DeltaPacket"></A></P>
+<H3>Delta Packet</H3>
+<P>As the user edits data on an InternetExpress web page, the JavaScript
+library code tracks edits, inserts, and deletes. When the user chooses the
+Apply Updates button, a representation of these changes is posted to the
+InternetExpress application. For modified records, the delta packet includes
+the original data. If the original data does not match the record when
+reconciling, a reconcile error will occur. </P>
+<P></P>
+<P><A HREF="ComponentsList?ClassName=TXMLBroker">TXMLBroker</A> is the
+InternetExpress component responsible for reconciling the error packet with the
+MIDAS server. After a successfull reconcile, it will redirect to the page that
+posted the delta packet. TXMLBroker has a property that references a reconcile
+page producer. If a reconcile error occurs, the content of the reconcile page
+producer will be returned in the HTTP request. </P>
+<P><A NAME="ErrorPacket"></A></P>
+<H3>Error Packet</H3>
+<P>When an InternetExpress application receives a request to apply updates, the
+MIDAS server is passed the XML data packet. If a reconcile error occurs, the
+MIDAS server returns an XML error packet to the caller. The InternetExpress
+application may build a reconcile page by combining the delta packet, error
+packet, JavaScript and HTML forms.
+<A
+ HREF="ComponentsList?ClassName=TReconcilePageProducer">TReconcilePageProducer</A>
+is an implementation of a reconcile page. </P>
+<P><A NAME="IAppServer"></A></P>
+<H2>IAppServer</H2>
+<P>IAppServer is the interface implemented by MIDAS servers and called by
+InternetExpress applications. The following IAppServer methods are called by
+TXMLBroker.</P>
+<P><A NAME="AS_GetRecords"></A></P>
+<H3>AS_GetRecords</H3>
+<P>Returns a data packet from a specified provider. To retrieve an XML data
+packet, pass the grXML flag. </P>
+<P><A NAME="AS_ApplyUpdates"></A></P>
+<H3>AS_ApplyUpdates</H3>
+<P>Applies updates received from a client dataset using a specified provider.
+This function is passed a delta packet and returns an error packet and error
+count. It knows to return an XML error packet when the delta packet is XML. 
+</P>
+<P><A NAME="XMLParsing"></A></P>
+<H2>Parsing XML</H2>
+<P>The XML embedded into InternetExpress pages must be parsed and stored in
+JavaScript data structures.</P>
+<P><A NAME="xmldom"></A></P>
+<H3>xmldom.js</H3>
+<P>IE 4 and Navigator do not have a built in XML parser. InternetExpress
+applications will detect these browsers and represent XML within the web page
+as a JavaScript string. The xmldom.js parser library will be included by the
+page. </P>
+<P><A NAME="XMLIslands"></A></P>
+<H3>XML Islands</H3>
+<P>IE 5.0 supports XML Islands. InternetExpress applications that detect IE 5.0
+will generate XML islands. Xmldom.js will not be included. XML Islands result
+in significant performance improvements because the parser is faster and
+xmldom.js does not need to be downloaded.</P>
+</BODY>
+</HTML>
+

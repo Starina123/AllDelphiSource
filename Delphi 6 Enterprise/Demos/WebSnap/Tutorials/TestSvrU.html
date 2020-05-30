@@ -1,0 +1,64 @@
+<!-- #include file="StdTutorialHeader.html" -->
+
+<P><FONT SIZE="+1">Start bin/webappdbg.exe</FONT></P>
+<BLOCKQUOTE><P><B><I>Server/Options</I></B></P>
+<UL>
+<LI>Port: 1024</LI>
+</UL>
+<BLOCKQUOTE><P>This tells the Web App Debugger to listen for HTTP requests on
+port 1024. The Web App Debugger can listen on other ports as long as there is no conflict
+with another listener. For example, port 80 should not be used if IIS is
+installed, running, and listening on port 80. </P>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<BLOCKQUOTE><UL>
+<LI>Default URL: ServerInfo.ServerInfo</LI>
+</UL>
+<BLOCKQUOTE><P>ServerInfo.exe is a Delphi WebBroker application that displays
+information about the Web App Debugger  executable applications that have been registered on
+the local computer. &nbsp;Identifying serverinfo in the default URL field enables a hyperlink
+displayed on
+the Web App Debugger's main form.  &nbsp;You'll be able to quickly access a list of Web App Debugger
+executables by clicking on the hyperlink.</P>
+</BLOCKQUOTE>
+  <UL>
+    <LI>Search Path: $(DELPHI)\Source\WebMidas;$(DELPHI)\demos\WebSnap\Images</LI>
+  </UL>
+  <BLOCKQUOTE>
+    <P>These paths are used by the Web App Debugger to
+      locate the JavaScript files needed by InternetExpress applications
+      and the image used by the WebSnap examples. If you have additional .js, 
+      .jpg files, etc. you can append their directory locations.
+    </P>
+</BLOCKQUOTE>
+<UL>
+<LI>Check Activate at Startup</LI>
+</UL>
+</BLOCKQUOTE>
+<BLOCKQUOTE><BLOCKQUOTE><P>Causes the Web App Debugger to start listening for requests when
+run.</P>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<BLOCKQUOTE><UL>
+<LI>OK</LI>
+</UL>
+</BLOCKQUOTE>
+<BLOCKQUOTE> <BLOCKQUOTE><P>Click the Start button to cause the Web App Debugger to start
+listening to HTTP requests now (This button displays &quot;Stop&quot; if the Web App Debugger is
+already listening).</P>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<P><FONT SIZE="+1">Test ServerInfo.exe</FONT></P>
+<BLOCKQUOTE><P>Now that Web App Debugger is configured you can use ServerInfo.exe to get a
+list of registered applications. Click on the hyperlink displayed on Web App Debugger's main form.</P>
+<P>You can also invoke ServerInfo.exe from a Web Browser with the following URL:
+</P>
+<P><A HREF="http://localhost:1024/ServerInfo.ServerInfo"
+TARGET="_blank">http://localhost:1024/ServerInfo.ServerInfo</A> </P>
+<P>This link will work if the Web App Debugger is configured as described above and
+serverinfo.exe has been run at least once to register.</P>
+</BLOCKQUOTE>
+
+<!-- #include file="StdTutorialFooter.html" -->
+
+

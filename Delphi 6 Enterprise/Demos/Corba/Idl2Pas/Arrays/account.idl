@@ -1,0 +1,8 @@
+// Account.IDL - Shows how to use an array as an in arg
+
+
+typedef short ArrayType[3];
+
+interface Account {
+	float balance(in ArrayType myArray);
+};

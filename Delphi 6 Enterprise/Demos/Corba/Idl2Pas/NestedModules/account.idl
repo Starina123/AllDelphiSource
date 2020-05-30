@@ -1,0 +1,17 @@
+module Financials {
+
+	module MutualFund {
+		interface Asset {
+			float nav();
+		};
+	};
+
+
+	module Bank {
+
+		interface Account {
+			float balance();
+		};
+	};
+};
+

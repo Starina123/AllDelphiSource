@@ -1,0 +1,21 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.02.5
+#------------------------------------------------------------------------------
+MAKE = make -$(MAKEFLAGS) -f$**
+DCC =dcc $<
+#------------------------------------------------------------------------------
+PROJECTS = WebRequestCGI PortScanner PageProducerCGI
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+WebRequestCGI: demo_src/webrequestcgi/WebRequestCGI.dpr
+			$(DCC)
+
+PortScanner: demo_src/portscanner/PortScanner.dpr
+		$(DCC)
+
+PageProducerCGI: demo_src/pageproducercgi/PageProducerCGI.dpr
+	$(DCC)
+
+

@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE><%= Page.Title %></TITLE>
+</HEAD>
+<BODY>
+<h1><%= Application.Title %></h1>
+<h2><%= Page.Title %></h2>
+<TABLE CELLSPACING=0 CELLPADDING=0>
+<TD>
+<%   e = new Enumerator(Pages)
+     delim = ''
+     for (; !e.atEnd(); e.moveNext())
+     {  
+       if (e.item().Published)
+       {
+         if (Page.Name != e.item().Name)
+         {
+           Response.Write(delim + '<A HREF=' + e.item().HREF + '>' + e.item().Title + '</A>')
+           delim = '&nbsp;|&nbsp'
+         }
+       }
+     }
+%>
+</TD>
+</TABLE>
+</BODY>
+</HTML>
+ 

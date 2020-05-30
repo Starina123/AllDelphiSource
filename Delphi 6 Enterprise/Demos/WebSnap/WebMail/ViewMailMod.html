@@ -1,0 +1,124 @@
+
+<HTML>
+<HEAD>
+<TITLE>
+<%= Page.Title %>
+</TITLE>
+</HEAD>
+<BODY>
+<H1><%= Application.Title %></H1>
+
+<% if (EndUser.Logout != null) { %>
+<%   if (EndUser.DisplayName != '') { %>
+  <H1>Welcome <%=EndUser.DisplayName %></H1>
+<%   } %>
+<%   if (EndUser.Logout.Enabled) { %>
+  <A HREF="<%=EndUser.Logout.AsHREF%>">Logout</A>
+<%   } %>
+<%   if (EndUser.LoginForm.Enabled) { %>
+  <A HREF=<%=EndUser.LoginForm.AsHREF%>>Login</A>
+<%   } %>
+<% } %>
+
+<H2><%= Page.Title %></H2>
+
+<TABLE CELLSPACING=0 CELLPADDING=0>
+<TD>
+<%  e = new Enumerator(Pages)
+     s = ''
+     c = 0
+     for (; !e.atEnd(); e.moveNext())
+     {
+       if (e.item().Published)
+       {
+         if (c>0) s += '&nbsp;|&nbsp;'
+         if (Page.Name != e.item().Name)
+           s += '<A HREF="' + e.item().HREF + '">' + e.item().Title + '</A>'
+         else
+           s += e.item().Title
+         c++
+       }
+     }
+     if (c>1) Response.Write(s)
+%>
+</TD>
+</TABLE>
+
+
+<%
+  // Display server-side errors that may have occured.
+  errors = new Enumerator(EmailAdapter.Errors)
+  if (!errors.atEnd())
+   Response.Write('<p>The following error(s) happened:');
+  for (; !errors.atEnd(); errors.moveNext())
+    Response.Write("<li>" + errors.item().Message)
+
+  // The call to the EmailAdapter's records starts the iteration,
+  // and fills in the MessageCount
+  emails = new Enumerator(EmailAdapter.Records);
+  if (EmailAdapter.MessageCount.Value > 0)
+  {
+    var i = 0;
+%>
+<p>You have <%=EmailAdapter.MessageCount.DisplayText%> messages.<br>
+
+<center>
+<table width="90%">
+<tr>
+  <td bgcolor="#DCDCDC"><font
+    face="Arial, Helvetica" size="2"><b>Id</b></font></td>
+  <td bgcolor="#DCDCDC"><font
+    face="Arial, Helvetica" size="2"><b>Message</b></font></td>
+  <td bgcolor="#DCDCDC"><font
+    face="Arial, Helvetica" size="2"><b>Date</b></font></td>
+  <td bgcolor="#DCDCDC"><font
+    face="Arial, Helvetica" size="2"><b>Size</b></font></td>
+</tr>
+
+<%
+    for (;!emails.atEnd(); emails.moveNext())
+    {
+      Response.Write('<tr>');
+      var color; // Color every other row
+      if (i % 2 == 0)
+        color = 'bgcolor="#DCDCDC"';
+      else
+        color = '';
+
+        
+      Response.Write('<td ' + color + '>' +
+        EmailAdapter.MessageId.DisplayText + '</td>\n');
+      // For the message subject, create a link to the EmailMessageModule
+      // to display that message.
+      Response.Write('<td ' + color + '><b>Subject:</b> ' +
+        '<a href="' + EmailAdapter.GetEmail.AsHREF + '">' +
+        EmailAdapter.MessageSubject.DisplayText + '</a><br>');
+
+      Response.Write(
+        '<b>From:</b> ' + EmailAdapter.MessageFromName.DisplayText +
+        ' &lt;<a href="mailto:' +
+        EmailAdapter.MessageFromEmail.DisplayText +
+        '">' + EmailAdapter.MessageFromEmail.DisplayText + '</a>&gt;' +
+        '</td>\n');
+      Response.Write('<td ' + color + '>' +
+        EmailAdapter.MessageDate.DisplayText + '</td>\n');
+      Response.Write('<td ' + color + '>' +
+     EmailAdapter.MessageSize.DisplayText + '</td>\n');
+
+      Response.Write('</tr>');
+      i++;
+    }
+
+%>
+</table>
+</center>
+<%
+  }
+  else
+    Response.Write('<P>You have no messages waiting.<br>');
+%>
+
+
+</BODY>
+</HTML>
+ 

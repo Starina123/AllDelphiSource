@@ -1,0 +1,6 @@
+// Account.idl
+
+
+interface Account {
+        float balance();
+};

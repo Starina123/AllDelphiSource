@@ -1,0 +1,16 @@
+module Server
+{
+  interface IMyTest;
+
+  
+  interface IMyTest
+  {
+    long Get_X();
+  };
+  
+  interface MyTestFactory
+  {
+    IMyTest CreateInstance(in string InstanceName);
+  };
+
+}; 

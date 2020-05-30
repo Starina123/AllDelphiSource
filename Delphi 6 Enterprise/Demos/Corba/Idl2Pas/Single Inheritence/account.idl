@@ -1,0 +1,14 @@
+// Account.idl -> Inherit from an interface
+
+module Bank {
+
+	interface Checking {
+		float balance();
+	};
+
+	interface Savings : Checking {
+		float interest_rate();
+	};
+
+};
+

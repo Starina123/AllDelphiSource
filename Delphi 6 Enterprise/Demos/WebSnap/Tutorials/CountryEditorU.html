@@ -1,0 +1,386 @@
+<!-- #include file="StdTutorialHeader.html" -->
+
+<P><font>This WebSnap application demonstrates how to use WebSnap wizards, components,
+and designers to build an application that edits the content of the
+Country table.&nbsp;</font></P>
+<P><FONT SIZE="+1">Create a New WebSnap Application</FONT></P>  
+<BLOCKQUOTE><P><I><B>File/New/Other.../WebSnap/Web Application </B>  
+</I></P>  
+<UL>  
+<LI>Check Web App Debugger  executable</LI>  
+<LI>CoClass Name: CountryEditor3 (to avoid a conflict with the example)</LI>  
+<LI>Page Name: Home</LI>  
+<LI>OK</LI>  
+</UL>  
+  <P><i><b>File/Save All</b></i></P>  
+  <ul>  
+    <li>Save the unit containing a TForm as ConsoleU.pas</li>  
+    <li>Save the unit containing a TWebAppPageModule as HomeU.pas</li>  
+    <li>Save the project as CountryEditor.dpr</li>  
+  </ul>  
+  <blockquote>  
+    <p>The application will look for the HomeU.html file in the same directory  
+    as the executable so save the unit and the project to the same directory.</p>  
+  </blockquote>  
+  <P><i><b>Set the ApplicationTitle</b></i></P>  
+  <ul>  
+    <li>Activate the Home module by double clicking on HomeU in the project  
+      manager</li>  
+    <li>In the object inspector, set ApplicationAdapter.ApplicationTitle to Country Editor</li>  
+  </ul>  
+  <blockquote>  
+    <p>Click on the Preview tab in the editor window.&nbsp; The application  
+    title is displayed at the top of the page.</p>  
+  </blockquote>  
+  <p><i><b>Run the Application</b></i></p>  
+    <p>If you would like to see what you have so far,&nbsp;<A HREF=#RUN>Run the application</A>.</p>  
+</BLOCKQUOTE>  
+<P><font size="+1">Create a New WebSnap Module</font></P>  
+<BLOCKQUOTE><P><I><B>File/New/Other.../WebSnap/Web Page Module </B>  
+</I></P>  
+<UL>  
+<LI>Select AdapterPageProducer</LI>  
+<LI>Page Name: CountryTable</LI>  
+<LI>OK</LI>  
+</UL>  
+<P><i><b>File/Save</b></i></P>  
+<UL>  
+<LI>Save unit as CountryTableU.pas</LI>  
+</UL>  
+  <p>The application will look for the CountryTableU.html file in the same directory  
+  as the executable so save the unit to the project directory.</p>  
+  <p><i><b>Run the Application</b></i></p>  
+    <p>If you would like to see what you have so far,&nbsp;<A HREF=#RUN>Run the application</A>.</p>  
+</BLOCKQUOTE>  
+<P><font size="+1">Add data components to the CountryTable module</font></P>  
+<blockquote>   
+  <P><i><b>View the Object Tree View</b></i></P>  
+  <UL>  
+    <LI>Activate the CountryTable module by double clicking CountryTableU in the   
+      project manager</LI>  
+    <LI>Choose View/Object TreeView main menu command</LI>  
+  </UL>  
+  <P><i><b>Add Data Aware Components</b></i></P>  
+  <UL>  
+    <LI>Select the Data Access tab in the tool palette</LI>  
+    <LI>Drop a TTable and a TSession on the Object TreeView</LI>  
+    <LI>Set Session properties:   
+      <ul>  
+        <li>AutoSessionName:&nbsp; True</li>  
+      </ul>  
+    </LI>  
+    <li>Set Table properties  
+      <ul>  
+        <li>DatabaseName:&nbsp; DBDEMOS</li>  
+        <li>TableName:&nbsp; country.db</li>  
+        <li>Name:&nbsp; Country</li>  
+        <li>Active:&nbsp; True&nbsp;</li>  
+      </ul>  
+    </li>  
+  </UL>  
+</blockquote>  
+<p>Note that the Session component is needed because we are using BDE components   
+  (TTable) in a multithreaded application.&nbsp;&nbsp;</p>  
+<blockquote>  
+  <P><i><b>Specify a key field</b></i></P>  
+  <blockquote>   
+    <P>The Name field in the country table can be used to identify a record.</P>  
+  </blockquote>  
+  <UL>  
+    <LI>Select the Country TTable component in the Object Tree View (you may need   
+      to expand the Session and DBDemos node to find the country.db node) .&nbsp;   
+      Right click and choose the Fields Editor...&nbsp; popup menu command.</LI>  
+    <LI>Right click on the Fields Editor window and choose the Add All Fields   
+      command</LI>  
+    <LI>Select the Name field from the list of added fields</LI>  
+    <LI>In the Object Inspector, expand the ProviderFlags property.</LI>  
+    <LI>pfInKey: True</LI>  
+  </UL>  
+  <P><i><b>Add an Adapter</b></i></P>  
+  <UL>  
+    <LI>Select the WebSnap tab in the tool palette</LI>  
+    <LI>Drop a TDataSetAdapter on the Object TreeView</LI>  
+    <LI>Set DataSetAdapter properties   
+      <ul>  
+        <li>DataSet:&nbsp; Country</li>  
+        <li>Name:&nbsp; Adapter</li>  
+      </ul>  
+    </LI>  
+  </UL>  
+</blockquote>  
+<p>The purpose of the DataSetAdapter is to expose the data in our application   
+  to server-side scripting.&nbsp;&nbsp;</p>  
+<P><font size="+1">Create a grid displaying data from the Country table</font></P>  
+<blockquote>   
+  <P>AdapterPageProducer components are used to dynamically generate HTML forms  
+  and grids display Adapter fields and executing Adapter actions.</P>  
+  <P><i><b>View the Object Tree View</b></i></P>  
+  <UL>  
+    <LI>Activate the CountryTable module by double clicking CountryTableU in the   
+      project manager</LI>  
+    <LI>Choose View/Object TreeView main menu command</LI>  
+  </UL>  
+  <P><i><b>Add a grid</b></i></P>  
+  <UL>  
+    <LI>In the Object Tree View for CountryTable, right click on WebPageItems</LI>  
+    <LI>Select the New Component... popup menu command</LI>  
+    <LI>Select AdapterForm then click OK.&nbsp; AdapterForm1 will appear in the   
+      Object Tree View</LI>  
+    <LI>Right click on AdapterForm1</LI>  
+    <LI>Select the New Component... popup menu command</LI>  
+    <LI>Select AdapterGrid then click OK.&nbsp; AdapterGrid1 will appear in the   
+      Object Tree View.</LI>  
+    <LI>Set AdapterGrid1 properties  
+      <ul>  
+        <li>Adapter: Adapter</li>  
+      </ul>  
+    </LI>  
+    <li>Preview the Page by clicking on the Preview tab at the bottom of the code   
+      editor window.</li>  
+    <li>Use the HTML Script tab to view the JavaScript generated by the WebSnap   
+      components.</li>  
+  </UL>  
+  <P><i><b>Run the Application</b></i></P>  
+  <p>If you would like to see what you have so far,&nbsp;<A HREF=#RUN>Run the   
+    application</A>.</p>  
+</blockquote>  
+<P><font size="+1">Add editing commands to the grid</font></P>  
+<blockquote>  
+<P><i><b>Add Buttons</b></i></P>  
+<UL>  
+    <LI>In the Object Tree View for CountryTable, select the AdapterGrid by expanding   
+      WebPageItems</LI>  
+<LI>Right click on AdapterGrid1</LI>  
+<LI>Select the Add All Columns popup menu command</LI>  
+<LI>Right click on AdapterGrid1</LI>  
+<LI>Select the New Component... popup menu command</LI>  
+    <LI>Select AdapterCommandColumn in the list then click OK</LI>    <LI>Right click on AdapterCommandColumn1 and choose the Add Commands... popup   
+      menu command</LI>  
+<LI>Multiselect the DeleteRow, EditRow, and NewRow commands then click OK.</LI>  
+<LI>Preview the Page by clicking on the Preview tab at the bottom of the code  
+  editor window.</LI>  
+</UL>  
+  <p><i><b>Run the Application</b></i></p>  
+    <p>If you would like to see what you have so far,&nbsp;<A HREF=#RUN>Run the application</A>.&nbsp;  
+    The Edit and Insert buttons won't work.&nbsp; Delete will work.</p>  
+</blockquote>  
+<P><font size="+1">Add an edit form&nbsp;</font></P>  
+<blockquote>   
+  <P><I><B>File/New/Other.../WebSnap/Page Module </B> </I></P>  
+  <UL>  
+    <LI>Select AdapterPageProducer</LI>  
+    <LI>Page Name: CountryForm</LI>  
+    <LI>Published: False</LI>  
+    <LI>OK</LI>  
+  </UL>  
+  <P><i><b>File/Save</b></i></P>  
+  <UL>  
+    <LI>Save unit as CountryFormU.pas</LI>  
+  </UL>  
+  <blockquote>   
+    <p>The application will look for the CountryFormU.html file in the same directory   
+      as the executable so save the unit to the project directory.</p>  
+  </blockquote>  
+  <P><i><b>Use the CountyTableU unit</b></i></P>  
+  <blockquote>   
+    <P>Add CountryTableU to the uses list so that this module will have access   
+      to the Adapter component.</P>  
+  </blockquote>  
+  <UL>  
+    <LI>Choose the File/Use Unit... main menu command</LI>  
+    <LI>Select CountryTableU from the list then click OK.</LI>  
+  </UL>  
+  <P><i><b>View the Object Tree View</b></i></P>  
+  <UL>  
+    <LI>Activate the CountryForm&nbsp; module by double clicking CountryFormU   
+      in the project manager</LI>  
+    <LI>Choose View/Object TreeView main menu command</LI>  
+  </UL>  
+  <P><i><b>Add input fields</b></i></P>  
+  <UL>  
+    <LI>In the Object Tree View for CountryForm, right click on WebPageItems</LI>  
+    <LI>Select the New Component... popup menu command</LI>  
+    <LI>Select AdapterForm then click OK.&nbsp; AdapterForm1 will appear in the   
+      Object Tree View</LI>  
+    <LI>Right click on AdapterForm1</LI>  
+    <LI>Select the New Component... popup menu command</LI>  
+    <LI>Select AdapterFieldGroup then click OK.&nbsp; AdapterFieldGroup1 will   
+      appear in the Object Tree View.</LI>  
+    <LI>Set AdapterFieldGroup properties   
+      <ul>  
+        <li>Adapter: CountryTable.Adapter</li>  
+      </ul>  
+    </LI>  
+    <li>Preview the Page by clicking on the Preview tab at the bottom of the code   
+      editor window (In some cases the Preview is not updated correctly, click   
+      on the Code tab and the back on the Preview tab).</li>  
+  </UL>  
+  <P><i><b>Add buttons</b></i></P>  
+  <UL>  
+    <LI>In the Object Tree View for CountryForm, right click on AdapterForm1</LI>  
+    <LI>Select the New Component... popup menu command</LI>  
+    <LI>Select AdapterCommandGroup then click OK.&nbsp; AdapterCommandGroup1 will   
+      appear in the Object Tree View.</LI>  
+    <LI>Set AdapteCommandGroup1 properties   
+      <ul>  
+        <li>SiteComponent: AdapterFieldGroup1</li>  
+      </ul>  
+    </LI>  
+    <li>Right click on AdapterCommandGroup1</li>  
+    <li>Select the Add Commands... popup menu command.</li>  
+    <li>Multiselect the Cancel, Apply, and Refresh Row commands then click OK.</li>  
+    <li>Preview the Page by clicking on the Preview tab at the bottom of the code   
+      editor window (In some cases the Preview is not updated correctly, click   
+      on the Code tab and the back on the Preview tab).</li>  
+  </ul>  
+  <P><i><b>Set Adapter Mode (optional)</b></i></P> 
+  <blockquote>  
+    <P>You may notice that the preview for CountryForm displays static text  
+    field values rather than input controls, and that the Apply and Cancel  
+    buttons are not displayed.&nbsp; This happens because the TDataSetAdapter is  
+    in browse mode, by default.&nbsp; You can change the mode using the  
+    following steps.&nbsp; These steps are optional because,&nbsp; when the  
+    application is running, the TDataSetAdapter mode will be changed to edit  
+    when the Edit action is executed.</P> 
+  </blockquote> 
+  <UL> 
+    <LI>In the Object Tree View for CountryForm, expand AdapterForm1 to show  
+      AdapterFieldGroup</LI> 
+    <LI>Select AdapterFieldGroup</LI> 
+    <LI>Set AdapteFieldGroup property  
+      <ul> 
+        <li>AdapterMode: Edit</li> 
+      </ul> 
+    </LI> 
+  </UL> 
+  <P><i><b>Link form actions to the grid page</b></i></P> 
+  <blockquote>  
+    <P>Specify which page to display when a command is executed by pushing a button 
+    on a form.</P> 
+  </blockquote> 
+  <UL> 
+    <LI>In the Object Tree View for CountryForm, expand AdapterForm1 until CmdCancel,  
+      CmdApply, and CmdRefreshRow are shown</LI> 
+    <LI>Set CmdCancel property  
+      <ul> 
+        <li>PageName: CountryTable</li> 
+      </ul> 
+    </LI> 
+    <LI>Set CmdApply property  
+      <ul> 
+        <li>PageName: CountryTable</li> 
+      </ul> 
+    </LI> 
+  </UL> 
+  <p><i><b>Link grid actions to the form page</b></i></p> 
+  <blockquote>  
+    <P>Specify which page to display when a command is executed by pushing a button   
+      in a grid row.&nbsp;</P>  
+  </blockquote>  
+  <UL>  
+    <LI>In the Object Tree View for CountryTable, expand AdapterGrid1 until NewRow,   
+      EditRow, and DeleteRow are shown</LI>  
+    <LI>Set CmdNewRow property   
+      <ul>  
+        <li>PageName: CountryForm</li>  
+      </ul>  
+    </LI>  
+    <LI>Set CmdEditRow property  
+      <ul>  
+        <li>PageName: CountryForm</li>  
+      </ul>  
+    </LI>  
+  </UL>  
+  <p><i><b>Run the Application</b></i></p>  
+  <p>If you would like to see what you have so far,&nbsp;<A HREF=#RUN>Run the   
+    application</A>.&nbsp; All the buttons will work.&nbsp; However, there will   
+    be no indication of database errors, such as invalid type.&nbsp; For example,   
+    try adding a new country with an invalid value (e.g., 'abc') in the Area field.&nbsp;   
+    One other issue is that the RefreshRow button will show when inserting a new   
+    record.</p>  
+</blockquote>  
+<P><font size="+1">Add error reporting</font></P>  
+<blockquote>   
+  <P>Add AdapterPageProducer components that will display database errors that occur   
+    while editing the Country table.&nbsp;</P>  
+  <P><i><b>Add error support to the grid</b></i></P>  
+  <UL>  
+    <LI>In the Object Tree View for CountryTable, select AdapterForm1 by expanding   
+      WebPageItems</LI>  
+    <LI>Right click on AdapterForm1</LI>  
+    <LI>Select the New Component... popup menu command</LI>  
+    <LI>Select AdapterErrorList in the list then click OK</LI>  
+    <LI>Move AdapterErrorList1 above AdapterGrid1 by dragging it, or using the   
+      up arrow in the Object Tree View toolbar.</LI>  
+    <LI>Set AdapterErrorList1 properties   
+      <ul>  
+        <li>Adapter: Adapter</li>  
+      </ul>  
+    </LI>  
+  </UL>  
+  <p><i><b>Add error support to the form</b></i></p>  
+  <UL>  
+    <LI>In the Object Tree View for CountryForm, select AdapterForm1 by expanding   
+      WebPageItems</LI>  
+    <LI>Right click on AdapterForm1</LI>  
+    <LI>Select the New Component... popup menu command</LI>  
+    <LI>Select AdapterErrorList in the list then click OK</LI>  
+    <LI>Move AdapterErrorList1 above AdapterFieldGroup1 by dragging on using the   
+      up arrow in the Object Tree View toolbar.</LI>  
+    <LI>Set AdapterErrorList properties  
+      <ul>  
+        <li>Adapter: CountryTable. Adapter</li>  
+      </ul>  
+    </LI>  
+  </UL>  
+  <p><i><b>Test error reporting</b></i></p>  
+  <blockquote>  
+    <p>Database errors will raise an exception in the running application.&nbsp;  
+    The exceptions are caught by the TDataSetAdapter and displayed on the page  
+    by the TAdapterErrorList.&nbsp;&nbsp; When running a web application from  
+    the Delphi, the exceptions may be reported by Delphi.&nbsp; To disable exception reporting, uncheck  
+    Tools/Debugger Options/Language Exceptions/Stop on Delphi Exceptions.</p> 
+    <P><i><b>Grid Errors</b></i></P> 
+    <UL> 
+      <LI>Run the application and browse to the CountryTable page.</LI> 
+      <LI>Start up another instance of your browser and browse to the CountryTable  
+        page.</LI> 
+      <LI>Click the DeleteRow button on the first row in the grid.</LI> 
+      <LI>Without refreshing the second browser, click the DeleteRow button on  
+        first row in the grid.</LI> 
+      <LI>You should see an error message displayed above the grid.&nbsp;</LI> 
+    </UL> 
+  </blockquote> 
+  <blockquote>  
+    <P><i><b>Form Errors</b></i></P> 
+    <UL> 
+      <LI>Run the application and browse to the CountryTable page.</LI> 
+      <LI>Click on the EditRow Button&nbsp;</LI>  
+      <LI>You should see the CountryForm page</LI>  
+      <LI>Change the area field to 'abc'</LI>  
+      <LI>Click the Apply Button</LI>  
+      <LI>You should see an error message displayed above the first field</LI>  
+    </UL>  
+  </blockquote>  
+</blockquote>  
+<P><B><I><A NAME=RUN></A></I></B><FONT SIZE="+1">Run the Application</FONT></P>  
+<blockquote>  
+  <P>If you haven't followed the instructions for configuring Delphi then see <A HREF="<%=Pages.ConfigureDelphi.HREF%>"><%=Pages.ConfigureDelphi.Title%></A>  
+ </P>  
+  <P>If you haven't following the instructions for configuring the Web App Debugger then see <A HREF="<%=Pages.TestSvr.HREF%>"><%=Pages.TestSvr.Title%></A> </P>  
+  <P><B><I>Run/Run</I></B></P>  
+</blockquote>  
+<BLOCKQUOTE>  
+<P>You will see a form displayed.&nbsp; Web App Debugger  executables are  
+COM servers.&nbsp; This is the console window of the COM server.&nbsp;&nbsp;  
+</P>  
+<P>The first time that your project is run, it will register the COM object  
+that can be accessed directly by the Web App Debugger.</P> 
+<P>Start webappdbg.exe.</P> 
+<P>Click on the default URL link to display the serverinfo.exe page. serverinfo should display the name of your application. </P>  
+<P>Select on the progid of your application and click Go to display the  
+default page. </P>  
+</BLOCKQUOTE>  
+  
+<!-- #include file="StdTutorialFooter.html" -->  
+  

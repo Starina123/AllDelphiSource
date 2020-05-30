@@ -1,0 +1,77 @@
+object DataFrame: TDataFrame
+  Left = 0
+  Top = 0
+  Width = 531
+  Height = 342
+  VertScrollBar.Range = 158
+  BorderStyle = bsSunken3d
+  TabOrder = 0
+  object Splitter1: TSplitter
+    Left = 0
+    Top = 211
+    Width = 531
+    Height = 5
+    Cursor = crVSplit
+    Align = alBottom
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Top = 0
+    Width = 531
+    Height = 27
+    DataSource = DataSource1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
+    Align = alTop
+    TabOrder = 0
+  end
+  inline FancyFrame1: TFancyFrame
+    Left = 0
+    Top = 216
+    Width = 531
+    Height = 126
+    HorzScrollBar.Range = 255
+    Align = alBottom
+    BorderStyle = bsSunken3d
+    TabOrder = 1
+    inherited Splitter1: TSplitter
+      Left = 250
+      Width = 5
+      Height = 126
+    end
+    inherited DBMemo1: TDBMemo
+      Width = 250
+      Height = 126
+    end
+    inherited DBImage1: TDBImage
+      Left = 255
+      Width = 276
+      Height = 126
+      Color = clBase
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 27
+    Width = 531
+    Height = 184
+    Align = alClient
+    DataSource = DataSource1
+    TabOrder = 2
+    TitleFont.Color = clBlack
+    TitleFont.Height = 13
+    TitleFont.Name = 'Helvetica'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Style = []
+  end
+  object DataSource1: TDataSource
+    DataSet = ClientDataSet1
+    Left = 56
+    Top = 136
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 152
+    Top = 136
+  end
+end

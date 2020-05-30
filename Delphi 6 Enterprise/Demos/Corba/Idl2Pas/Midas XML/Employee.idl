@@ -1,0 +1,10 @@
+// IDL file for database example using Employee.db Paradox table
+
+interface Employee {
+
+  any getEmployeesByName(in string name);
+  string getEmployeesByNameXML(in string name);
+
+};
+
+

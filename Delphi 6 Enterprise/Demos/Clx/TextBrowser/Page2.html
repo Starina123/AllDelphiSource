@@ -1,0 +1,28 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>TextBrowser Demo Application - Page 2</title>
+</head>
+<body>
+
+<center><b><font size=+1>VCLX <font color="#CC0000">TTextBrowser</font>
+Demo</font></b></center>
+
+<p><br>
+<p><a NAME="Second page"></a>
+
+You have selected this page as a link, and since the TTextBrowser.OnTextChange event has now fired, you should notice that the back button is activated.  This meands that you can call the <i>TTextBrowswer.Back</i> method to return to the page that linked you here.  This is done with this code:
+<pre>
+procedure TTextBrowserForm.TextBrowserTextChanged(Sender: TObject);
+begin
+  BackBtn.Enabled := TextBrowser.CanGoBackward;
+  ForwardBtn.Enabled := TextBrowser.CanGoForward;
+  Caption := FormCaption + TextBrowser.DocumentTitle;
+end;
+</pre>
+Link to <a href="Page3.html">Page 3</a>, and then hit the back button, and both the Forward and Back buttons should be enabled.
+
+<p>Back to <a href="index.html">main page</a> (or better yet, hit the <b>Home</b> button)
+</body>
+</html>

@@ -1,0 +1,214 @@
+object TextBrowserForm: TTextBrowserForm
+  Left = 409
+  Top = 152
+  Width = 640
+  Height = 469
+  HorzScrollBar.Range = 635
+  VertScrollBar.Range = 108
+  ActiveControl = BackBtn
+  Caption = 'TTextBrowser Component Demo Application'
+  Color = clBackground
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 75
+  TextHeight = 15
+  TextWidth = 7
+  object SpeedButton1: TSpeedButton
+    Left = 600
+    Top = 16
+    Width = 23
+    Height = 22
+    Anchors = [akTop, akRight]
+    Glyph.Data = {
+      7A010000424D7601000000000000760000002800000020000000100000000100
+      04000000000000010000120B0000120B00001000000010000000000000000000
+      800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00303333333333
+      333337F3333333333333303333333333333337F33FFFFF3FF3FF303300000300
+      300337FF77777F77377330000BBB0333333337777F337F33333330330BB00333
+      333337F373F773333333303330033333333337F3377333333333303333333333
+      333337F33FFFFF3FF3FF303300000300300337FF77777F77377330000BBB0333
+      333337777F337F33333330330BB00333333337F373F773333333303330033333
+      333337F3377333333333303333333333333337FFFF3FF3FFF333000003003000
+      333377777F77377733330BBB0333333333337F337F33333333330BB003333333
+      333373F773333333333330033333333333333773333333333333}
+    NumGlyphs = 2
+    OnClick = SpeedButton1Click
+  end
+  object HomeBtn: TButton
+    Left = 8
+    Top = 64
+    Width = 75
+    Height = 25
+    Caption = 'Home'
+    TabOrder = 5
+    OnClick = HomeBtnClick
+  end
+  object BackBtn: TButton
+    Left = 88
+    Top = 64
+    Width = 75
+    Height = 25
+    Caption = 'Back'
+    TabOrder = 1
+    OnClick = BackBtnClick
+  end
+  object ForwardBtn: TButton
+    Left = 168
+    Top = 64
+    Width = 75
+    Height = 25
+    Caption = 'Forward'
+    TabOrder = 2
+    OnClick = ForwardBtnClick
+  end
+  object TextBrowser: TTextBrowser
+    Left = 8
+    Top = 96
+    Width = 624
+    Height = 334
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 3
+    TextFormat = tfText
+    UnderlineLink = False
+    OnHighlightText = TextBrowserHighlightText
+    OnTextChanged = TextBrowserTextChanged
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 121
+    Height = 41
+    Caption = 'Link Color'
+    TabOrder = 4
+    object RadioButton1: TRadioButton
+      Left = 8
+      Top = 16
+      Width = 57
+      Height = 17
+      Caption = 'Blue'
+      Checked = True
+      Font.Color = clBlue
+      Font.Height = 13
+      Font.Name = 'Helvetica'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = RadioButton1Click
+    end
+    object RadioButton2: TRadioButton
+      Left = 64
+      Top = 17
+      Width = 49
+      Height = 17
+      Caption = 'Red'
+      Font.Color = clRed
+      Font.Height = 13
+      Font.Name = 'Helvetica'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      TabStop = False
+      OnClick = RadioButton2Click
+    end
+  end
+  object Label1: TLabel
+    Left = 280
+    Top = 1
+    Width = 96
+    Height = 15
+    Caption = 'Link Source Path'
+  end
+  object LinkSourceEdit: TEdit
+    Left = 280
+    Top = 16
+    Width = 313
+    Height = 23
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 6
+    OnChange = LinkSourceEditChange
+  end
+  object ReloadBtn: TButton
+    Left = 543
+    Top = 64
+    Width = 92
+    Height = 25
+    Caption = 'Reload'
+    TabOrder = 7
+    OnClick = ReloadBtnClick
+  end
+  object GroupBox2: TGroupBox
+    Left = 136
+    Top = 8
+    Width = 129
+    Height = 41
+    Caption = 'Text Color'
+    TabOrder = 8
+    object RadioButton3: TRadioButton
+      Left = 8
+      Top = 16
+      Width = 57
+      Height = 17
+      Caption = 'Black'
+      Checked = True
+      Font.Color = clBlack
+      Font.Height = 13
+      Font.Name = 'Helvetica'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = RadioButton3Click
+    end
+    object RadioButton4: TRadioButton
+      Left = 65
+      Top = 16
+      Width = 58
+      Height = 17
+      Caption = 'Green'
+      Font.Color = clGreen
+      Font.Height = 13
+      Font.Name = 'Helvetica'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      TabStop = False
+      OnClick = RadioButton4Click
+    end
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 264
+    Top = 48
+    Width = 161
+    Height = 41
+    Items.Strings = (
+      'Formatted'
+      'Plain')
+    Orientation = orHorizontal
+    Caption = 'Text Format'
+    ItemIndex = 0
+    TabOrder = 9
+    OnClick = RadioGroup1Click
+  end
+  object UnderlineCheckbox: TCheckBox
+    Left = 432
+    Top = 56
+    Width = 100
+    Height = 30
+    Caption = 'Underline Links'
+    TabOrder = 10
+    OnClick = UnderlineCheckboxClick
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 450
+    Width = 640
+    Height = 19
+    Panels = <>
+    SimplePanel = True
+    SizeGrip = False
+  end
+end

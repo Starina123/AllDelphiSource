@@ -1,0 +1,78 @@
+<!-- #include file="StdTutorialHeader.html" -->
+
+<P>Follow these instructions to configure Delphi to build and test WebSnap
+Applications. </P>
+<P><FONT SIZE="+1">Install the WebSnap Components</FONT></P>
+<BLOCKQUOTE><P>The dclwebsnap60.bpl package contains the WebSnap components and
+wizards. Skip this step if the WebSnap components are installed. When
+installed you will see a WebSnap tab on the palette and a WebSnap tab
+in the File/New/Other... dialog. </P>
+<FONT SIZE="+1"></FONT></BLOCKQUOTE>
+<BLOCKQUOTE><P><FONT><B><I>Components/Install Packages...</I></B></FONT></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><UL>
+<LI>Add...</LI>
+<LI>bin/dclwebsnap60.bpl</LI>
+<LI>OK</LI>
+</UL>
+</BLOCKQUOTE>
+<P><FONT SIZE="+1">Enable AutoSave</FONT></P>
+<BLOCKQUOTE><P>WebSnap applications contain HTML files that must be saved
+to disk before running the application. </P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P><FONT><B><I>Tools/Environment
+Options.../Preferences</I></B></FONT></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><UL>
+<LI>Check Autosave options/Editor Files</LI>
+<LI>OK</LI>
+</UL>
+<BLOCKQUOTE> </BLOCKQUOTE>
+</BLOCKQUOTE>
+<p><font size="+1">Configure Internet Environment Options</font></p>
+<BLOCKQUOTE><P>Use the Tools/Environment Options/Internet tab to configure
+  internet options.&nbsp; These steps are optional. </P>
+</BLOCKQUOTE>
+<BLOCKQUOTE><P><FONT><B><I>Tools/Environment Options.../Internet</I></B></FONT></P>
+</BLOCKQUOTE>
+<BLOCKQUOTE>
+  <UL>
+    <LI>If you have installed an HTML editor or XML editor on your system, you 
+      can configure Delphi to launch the editor. &nbsp;Choose the Edit... command. 
+      &amp;nbsp;In the Edit Action field enter the action that the editor registered 
+      with windows (e.g; Edit_with_XML_Spy). &nbsp;To see your Win2K actions, 
+      open a folder and choose Tools.../Folder Options/File Types/Advanced. Once 
+      you've configured the editor, you'll be able to launch it when a file with 
+      a matching extension is open in Delphi. &nbsp;To launch an external editor, either 
+      choose the External Editor command on the Internet Toolbar or right click 
+      on the editor and choose the html Editor command in the popup menu.</LI>
+    <LI>Choose the HTML file extension you prefer.&nbsp; The New Web Page Module 
+      wizard will create HTML files with your preferred extension.</LI>
+    <LI>Define an image file on your local system that you would like the AdapterPageProducer 
+      components to use at design time.&nbsp; At this point, the only time this 
+      image is used is when a TDataSetAdapterImageField field is bound to an TImageField 
+      in a TDataSet.&nbsp; At runtime the blob will be converted from .bmp to 
+      .jpg.&nbsp; At design-time, the sample bitmap will be displayed. </LI>
+  </UL>
+</BLOCKQUOTE>
+<p><font size="+1">Show the Internet Toolbar</font></p>
+<BLOCKQUOTE><P>The internet toolbar provides convenient access to the
+  WebSnap wizards. </P>
+  <ul>
+    <li>Right-click on an existing IDE toolbar and check Internet.</li>
+  </ul>
+</BLOCKQUOTE>
+<p>&nbsp;</p>
+<BLOCKQUOTE>
+<BLOCKQUOTE> </BLOCKQUOTE>
+</BLOCKQUOTE>
+<BLOCKQUOTE><BLOCKQUOTE>
+<BLOCKQUOTE><BLOCKQUOTE><P></P>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+    <P></P>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<!-- #include file="StdTutorialFooter.html" -->
+

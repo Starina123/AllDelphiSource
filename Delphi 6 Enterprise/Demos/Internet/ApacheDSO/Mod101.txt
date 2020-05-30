@@ -1,0 +1,60 @@
+Online DSO help from apache....
+http://httpd.apache.org/docs/misc/API.html
+http://httpd.apache.org/docs/dso.html
+
+Creating and using a DSO in a nutshell.....
+
+* Create the Module
+* Load the Module
+* Set the handler
+
+Expanded....
+
+  When compiling the module there are Three Key strings to be aware of.
+  To better explain here is an example of a Kylix Project File. 
+  Note that I've added a few lines.....
+    //-----------HelloModule.dpr---------------//
+    library HelloModule;
+
+    uses
+      WebBroker,
+      ApacheApp,
+      HelloUnit in 'HelloUnit.pas' {WebModule1: TWebModule};
+
+    {$R *.res}
+
+    exports
+      apache_module name 'Hello_module';
+
+    begin
+      ModuleName:='HelloWorld_module';
+      ContentType:= 'hello-handler';
+      Application.Initialize;
+      Application.CreateForm(TWebModule1, WebModule1);
+      Application.Run;
+    end.
+    //----------end HelloModule.dpr-------------//
+  
+  The Three Key Strings are:
+  1. the Exported name 'Hello_module'
+     This the CASE SENSITIVE value used for the LoadModule Directive
+     LoadModule Hello_module  [path to module]
+  2. The ModuleName variable  'HelloWorld_module'
+     As you can see you have the power to set this your self, however;
+     it is supposed to magically set it self to [libraryName] + '_module'.
+     This is the name used internally by the ApacheAPI as Module->Name.
+  3. The ContentType variable 'hello-handler'
+     You can also  set this yourself, else it is set for you
+     as  LowerCase(LibraryName) + '-handler';
+
+
+  Given this information, the entries http.conf file would look like this:
+
+    LoadModule Hello_module libexec/libHelloModule.so
+
+    <Location /HelloWorld>
+	    SetHandler hello-handler
+    </Location>
+
+  And the url to invoke this module would be
+  http://localhost/HelloWorld/

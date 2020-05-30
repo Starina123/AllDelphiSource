@@ -1,0 +1,129 @@
+<!-- #include file="GeneralTemplateTop.html" -->
+<div align="center">
+<b>Your pictures</b><br>
+<br>
+<form method="get">
+<table border=1 cellspacing=0 cellpadding=3 bordercolor="#0099FF">
+<tr>
+  <td align="right"><font face="Arial" size="2">Change Thumb Width:</font>  </td>
+  <td>
+  <input type="Text" value="<%=DisplayOptions.PreferredThumbWidth.DisplayText%>" name="<%=DisplayOptions.PreferredThumbWidth.InputName%>" Size="6"></td>
+  </td>
+</tr>
+<tr>
+  <td align="right"><font face="Arial" size="2">Change Column Number:</font> </td>
+  <td>
+  <input type="Text" value="<%=DisplayOptions.MaxPicsPerRow.DisplayText%>" name="<%=DisplayOptions.MaxPicsPerRow.InputName%>" Size="6"></td>
+</tr>
+<tr>
+  <td align="right"><font face="Arial" size="2">Pictures per Page:</font> </td>
+  <td>
+  <input type="Text" value="<%=DisplayOptions.MaxPicsPerPage.DisplayText%>" name="<%=DisplayOptions.MaxPicsPerPage.InputName%>" Size="6"></td>
+</tr>
+<tr>
+  <td align="middle" colspan="2">
+    <input type=hidden name="__action" value="<%=DisplayOptions.SubmitOptions.AsFieldValue%>">
+    <input type=submit class=submitButton value="Update Page">
+  </td>
+</tr>
+</table>
+</form>
+
+<%
+  // Report error in DisplayOptions.SubmitOptions
+  {
+   var e = new Enumerator(DisplayOptions.Errors)
+   if (!e.atEnd())
+     Response.Write('<p>The following error(s) happened:');
+   for (; !e.atEnd(); e.moveNext())
+   {
+    Response.Write("<li>" + e.item().Message)
+   }
+  }
+%>
+
+<%
+  {
+  // If the iterator PicturesIterator. raises any errors, it
+  // will not "announce" them on top. This will force them
+  // on top.
+  ForceError = new Enumerator(PicturesIterator.Records)
+
+  // Display server-side errors that may have occured.
+
+   var e = new Enumerator(PicturesIterator.Errors)
+   if (!e.atEnd())
+     Response.Write('<p>The following error(s) happened:');
+   for (; !e.atEnd(); e.moveNext())
+   {
+    Response.Write("<li>" + e.item().Message)
+   }
+  }
+%>
+
+<table border=1 cellspacing=0 cellpadding=3 bordercolor="#0099FF">
+    <tr>
+<%
+  picture = new Enumerator(PicturesIterator.Records);
+  count = 0;
+  i = 1;
+  for (; !picture.atEnd(); !picture.moveNext())
+  {
+
+    count++
+  %>
+
+
+        <form>
+      <td align="middle">
+        <b><font face="Arial" size="2"><%=PicturesIterator.PictureImage.DisplayText%></font></b><br><br>
+        <a href="<%=PicturesIterator.PictureImage.Image.AsHREF%>"><img src="<%=PicturesIterator.PictureThumbImage.Image.AsHREF%>" width="<%=PicturesIterator.ThumbWidth.DisplayText%>" height="<%=PicturesIterator.ThumbHeight.DisplayText%>" border="0"></a><br>
+
+
+
+    <input type=hidden name="__action" value="<%=PicturesIterator.DeletePicture.AsFieldValue%>">
+    <input type=submit class=submitButton value="Delete">
+      </td>
+        </form>
+  <%
+    if (i % PicturesIterator.PicsPerRow.Value == 0)
+    { %>
+    </tr><tr>
+ <% }
+
+    i++
+  }
+%>
+  </tr>
+</table>
+
+<P>
+<%
+  if (count == 0)
+    Response.Write('<b>You have no pictures - first upload some pictures</b>');
+%>
+
+<% if (count > 0)
+{
+     var e = new Enumerator(PicturesIterator.GotoPage.Array)
+     for (; !e.atEnd(); e.moveNext())
+     {
+       if (PicturesIterator.GotoPage.Enabled)
+       { %>
+   &lt;<a href="<%=PicturesIterator.GotoPage.LinkToPage(Page.Name, Page.Name).AsHREF%>"><%=PicturesIterator.GotoPage.DisplayLabel%></a>&gt;
+       <%
+       }
+       else
+       {%>
+   &lt;<a><%=PicturesIterator.GotoPage.DisplayLabel%></a>&gt;
+     <%}
+     }
+}
+%>
+
+<a href="/Project2.CorbinTest4?__action=46.WebPageLookModule.PicturesIterator.PictureHREFfilename.8.bugs.JPG">
+
+
+</div>
+<#STYLES><#WARNINGS><#SERVERSCRIPT>
+<!-- #include file="GeneralTemplateBottom.html" -->

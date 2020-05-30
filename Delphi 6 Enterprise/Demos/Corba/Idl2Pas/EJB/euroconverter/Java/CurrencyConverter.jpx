@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--JBuilder XML Project-->
+<project>
+  <property category="enterprise" name="appserver.fullname" value="Borland AppServer 4.5" />
+  <property category="idl" name="Compiler" value="VisiBroker 4.5" />
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.AppServerRunner" />
+  <property category="runtime.0" name="applet.vmparameters" value="-classic" />
+  <property category="runtime.0" name="application.vmparameters" value="-classic" />
+  <property category="runtime.0" name="appserver.ejbJars.1" value="C:\Projects\JBuilder4Projects\Seminars\RapidEnterpriseIntegration\CurrencyConverter\CurrencyConverter.jar" />
+  <property category="runtime.0" name="appserver.ejbJarsSaved" value="1" />
+  <property category="runtime.0" name="appserver.parameters" value="-jts -jns -jss -jdb" />
+  <property category="runtime.0" name="appserver.servername" value="ejbcontainer" />
+  <property category="runtime.0" name="appserver.vmparameters" value="" />
+  <property category="runtime.0" name="jsprunner.docbase" value="." />
+  <property category="runtime.0" name="jsprunner.jspfile" value="../../../JBuilder4/bin" />
+  <property category="runtime.0" name="jsprunner.vmparameters" value="-classic" />
+  <property category="sys" name="AuthorLabel" value="@author" />
+  <property category="sys" name="BackupPath" value="bak" />
+  <property category="sys" name="BeansInstantiate" value="false" />
+  <property category="sys" name="BraceStyle" value="0" />
+  <property category="sys" name="CheckStable" value="1" />
+  <property category="sys" name="Company" value="Borland Software Corporation" />
+  <property category="sys" name="CompanyLabel" value="Company:" />
+  <property category="sys" name="Copyright" value="Copyright (c) 2000" />
+  <property category="sys" name="CopyrightLabel" value="Copyright:" />
+  <property category="sys" name="DefaultPackage" value="currencyconverter" />
+  <property category="sys" name="Description" value="eBusiness development with Borland Products" />
+  <property category="sys" name="DescriptionLabel" value="Description:" />
+  <property category="sys" name="DocPath" value="doc" />
+  <property category="sys" name="EventMatch" value="false" />
+  <property category="sys" name="EventStyle" value="1" />
+  <property category="sys" name="ExcludeClassEnabled" value="0" />
+  <property category="sys" name="InstanceVisibility" value="0" />
+  <property category="sys" name="JDK" value="java 1.3.0-C" />
+  <property category="sys" name="LastTag" value="0" />
+  <property category="sys" name="Libraries" value="BAS 4.5;IAS 4.1" />
+  <property category="sys" name="MakeStable" value="0" />
+  <property category="sys" name="OutPath" value="classes" />
+  <property category="sys" name="SourcePath" value="src" />
+  <property category="sys" name="Title" value="Rapid Enterprise Integration" />
+  <property category="sys" name="TitleLabel" value="Title:" />
+  <property category="sys" name="Version" value="1.0" />
+  <property category="sys" name="VersionLabel" value="@version" />
+  <property category="sys" name="WorkingDirectory" value="." />
+  <property category="team" name="ignorePath.0" value="Borland_AppServer" />
+  <property category="team" name="ignorePath.1" value="Borland_AppServer" />
+  <property category="team" name="ignorePath.2" value="Borland_AppServer" />
+  <property category="team" name="ignorePath.3" value="Borland_AppServer" />
+  <file path="CurrencyConverter.ejbgrp">
+    <property category="EJBGroup" name="jarpath" value="CurrencyConverter.jar" />
+    <file path="CurrencyConverter.jar" />
+  </file>
+  <file path="CurrencyConverter.html" />
+  <file path="../../../../DelphiProjects/EuroConverter/ejb.idl">
+    <property category="generated" name="VisiBroker.IDL2Java.0" value="Sequence_of_AnyHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.1" value="Sequence_of_AnyHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.10" value="currencyconverter/EuroConverterHomeHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.11" value="currencyconverter/EuroConverterHome.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.12" value="currencyconverter/EuroConverterHomeOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.13" value="currencyconverter/EuroConverterHomePOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.14" value="currencyconverter/EuroConverterHomePOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.15" value="currencyconverter/_EuroConverterHomeStub.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.2" value="currencyconverter/EuroConverterHelper.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.3" value="currencyconverter/EuroConverterHolder.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.4" value="currencyconverter/EuroConverter.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.5" value="currencyconverter/EuroConverterOperations.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.6" value="currencyconverter/EuroConverterPOA.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.7" value="currencyconverter/EuroConverterPOATie.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.8" value="currencyconverter/_EuroConverterStub.java" />
+    <property category="generated" name="VisiBroker.IDL2Java.9" value="currencyconverter/EuroConverterHomeHelper.java" />
+  </file>
+  <file path="src/currencyconverter/EuroConverter.java" />
+  <file path="src/currencyconverter/EuroConverterBean.java" />
+  <file path="src/currencyconverter/EuroConverterBeanTestClient1.java" />
+  <file path="src/currencyconverter/EuroConverterHome.java">
+    <property category="generated" name="VisiBroker.Java2IIOP.0" value="currencyconverter/EuroConverterHelper.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.1" value="currencyconverter/EuroConverterHolder.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.10" value="currencyconverter/EuroConverterHomePOA.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.11" value="currencyconverter/_EuroConverterHome_Stub.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.2" value="currencyconverter/EuroConverterPOAInvokeHandler.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.3" value="currencyconverter/EuroConverterOperations.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.4" value="currencyconverter/EuroConverterPOA.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.5" value="currencyconverter/_EuroConverter_Stub.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.6" value="currencyconverter/EuroConverterHomeHelper.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.7" value="currencyconverter/EuroConverterHomeHolder.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.8" value="currencyconverter/EuroConverterHomePOAInvokeHandler.java" />
+    <property category="generated" name="VisiBroker.Java2IIOP.9" value="currencyconverter/EuroConverterHomeOperations.java" />
+    <property category="idl" name="GenerateIIOP" value="true" />
+  </file>
+</project>
+

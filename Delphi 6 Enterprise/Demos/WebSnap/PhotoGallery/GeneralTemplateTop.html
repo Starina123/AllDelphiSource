@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<TITLE>
+<%= Page.Title %>
+</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<font face="Arial">
+<P>
+<% if (Application.Title  != '') { %>
+ <center><font size="+2"><%= Application.Title %></font></center>
+<% } %>
+<table width="95%">
+<tr>
+  <td>
+   <font face="Arial" size="+2">
+    <%= Page.Title %>
+   </font>
+  </td>
+  <td align="right">
+    <font face="Arial" size="+1">
+    <% if (EndUser.Logout != null) {
+         if (EndUser.DisplayName != '') { %>
+        Welcome <%=EndUser.DisplayName %>
+    <%   } %>
+    <%   if (EndUser.Logout.Enabled) { %>
+     - &lt; <A HREF="<%=EndUser.Logout.AsHREF%>">Logout</A> &gt;
+    <%   } %>
+    <%   if (EndUser.LoginForm.Enabled) { %>
+      &lt; <A HREF="<%=EndUser.LoginForm.AsHREF%>">Login</A> &gt;
+    <%   } %>
+    <% } %>
+     &nbsp;&nbsp;&nbsp;&nbsp;
+    </font>
+  </td>
+</tr>
+</table>
+
+<style>
+<!--
+A.custom {
+    color: #FFFFFF;
+	text-decoration: none; 
+}
+A.custom:hover {
+	color:#0000FF; 
+}
+.submitButton { 
+  color: #FFFFFF;  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 9pt; 
+  font-style: bold; 
+  background-color: #0099FF;
+}
+-->
+</style>
+
+<br>
+<table valign="top" height="18" width="95%" bgcolor="#0099FF">
+<tr>
+  <td>
+    <font color="#FFFFFF" face="Arial" size="2">
+<%
+  e = new Enumerator(Pages)
+  s = ''
+  c = 0
+  for (; !e.atEnd(); e.moveNext())
+  {
+   if (e.item().Published)
+   {
+    // Check if the user has rights to view this page
+    if (e.item().CanView)
+    {
+      if (Page.Name != e.item().Name)
+        s = s + '&lt;<A class="custom" href="' + e.item().HREF + '">' + e.item().Title + '</A>&gt; &nbsp; &nbsp; &nbsp;'
+      else
+        s = s + '&lt;' + e.item().Title + '&gt; &nbsp; &nbsp;'
+      c++
+    }
+   }
+  }
+  if (c>1) Response.Write(s)
+%>
+    </font>
+  </td>
+</tr>
+</table>
+
+<P><%=Page.Description%>
+
+</font>

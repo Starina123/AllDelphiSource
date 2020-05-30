@@ -1,0 +1,27 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = richedit.exe richedit.ENU richedit.FRA richedit.DEU
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+richedit.exe: richedit.dpr
+  $(DCC)
+
+richedit.ENU: Enu\richedit.dpr
+  $(DCC)
+
+richedit.FRA: Fra\richedit.dpr
+  $(DCC)
+
+richedit.DEU: Deu\richedit.dpr
+  $(DCC)

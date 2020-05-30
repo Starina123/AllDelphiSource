@@ -1,0 +1,14 @@
+/****************************************************************************
+
+template.rc
+
+produced by Borland Resource Workshop
+
+
+*****************************************************************************/
+#define HTML 23  // HTML resource identifier
+#define XSL  24  // XSL resource identifier
+
+StdDemo HTML StdDemo.html
+xslsample XSL  sample.xsl
+

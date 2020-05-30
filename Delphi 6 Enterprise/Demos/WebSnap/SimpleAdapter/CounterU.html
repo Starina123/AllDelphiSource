@@ -1,0 +1,30 @@
+<!-- #include file="..\include\StdDemoHeader.html" -->
+
+<H2>Count: <%=Adapter.Count.DisplayText %></H2>
+
+<FORM NAME="F" METHOD=POST>
+<INPUT TYPE=HIDDEN NAME="__action" VALUE="<%=Adapter.Increment.AsFieldValue%>">
+<INPUT TYPE=SUBMIT VALUE="<%=Adapter.Increment.DisplayLabel%>"
+  onclick="F.__action.value='<%=Adapter.Increment.AsFieldValue%>'">
+<INPUT TYPE=SUBMIT VALUE="<%=Adapter.Dec.DisplayLabel%>"
+  onclick="F.__action.value='<%=Adapter.Dec.AsFieldValue%>'">
+<BR><BR>
+<INPUT TYPE=INPUT VALUE="<%=Adapter.Arg1.EditText%>" NAME="<%=Adapter.Arg1.InputName%>">
+<BR>
+<INPUT TYPE=SUBMIT VALUE="<%=Adapter.Add.DisplayLabel%>"
+  onclick="F.__action.value='<%=Adapter.Add.AsFieldValue%>'">
+<INPUT TYPE=SUBMIT VALUE="<%=Adapter.Subtract.DisplayLabel%>"
+  onclick="F.__action.value='<%=Adapter.Subtract.AsFieldValue%>'">
+</FORM>
+
+<%   // Display server side errors
+     e = new Enumerator(Adapter.Errors)
+     for (; !e.atEnd(); e.moveNext())
+     {
+%>
+<%=    "<li>" + e.item().Message %>
+<%   }
+%>
+
+<!-- #include file="..\include\StdDemoFooter.html" -->
+

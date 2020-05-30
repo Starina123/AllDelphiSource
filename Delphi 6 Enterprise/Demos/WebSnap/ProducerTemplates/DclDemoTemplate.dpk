@@ -1,0 +1,42 @@
+package DclDemoTemplate;
+
+{$R *.res}
+{$R 'templates.res'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $5202FFFF}
+{$DESCRIPTION 'Sample WebSnap Templates'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  dclwebsnap,
+  TemplateRes;
+
+{%RC 'templates.rc'}
+{%File 'StdDemo.html'}
+{%File 'sample.xsl'}
+{%File 'readme.txt'}
+
+contains
+  DemoTemplates in 'DemoTemplates.pas';
+
+end.

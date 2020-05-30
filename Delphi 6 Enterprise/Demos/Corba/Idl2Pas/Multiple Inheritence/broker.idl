@@ -1,0 +1,16 @@
+module Broker {
+
+	interface MoneyMarket {
+    		float interest_rate();
+	};
+
+	interface MarginAccount {
+		float margin_rate();
+	};
+
+	interface InvestmentAccount: MoneyMarket, MarginAccount {
+    		float balance();
+	};
+
+};
+

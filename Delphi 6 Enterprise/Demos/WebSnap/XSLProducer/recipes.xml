@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Recipe>
+   <Name>Lime Jello Marshmallow Cottage Cheese Surprise</Name>
+   <Description>
+     My grandma's favorite (may she rest in peace).
+   </Description>
+   <Ingredients>
+      <Ingredient>
+         <Qty unit="box">1</Qty>
+         <Item>lime gelatin</Item>
+      </Ingredient>
+      <Ingredient>
+         <Qty unit="g">500</Qty>
+         <Item>multicolored tiny marshmallows</Item>
+      </Ingredient>
+      <Ingredient>
+         <Qty unit="ml">500</Qty>
+         <Item>Cottage cheese</Item>
+      </Ingredient>
+      <Ingredient>
+         <Qty unit="dash"/>
+         <Item optional="1">Tabasco sauce</Item>
+      </Ingredient>
+   </Ingredients>
+   <Instructions>
+      <Step>
+Prepare lime gelatin according to package instructions
+      </Step>
+      <!-- And so on... -->
+   </Instructions>
+</Recipe>
+
+

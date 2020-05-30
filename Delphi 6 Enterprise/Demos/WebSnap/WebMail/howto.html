@@ -1,0 +1,465 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>WebSnap Email Application</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<P><font size="+1">Creating a WebSnap Email Application</font><br>
+<br>
+by <a href="mailto:cdunn@borland.com">Corbin Dunn</a></P>
+
+<P>We have all seen applications that allow you to check your email on a
+web page. This document gives step-by-step instructions on how to create
+a WebSnap application that allows you to check your email from a web
+page.</P>
+
+<P>First, select <strong>File->New->Other...</strong> and from the <strong>WebSnap</strong> tab select <strong>WebSnap Application.</strong>
+
+<P>For ease of debugging, select a <strong>Web App Debugger executable</strong>, and give it a <strong>CoClass Name</strong> of <strong>WebMail</strong>. Press the <strong>Components...</strong> button and check the following:
+<ul>
+<li>Application Adapter</li>
+<li>End User Adapter</li>
+<li>Page Dispatcher</li>
+<li>Adapter Dispatcher</li>
+<li>Sessions Service</li>
+</ul>
+
+For the End User Adapter, select the <b>TEndUserSessionAdapter</b>. Leave all
+the others with the defaults. Close the dialog with the <b>OK</b> button.
+Rename the <b>Page Name</b> to be MainModule and then close the <b>New WebSnap
+Application</b> dialog with its <b>OK</b> button.
+
+</P>
+
+<P>Select <strong>File->New->Other...</strong> and from the <strong>WebSnap</strong> tab select <strong>WebSnap Page Module</strong> to create another page. Name it <strong>LoginModule</strong> and uncheck <strong>Published</strong>. Create another page, naming it <strong>ViewMailModule</strong>, but leave <strong>Published</strong> checked and also check <strong>Login Required.</strong> Finally, create one more page named <strong>EmailMessageModule</strong>, unchecking the <strong>Published</strong> option.</p>
+
+<P>Select <strong>File->Save All</strong> and save the project into a new folder of your choice. Save Unit5.pas (EmailMessageModule) as EmailMessageMod.pas, Unit4.pas (ViewMailModule) as ViewMailMod.pas, Unit3.pas (LoginModule) as LoginMod.pas, 
+Unit2.pas (MainModule) as <strong>MainMod.pas</strong>, Unit1.pas (Form1) as <strong>MainFrm.pas</strong> and Project1.dpr (Project1) as <strong>WebMailApp.dpr</strong>.
+</P>
+
+<P>The first thing to do is to create the Login page. On the LoginModule, place a TLoginFormAdapter. We want to replace the PageProducer with a TAdapterPageProducer, so select PageProducer and delete it. Place a TAdapterPageProducer on the LoginModule. Click anywhere on the LoginModule make sure that the PageProducer property in the <strong>Object Inspector</strong> now says AdapterPageProducer1. Double-click on the LoginFormAdapter1 to bring up the Fields editor. Right click in the right-hand pane and select <strong>Add all fields</strong>.
+
+<P>Double-click on the AdapterPageProducer1 to bring up the web page editor, and then right-click on the AdapterPageProducer1 and select <strong>New Component...</strong>. Add an AdapterForm. Select the AdapterForm1, right-click on it, and select <strong>New Component...</strong> to add an AdapterFieldGroup. Select the AdapterFieldGroup1 and in the <strong>Object Inspector</strong> set the Adapter property to be <strong>LoginFormAdapter1</strong>. Now, right click on the AdapterForm1 and select <strong>New Component...</strong> to add an <strong>AdapterCommandGroup</strong>. Select the <strong>AdapterCommandGroup1</strong> and set the <strong>DisplayComponent</strong> property to be <strong>AdapterFieldGroup1</strong>. Next, right click on the AdapterForm1 and from <strong>New Component...</strong> select <strong>AdapterErrorList</strong>. Then, select the AdapterErrorList1 and set the Adapter to be the LoginFormAdapter1. If you want errors to appear on top of everything else, drag the AdapterErrorList1 to the top of the list.</P>
+ 
+<P>We now have to make the associated HTML page display the information on the LoginFormAdapter1. To do this, select the LoginMod.html file from the tabs at the bottom of the <strong>Code Editor</strong>. Before the closing BODY tag, add:<br> &lt;#SERVERSCRIPT&gt; If you take a look at the preview, you should see the edit boxes to login with.</P> 
+
+<P>Now, add a <strong>TIdPop3</strong> component from the <strong>Indy Clients</strong> tab to the ViewMailModule and rename it to be popEmail. Set the <strong>Host</strong> property of the popEmail component to be your email server's POP3 hostname (such as, mail.your-host.com). Under the function ViewMailModule in the interface, add the following constants:
+
+<pre class="sourcecode"><code><b>const</b>
+  cUserName = <font color="#9933CC">'UserName'</font>;
+  cPassword = <font color="#9933CC">'Password'</font>;
+</code></pre>
+
+Then, in the LoginModule's LoginFormAdapter1, double-click on the <strong>OnLogin</strong> event and add the code in the event handler:
+
+<pre class="sourcecode"><code><b>procedure</b> TLoginModule.LoginFormAdapter1Login(Sender: TObject;
+  UserID: Variant);
+<b>begin</b>
+  <font color="#003399"><i>// Try to log them in and verify the username/pass are correct</i></font>
+  <b>with</b> ViewMailModule <b>do</b>
+  <b>begin</b>
+    <b>if</b> popEmail.Connected <b>then</b>
+    <b>begin</b>
+      <b>try</b>
+        popEmail.Disconnect;
+      <b>except</b>
+      <b>end</b>;
+    <b>end</b>;
+    <b>if</b> AdaptUserName.ActionValue &lt;&gt; <b>nil</b> <b>then</b>
+      popEmail.UserId := AdaptUserName.ActionValue.Values[0]
+    <b>else</b>
+      <b>raise</b> Exception.Create(<font color="#9933CC">'No user name passed from web page!'</font>);
+
+    <b>if</b> AdaptPassword.ActionValue &lt;&gt; <b>nil</b> <b>then</b>
+      popEmail.Password := AdaptPassword.ActionValue.Values[0]
+    <b>else</b>
+      <b>raise</b> Exception.Create(<font color="#9933CC">'No password passed from web page!'</font>);
+
+    <font color="#003399"><i>// Try to connect, which will test the username and password</i></font>
+    <font color="#003399"><i>// against the mail server</i></font>
+    <b>try</b>
+      popEmail.Connect;                
+    <b>finally</b>
+      <b>try</b>
+        popEmail.Disconnect;
+      <b>except</b>
+      <b>end</b>;
+    <b>end</b>;
+    <font color="#003399"><i>// On a successful login, save the users information in a session.</i></font>
+    WebContext.Session.Values[cUserName] := popEmail.UserId;
+    WebContext.Session.Values[cPassword] := popEmail.Password;
+  <b>end</b>;
+<b>end</b>;
+
+</code></pre>
+You will have to add ViewMailMod to the uses list to make it compile. 
+</P>
+
+<P>Now that the login page is completed, we need to tell the application to use this login page. Select the <strong>EndUserSessionAdapter</strong> from the <strong>MainModule</strong> and in the <strong>Object Inspector</strong> set the <strong>LoginPage</strong> property to be <strong>LoginModule</strong> (you will have to type in the string).  </P>
+
+<P>Next, open back up the ViewMailModule. Add a TIdMessage (from the Indy Misc tab) to the ViewMailModule and name it <strong>msgEmail</strong>. We want to expose the email headers to the web page and use Javascript to iterate through all the messages. First, lets tackle the iteration part. Add the following to the private section of the TViewMailModule:
+
+<pre class="sourcecode"><code>  <b>private</b>
+    <font color="#003399"><i>{ Private declarations }</i></font>
+    FMessageId: Integer;
+    FMessageCount: Integer;
+    FMessageSubject: <b>string</b>;
+    FMessageFromName: <b>string</b>;
+    FMessageFromEmail: <b>string</b>;
+    FMessageDate: <b>string</b>;
+    FMessageSize: Integer;
+</code></pre>
+    
+These private data fields will allow us to keep track of what message we are on, and all the associated items in that message.    
+<br>
+<br>
+
+Next, place a <strong>TAdapter</strong> on the <b>ViewMailModule</b> and rename it to be <strong>EmailAdapter</strong>. Select the EmailAdapter and double-click on the <strong>OnIterateRecords</strong> event. Add the following code, allowing us
+to iterate through all the emails:
+    
+<pre class="sourcecode"><code><b>procedure</b> TViewMailModule.EmailAdapterIterateRecords(Sender: TObject;
+  Action: TIteratorMethod; <b>var</b> EOF: Boolean);
+
+  <b>procedure</b> FillInMessageInfo;
+  <b>begin</b>
+    msgEmail.Clear;
+    popEmail.RetrieveHeader(FMessageId, msgEmail);
+    FMessageSubject := msgEmail.Subject;
+    FMessageFromName := msgEmail.From.Name;
+    FMessageFromEmail := msgEmail.From.Address;
+    FMessageDate := DateTimeToStr(msgEmail.Date);
+  <b>end</b>;
+
+<b>begin</b>
+  <b>if</b> Action = itStart <b>then</b>
+  <b>begin</b>
+    <font color="#003399"><i>// Connect to the server, using the user name and password stored</i></font>
+    <font color="#003399"><i>// in the session.</i></font>
+    <b>if</b> popEmail.Connected <b>then</b>
+    <b>begin</b>
+      <b>try</b>
+        popEmail.Disconnect
+      <b>except</b>
+      <b>end</b>;
+    <b>end</b>;
+    popEmail.UserId := WebContext.Session.Values[cUserName];
+    popEmail.Password := WebContext.Session.Values[cPassword];
+    popEmail.Connect;
+    <font color="#003399"><i>// Find out the message count</i></font>
+    FMessageCount := popEmail.CheckMessages;
+    FMessageId := 0;
+    EOF := FMessageCount = 0;
+  <b>end</b>
+  <b>else</b> <b>if</b> Action = itNext <b>then</b>
+  <b>begin</b>
+    Inc(FMessageId);
+    EOF := FMessageId &gt;= FMessageCount;
+  <b>end</b>
+  <b>else</b>
+    EOF := True;
+
+  <b>if</b> <b>not</b> EOF <b>then</b>
+    FillInMessageInfo;
+<b>end</b>;
+</code></pre>    
+
+Notice how a different code is done depending on what Action the iterator is going through.
+<br>
+<br>
+
+Double-click on the EmailAdapter, right-click on the right-hand pane and add the following  <strong>AdapterField</strong>'s named: MessageId, MessageSubject, MessageFromName, MessageFromEmail, MessageSize, MessageDate and MessageCount. Select MessageId from the list and double-click on the <strong>OnGetValue</strong> event in the <strong>Object Inspector</strong>. Add the following code:
+
+<pre class="sourcecode"><code><b>procedure</b> TViewMailModule.MessageIdGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageId;
+<b>end</b>;
+</code></pre>
+
+<P>Repeat for the other AdapterFields, with using the respective private data member:</P>
+
+<pre class="sourcecode"><code><b>procedure</b> TViewMailModule.MessageSubjectGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageSubject;
+<b>end</b>;
+
+<b>procedure</b> TViewMailModule.MessageFromNameGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageFromName;
+<b>end</b>;
+
+<b>procedure</b> TViewMailModule.MessageDateGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageDate;
+<b>end</b>;
+
+<b>procedure</b> TViewMailModule.MessageFromEmailGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageFromEmail;
+<b>end</b>;
+
+<b>procedure</b> TViewMailModule.MessageSizeGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageSize;
+<b>end</b>;
+
+<b>procedure</b> TViewMailModule.MessageCountGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageCount;
+<b>end</b>;
+</code></pre>
+
+<P>The AdapterFields are what allows you to access your data with Javascript from an HTML page.<br>
+<br>
+Now, we need the ability to allow the user to view a particular email message. We will create an <strong>Action</strong> to do this. Select the <strong>EmailAdapter</strong> and click on the <strong>Actions</strong> property in the <strong>Object Inspector</strong> to bring up the Actions list editor. Click the <strong>New Item</strong> button and add a new <strong>AdapterAction</strong>. Rename it to GetEmail. We need to add a parameter of what email message that the GetEmail action should be associated with. In the <strong>Object Inspector</strong>'s <strong>Events</strong> for the GetEmail AdapterAction, double-click on the <strong>OnGetParams</strong> event and add the following code:
+
+<pre class="sourcecode"><code><b>procedure</b> TViewMailModule.GetEmailGetParams(Sender: TObject;
+  Params: TStrings);
+<b>begin</b>
+  Params.Values[<font color="#9933CC">'id'</font>] := IntToStr(FMessageId);
+<b>end</b>;
+</code></pre>
+
+Now, we need to specify what happens when this action is invoked. Double-click on the <strong>OnExecute</strong> event and add the following code:
+
+<pre class="sourcecode"><code><b>procedure</b> TViewMailModule.GetEmailExecute(Sender: TObject;
+  Params: TStrings);
+<b>begin</b>
+  <b>if</b> (Params.Values[<font color="#9933CC">'id'</font>] &lt;&gt; <font color="#9933CC">''</font>) <b>and</b> (WebContext.EndUser.LoggedIn) <b>then</b>
+    DispatchPageName(EmailMessageModule.Name, Response, []);
+<b>end</b>;
+</code></pre>
+
+The DispatchPageName will return a Response with the EmailMessageModule page. Since the EmailMessageModule is not Published, this will be the only way to access this page. To make this compile, you will have to add <strong>EmailMessageMod</strong> and <strong>WebDisp</strong> to your uses list for the ViewMailMod unit. </P>
+
+<P>Now, we want to add Javascript that interacts with the EmailAdapter. Open the ViewMailMod.html page by clicking on the tab at the bottom of the <strong>Code Editor</strong>. We can write javascript accessing any TAdapter's <strong>Data</strong> or <strong>Actions</strong> with things such as: AdapterName.AdapterFieldName.Value or AdapterName.AdapterFieldName.DisplayText. Select the ViewMailMod.html tab at the bottom of the code editor and add the following HTML just above the closing BODY tag:
+
+<pre>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT>
+  <FONT COLOR=GREEN><I>// Display server-side errors that may have occured.
+</I></FONT>  errors <FONT COLOR=BLUE SIZE=+1>=</FONT> <FONT COLOR=BLUE SIZE=+1>new</FONT> Enumerator<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT>EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Errors<FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+  <FONT COLOR=RED><B>if</B></FONT> <FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1>!</FONT>errors<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>atEnd<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+   Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'&lt;p&gt;The following error(s) happened:'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+  <FONT COLOR=RED><B>for</B></FONT> <FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT> <FONT COLOR=BLUE SIZE=+1>!</FONT>errors<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>atEnd<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT> errors<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>moveNext<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+    Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>"&lt;li&gt;"</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT> errors<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>item<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Message<FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+
+  <FONT COLOR=GREEN><I>// The call to the EmailAdapter's records starts the iteration,
+</I></FONT>  <FONT COLOR=GREEN><I>// and fills in the MessageCount
+</I></FONT>  emails <FONT COLOR=BLUE SIZE=+1>=</FONT> <FONT COLOR=BLUE SIZE=+1>new</FONT> Enumerator<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT>EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Records<FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+  <FONT COLOR=RED><B>if</B></FONT> <FONT COLOR=BLUE SIZE=+1><B>(</B></FONT>EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageCount<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Value <FONT COLOR=BLUE SIZE=+1>&gt;</FONT> <FONT COLOR=BROWN>0</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+  <FONT COLOR=BLUE SIZE=+1><B>{</B></FONT>
+    <FONT COLOR=RED><B>var</B></FONT> i <FONT COLOR=BLUE SIZE=+1>=</FONT> <FONT COLOR=BROWN>0</FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>p<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>You have <FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>=</FONT>EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageCount<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT> messages<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>br<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>center<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>table width<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"90%"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>tr<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT>td bgcolor<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"#DCDCDC"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>font
+    face<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"Arial, Helvetica"</FONT> size<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"2"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>Id<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>font<FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>td<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT>td bgcolor<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"#DCDCDC"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>font
+    face<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"Arial, Helvetica"</FONT> size<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"2"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>Message<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>font<FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>td<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT>td bgcolor<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"#DCDCDC"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>font
+    face<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"Arial, Helvetica"</FONT> size<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"2"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>Date<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>font<FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>td<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT>td bgcolor<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"#DCDCDC"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>font
+    face<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"Arial, Helvetica"</FONT> size<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"2"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>Size<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>font<FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>td<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>tr<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT>
+    <FONT COLOR=RED><B>for</B></FONT> <FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT><FONT COLOR=BLUE SIZE=+1>!</FONT>emails<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>atEnd<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT> emails<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>moveNext<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+    <FONT COLOR=BLUE SIZE=+1><B>{</B></FONT>
+      Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'&lt;tr&gt;'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+      <FONT COLOR=RED><B>var</B></FONT> color<FONT COLOR=BLUE SIZE=+1><B>;</B></FONT> <FONT COLOR=GREEN><I>// Color every other row
+</I></FONT>      <FONT COLOR=RED><B>if</B></FONT> <FONT COLOR=BLUE SIZE=+1><B>(</B></FONT>i <FONT COLOR=BLUE SIZE=+1>%</FONT> <FONT COLOR=BROWN>2</FONT> <FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=BLUE SIZE=+1>=</FONT> <FONT COLOR=BROWN>0</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+        color <FONT COLOR=BLUE SIZE=+1>=</FONT> <FONT COLOR=PURPLE>'bgcolor="#DCDCDC"'</FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+      <FONT COLOR=RED><B>else</B></FONT>
+        color <FONT COLOR=BLUE SIZE=+1>=</FONT> <FONT COLOR=PURPLE>''</FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+
+        
+      Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'&lt;td '</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT> color <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'&gt;'</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT>
+        EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageId<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'&lt;/td&gt;\n'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+      <FONT COLOR=GREEN><I>// For the message subject, create a link to the EmailMessageModule
+</I></FONT>      <FONT COLOR=GREEN><I>// to display that message.
+</I></FONT>      Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'&lt;td '</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT> color <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'&gt;&lt;b&gt;Subject:&lt;/b&gt; '</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT>
+        <FONT COLOR=PURPLE>'&lt;a href="'</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT> EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>GetEmail<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>AsHREF <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'"&gt;'</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT>
+        EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageSubject<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'&lt;/a&gt;&lt;br&gt;'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+
+      Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT>
+        <FONT COLOR=PURPLE>'&lt;b&gt;From:&lt;/b&gt; '</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT> EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageFromName<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText <FONT COLOR=BLUE SIZE=+1>+</FONT>
+        <FONT COLOR=PURPLE>' &amp;lt;&lt;a href="mailto:'</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT>
+        EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageFromEmail<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText <FONT COLOR=BLUE SIZE=+1>+</FONT>
+        <FONT COLOR=PURPLE>'"&gt;'</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT> EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageFromEmail<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'&lt;/a&gt;&amp;gt;'</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT>
+        <FONT COLOR=PURPLE>'&lt;/td&gt;\n'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+      Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'&lt;td '</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT> color <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'&gt;'</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT>
+        EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageDate<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'&lt;/td&gt;\n'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+      Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'&lt;td '</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT> color <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'&gt;'</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT>
+     EmailAdapter<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageSize<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText <FONT COLOR=BLUE SIZE=+1>+</FONT> <FONT COLOR=PURPLE>'&lt;/td&gt;\n'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+
+      Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'&lt;/tr&gt;'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+      i<FONT COLOR=BLUE SIZE=+1><FONT COLOR=BLUE SIZE=+1>+</FONT><FONT COLOR=BLUE SIZE=+1>+</FONT></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+    <FONT COLOR=BLUE SIZE=+1><B>}</B></FONT>
+
+<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>table<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>center<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT>
+  <FONT COLOR=BLUE SIZE=+1><B>}</B></FONT>
+  <FONT COLOR=RED><B>else</B></FONT>
+    Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'&lt;P&gt;You have no messages waiting.&lt;br&gt;'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+</pre>
+
+Finally, we need to work on the EmailMessageModule to allow the user to display a particular message. Add a TAdapter to the <strong>EmailMessageModule</strong> and name it <strong>EmailMessage</strong>.  Double-click on the EmailMessage Adapter and add the following new <strong>AdapterFields</strong>: StartMessage, MessageId, MessageFromName, MessageFromEmail, MessageSubject, MessageDate and MessageBody. Add the following to the private section of the EmailMessageModule:
+
+<pre class="sourcecode"><code>    <font color="#003399"><i>{ Private declarations }</i></font>
+    FMessageId: Integer;
+    FMessageSubject: <b>string</b>;
+    FMessageFromName: <b>string</b>;
+    FMessageFromEmail: <b>string</b>;
+    FMessageDate: <b>string</b>;
+    FMessageBody: <b>string</b>;
+</code></pre>
+
+Select the <strong>StartMessage</strong> AdapterField and in the <strong>OnGetValue</strong> Event add the following code:
+
+<pre class="sourcecode"><code>
+<b>procedure</b> TEmailMessageModule.StartMessageGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := False; <font color="#003399"><i>// Failure</i></font>
+
+  <b>if</b> Request.QueryFields.Values[<font color="#9933CC">'id'</font>] &lt;&gt; <font color="#9933CC">''</font> <b>then</b>
+  <b>begin</b>
+    FMessageId := StrToInt(Request.QueryFields.Values[<font color="#9933CC">'id'</font>]);
+
+    <b>with</b> ViewMailModule <b>do</b>
+    <b>begin</b>
+      popEmail.UserId := WebContext.Session.Values[cUserName];
+      popEmail.Password := WebContext.Session.Values[cPassword];
+      popEmail.Connect;
+      <b>try</b>
+        msgEmail.Clear;
+        popEmail.Retrieve(FMessageId, msgEmail);
+
+        FMessageSubject := msgEmail.Subject;
+        FMessageFromName := msgEmail.From.Name;
+        FMessageFromEmail := msgEmail.From.Address;
+        FMessageDate := DateTimeToStr(msgEmail.Date);
+        FMessageBody := msgEmail.Body.Text;
+
+        Value := True;
+      <b>finally</b>
+        <b>try</b>
+          popEmail.Disconnect;
+        <b>except</b>
+        <b>end</b>
+      <b>end</b>;
+    <b>end</b>;
+  <b>end</b>
+  <b>else</b>
+    <b>raise</b> Exception.Create(<font color="#9933CC">'No valid message id passed to the EmailMessageModule'</font>);
+<b>end</b>;
+</code></pre>
+
+Be sure to add <b>ViewMailMod</b> to your lower uses list (in the implementation section) of the <b>EmailMessageMod</b> to make the code compile. Adding it to the upper uses list (the interface section) may give you a "circular reference" error. 
+<br>
+<br>With Javascript in the associated HTML page, we will access <strong>EmailMessage.StartMessage.Value</strong> to see if the user could sucessfully logon to the email server and retrive the requested email. 
+<br>
+<br>
+For the <strong>OnGetValue</strong> Events of the other TAdapterFields, add the following code:
+
+<pre class="sourcecode"><code><b>procedure</b> TEmailMessageModule.MessageIdGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageId;
+<b>end</b>;
+
+<b>procedure</b> TEmailMessageModule.MessageFromNameGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageFromName;
+<b>end</b>;
+
+<b>procedure</b> TEmailMessageModule.MessageFromEmailGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageFromEmail; 
+<b>end</b>;
+
+<b>procedure</b> TEmailMessageModule.MessageSubjectGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageSubject; 
+<b>end</b>;
+
+<b>procedure</b> TEmailMessageModule.MessageDateGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageDate;  
+<b>end</b>;
+
+<b>procedure</b> TEmailMessageModule.MessageBodyGetValue(Sender: TObject;
+  <b>var</b> Value: Variant);
+<b>begin</b>
+  Value := FMessageBody;
+<b>end</b>;
+
+</code></pre>
+  
+Finally, we have to add HTML to the EmailMessageMod.html page, above the closing BODY tag:<br>
+
+<pre>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>P<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT>
+  <FONT COLOR=GREEN><I>// First, see if we can view the message
+</I></FONT>  <FONT COLOR=RED><B>if</B></FONT> <FONT COLOR=BLUE SIZE=+1><B>(</B></FONT>EmailMessage<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>StartMessage<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Value<FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+  <FONT COLOR=BLUE SIZE=+1><B>{</B></FONT>
+<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>table width<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"100%"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>tr<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT>td bgcolor<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"#DCDCDC"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>From<FONT COLOR=BLUE SIZE=+1>:</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT> <FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>=</FONT>EmailMessage<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageFromName<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+    <FONT COLOR=BLUE SIZE=+1>&lt;</FONT>a href<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"mailto:&lt;%=EmailMessage.MessageFromEmail.DisplayText%&gt;"</FONT>
+      <FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>=</FONT>EmailMessage<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageFromEmail<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>a<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>td<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT>td bgcolor<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"#DCDCDC"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>Date<FONT COLOR=BLUE SIZE=+1>:</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT> <FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>=</FONT>EmailMessage<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageDate<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>td<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>tr<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>tr<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT>td bgcolor<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"#DCDCDC"</FONT> colspan<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"2"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>Subject<FONT COLOR=BLUE SIZE=+1>:</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>b<FONT COLOR=BLUE SIZE=+1>&gt;</FONT> <FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>=</FONT>EmailMessage<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageSubject<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT><FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>td<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>tr<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>tr<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT>td colspan<FONT COLOR=BLUE SIZE=+1>=</FONT><FONT COLOR=PURPLE>"2"</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT>pre<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>=</FONT>EmailMessage<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>MessageBody<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>DisplayText<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>pre<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+  <FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>td<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>tr<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>/</FONT>table<FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+<FONT COLOR=BLUE SIZE=+1>&lt;</FONT><FONT COLOR=BLUE SIZE=+1>%</FONT>
+  <FONT COLOR=BLUE SIZE=+1><B>}</B></FONT>
+  <FONT COLOR=RED><B>else</B></FONT>
+    Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'Can not display the given email message id&lt;br&gt;'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+
+  errors <FONT COLOR=BLUE SIZE=+1>=</FONT> <FONT COLOR=BLUE SIZE=+1>new</FONT> Enumerator<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT>EmailMessage<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Errors<FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+  <FONT COLOR=RED><B>if</B></FONT> <FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1>!</FONT>errors<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>atEnd<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+   Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>'&lt;p&gt;The following error(s) happened:'</FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT>
+  <FONT COLOR=RED><B>for</B></FONT> <FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT> <FONT COLOR=BLUE SIZE=+1>!</FONT>errors<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>atEnd<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>;</B></FONT> errors<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>moveNext<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>
+    Response<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Write<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=PURPLE>"&lt;li&gt;"</FONT> <FONT COLOR=BLUE SIZE=+1>+</FONT> errors<FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>item<FONT COLOR=BLUE SIZE=+1><B>(</B></FONT><FONT COLOR=BLUE SIZE=+1><B>)</B></FONT><FONT COLOR=BLUE SIZE=+1><B>.</B></FONT>Message<FONT COLOR=BLUE SIZE=+1><B>)</B></FONT>    
+<FONT COLOR=BLUE SIZE=+1>%</FONT><FONT COLOR=BLUE SIZE=+1>&gt;</FONT>
+</pre>
+
+<P>Run the application by pressing F9. Start the <strong>Web App Debugger</strong> and click on the default URL. Select <strong>WebMailApp.WebMail</strong> from the list. You should now be able to login to your email account and check your messages. Note that the WebMailApp.exe must stay running to keep the session active.</P>
+
+</P>
+</body>
+</html>

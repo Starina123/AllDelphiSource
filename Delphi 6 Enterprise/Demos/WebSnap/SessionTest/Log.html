@@ -1,0 +1,9 @@
+<TABLE>
+  <TH>Log
+  <%   var e = new Enumerator(Modules.Home.Log.Records)
+     for (; !e.atEnd(); e.moveNext())
+     { %>
+  <TR><TD>&nbsp;<%= Modules.Home.Log.ValueField.DisplayText %>
+  <%
+     } %>
+</TABLE>
