@@ -1,0 +1,264 @@
+
+STRINGTABLE
+{
+ 65328,  "Index incorrect"
+ 65329,  "Impossible d'insérer un élément"
+ 65330,  "Propriétaire incorrect"
+ 65331,  "Erreur d'insertion de ligne RichEdit"
+ 65332,  "Erreur au chargement de flux"
+ 65333,  "Erreur à l'enregistrement de flux"
+ 65334,  "%s est déjà associé avec %s"
+}
+
+
+STRINGTABLE
+{
+ 65344,  "Gauche"
+ 65345,  "Haut"
+ 65346,  "Droite"
+ 65347,  "Bas"
+ 65348,  "Ins"
+ 65349,  "Suppr"
+ 65350,  "Maj+"
+ 65351,  "Ctrl+"
+ 65352,  "Alt+"
+ 65353,  "Impossible d'insérer une ligne"
+ 65354,  "Le Presse-papiers ne supporte pas les icônes"
+ 65355,  "Le texte dépasse la capacité du mémo"
+ 65356,  "Opération non supportée par l'imprimante sélectionnée"
+ 65357,  "Aucune imprimante par défaut sélectionnée"
+ 65358,  "Index de bits hors limites"
+ 65359,  "Le menu '%s' est déjà utilisé par une autre fiche"
+}
+
+
+STRINGTABLE
+{
+ 65360,  "A&ide"
+ 65361,  "&Abandon"
+ 65362,  "&Retenter"
+ 65363,  "I&gnorer"
+ 65364,  "&Tout"
+ 65365,  "Non &pour tout"
+ 65366,  "O&ui pour tout"
+ 65367,  "RetArr"
+ 65368,  "Tab"
+ 65369,  "Echap"
+ 65370,  "Entrée"
+ 65371,  "Espace"
+ 65372,  "PagePréc"
+ 65373,  "PageSuiv"
+ 65374,  "Fin"
+ 65375,  "Origine"
+}
+
+
+STRINGTABLE
+{
+ 65376,  "Abandon"
+ 65377,  "&Tout"
+ 65378,  "Impossible de glisser une fiche"
+ 65379,  "MetaFichiers"
+ 65380,  "MétaFichiers améliorés"
+ 65381,  "Icônes"
+ 65382,  "Bitmaps"
+ 65383,  "Valeur de propriété incorrecte"
+ 65384,  "Avertissement"
+ 65385,  "Erreur"
+ 65386,  "Information"
+ 65387,  "Confirmation"
+ 65388,  "&Oui"
+ 65389,  "&Non"
+ 65390,  "OK"
+ 65391,  "Annuler"
+}
+
+
+STRINGTABLE
+{
+ 65392,  "Pas assez de timers disponibles"
+ 65393,  "L'imprimante n'imprime pas pour l'instant"
+ 65394,  "Impression en cours"
+ 65395,  "Imprimante sélectionnée incorrecte"
+ 65396,  "%s sur %s"
+ 65397,  "GroupIndex ne peut être inférieur au GroupIndex de l'élément de menu précédent"
+ 65398,  "Impossible de créer la fiche. Aucune fiche Non MDI active"
+ 65399,  "Un contrôle ne peut avoir lui-même comme parent"
+ 65400,  "OK"
+ 65401,  "Annuler"
+ 65402,  "&Oui"
+ 65403,  "&Non"
+ 65404,  "&Aide"
+ 65405,  "&Fermer"
+ 65406,  "&Ignorer"
+ 65407,  "&Retenter"
+}
+
+
+STRINGTABLE
+{
+ 65408,  "Plus de ressources système"
+ 65409,  "Les canevas ne permettent pas de dessiner"
+ 65410,  "Taille d'image incorrecte"
+ 65411,  "ImageList incorrecte"
+ 65412,  "Index ImageList incorrect"
+ 65413,  "Erreur à la lecture des données ImageList du flux"
+ 65414,  "Erreur de création de contexte périphérique fenêtre"
+ 65415,  "Erreur de création de la classe fenêtre"
+ 65416,  "Impossible de focaliser une fenêtre désactivée ou invisible"
+ 65417,  "Le contrôle '%s' n'a pas de fenêtre parente"
+ 65418,  "Impossible de cacher une fiche enfant MDI"
+ 65419,  "Impossible de changer Visible dans OnShow ou OnHide"
+ 65420,  "Impossible de rendre modale une fenêtre visible"
+ 65421,  "Index de menu hors limites"
+ 65422,  "Menu inséré deux fois"
+ 65423,  "Sous-menu pas dans le menu"
+}
+
+
+STRINGTABLE
+{
+ 65424,  "Opération non autorisée sur une liste de chaînes triée"
+ 65425,  "Une liste de chaînes n'autorise pas de duplicatas"
+ 65426,  "Un composant nommé %s existe déjà"
+ 65427,  "''%s'' n'est pas un nom de composant correct"
+ 65428,  "Une classe nommée %s existe déjà"
+ 65429,  "Valeur de propriété incorrecte"
+ 65430,  "Chemin de propriété incorrect"
+ 65431,  "Propriété inexistante"
+ 65432,  "Propriété en lecture seule"
+ 65433,  "Erreur lors de la lecture de %s%s%s: %s"
+ 65434,  "Ancêtre de '%s' non trouvé"
+ 65435,  "Image bitmap incorrecte"
+ 65436,  "Image icône incorrecte"
+ 65437,  "MetaFichier incorrect"
+ 65438,  "Impossible de modifier la taille d'une icône"
+ 65439,  "Format Presse-papiers non supporté"
+}
+
+
+STRINGTABLE
+{
+ 65440,  "Jeudi"
+ 65441,  "Vendredi"
+ 65442,  "Samedi"
+ 65443,  "Impossible d'affecter %s à %s"
+ 65444,  "Impossible de créer le fichier %s"
+ 65445,  "Impossible d'ouvrir le fichier %s"
+ 65446,  "Erreur de lecture du flux"
+ 65447,  "Erreur d'écriture dans le flux"
+ 65448,  "Plus de mémoire lors de l'expansion du flux mémoire"
+ 65449,  "Impossible d'écrire dans un flux en lecture seule"
+ 65450,  "Classe %s non trouvée"
+ 65451,  "Format de flux incorrect"
+ 65452,  "Ressource %s non trouvée"
+ 65453,  "Index de liste hors limites (%d)"
+ 65454,  "Capacité de liste hors limites (%d)"
+ 65455,  "Compte de liste hors limites (%d)"
+}
+
+
+STRINGTABLE
+{
+ 65456,  "Août"
+ 65457,  "Septembre"
+ 65458,  "Octobre"
+ 65459,  "Novembre"
+ 65460,  "Décembre"
+ 65461,  "Dim"
+ 65462,  "Lun"
+ 65463,  "Mar"
+ 65464,  "Mer"
+ 65465,  "Jeu"
+ 65466,  "Ven"
+ 65467,  "Sam"
+ 65468,  "Dimanche"
+ 65469,  "Lundi"
+ 65470,  "Mardi"
+ 65471,  "Mercredi"
+}
+
+
+STRINGTABLE
+{
+ 65472,  "Avr"
+ 65473,  "Mai"
+ 65474,  "Jun"
+ 65475,  "Jul"
+ 65476,  "Aoû"
+ 65477,  "Sep"
+ 65478,  "Oct"
+ 65479,  "Nov"
+ 65480,  "Déc"
+ 65481,  "Janvier"
+ 65482,  "Février"
+ 65483,  "Mars"
+ 65484,  "Avril"
+ 65485,  "Mai"
+ 65486,  "Juin"
+ 65487,  "Juillet"
+}
+
+
+STRINGTABLE
+{
+ 65488,  "Ecriture"
+ 65489,  "Chaîne de format trop longue"
+ 65490,  "Erreur lors de la création de tableau de variants"
+ 65491,  "Le variant n'est pas un tableau"
+ 65492,  "Indice de tableau de variants hors limites"
+ 65493,  "Exception externe %x"
+ 65494,  "Echec de l'assertion"
+ 65495,  "Interface non supportée"
+ 65496,  "%s (%s, ligne %d)"
+ 65497,  "Erreur abstraite"
+ 65498,  "Violation d'accès à l'adresse %p dans le module '%s'. %s de l'adresse %p"
+ 65499,  "Erreur Win32.  Code : %d.\n%s"
+ 65500,  "Une fonction de l'API Win32 a échoué"
+ 65501,  "Jan"
+ 65502,  "Fév"
+ 65503,  "Mar"
+}
+
+
+STRINGTABLE
+{
+ 65504,  "Débordement négatif flottant"
+ 65505,  "Opération de pointeur incorrecte"
+ 65506,  "Transtypage de classe incorrect"
+ 65507,  "Violation d'accès à l'adresse %p. %s de l'adresse %p"
+ 65508,  "Débordement de pile"
+ 65509,  "Frappe de Contrôle-C"
+ 65510,  "Instruction privilégiée"
+ 65511,  "Opération abandonnée"
+ 65512,  "Exception %s dans le module %s à %p.\n%s%s"
+ 65513,  "Erreur d'application"
+ 65514,  "Le format '%s' est incorrect ou incompatible avec l'argument"
+ 65515,  "Aucun argument pour le format '%s'"
+ 65516,  "Conversion de type variant incorrecte"
+ 65517,  "Opération de variant incorrecte"
+ 65518,  "Appels de méthode variante non supportés"
+ 65519,  "Lecture"
+}
+
+
+STRINGTABLE
+{
+ 65520,  "'%s' n'est pas une valeur entière correcte"
+ 65521,  "Mémoire insuffisante"
+ 65522,  "Erreur E/S %d"
+ 65523,  "Fichier introuvable"
+ 65524,  "Nom de fichier incorrect"
+ 65525,  "Trop de fichiers ouverts"
+ 65526,  "Accès au fichier refusé"
+ 65527,  "Lecture au-delà de la fin de fichier"
+ 65528,  "Disque plein"
+ 65529,  "Saisie numérique incorrecte"
+ 65530,  "Division par zéro"
+ 65531,  "Erreur de vérification d'étendue"
+ 65532,  "Débordement d'entier"
+ 65533,  "Opération en virgule flottante incorrecte"
+ 65534,  "Division par zéro en virgule flottante"
+ 65535,  "Débordement en virgule flottante"
+}
+

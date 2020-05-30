@@ -1,0 +1,264 @@
+
+STRINGTABLE
+{
+ 65328,  "Invalid index"
+ 65329,  "Unable to insert an item"
+ 65330,  "Invalid owner"
+ 65331,  "RichEdit line insertion error"
+ 65332,  "Failed to Load Stream"
+ 65333,  "Failed to Save Stream"
+ 65334,  "%s is already associated with %s"
+}
+
+
+STRINGTABLE
+{
+ 65344,  "Left"
+ 65345,  "Up"
+ 65346,  "Right"
+ 65347,  "Down"
+ 65348,  "Ins"
+ 65349,  "Del"
+ 65350,  "Shift+"
+ 65351,  "Ctrl+"
+ 65352,  "Alt+"
+ 65353,  "Unable to insert a line"
+ 65354,  "Clipboard does not support Icons"
+ 65355,  "Text exceeds memo capacity"
+ 65356,  "Operation not supported on selected printer"
+ 65357,  "There is no default printer currently selected"
+ 65358,  "Bits index out of range"
+ 65359,  "Menu '%s' is already being used by another form"
+}
+
+
+STRINGTABLE
+{
+ 65360,  "&Help"
+ 65361,  "&Abort"
+ 65362,  "&Retry"
+ 65363,  "&Ignore"
+ 65364,  "&All"
+ 65365,  "N&o to All"
+ 65366,  "Yes to &All"
+ 65367,  "BkSp"
+ 65368,  "Tab"
+ 65369,  "Esc"
+ 65370,  "Enter"
+ 65371,  "Space"
+ 65372,  "PgUp"
+ 65373,  "PgDn"
+ 65374,  "End"
+ 65375,  "Home"
+}
+
+
+STRINGTABLE
+{
+ 65376,  "Abort"
+ 65377,  "&All"
+ 65378,  "Cannot drag a form"
+ 65379,  "Metafiles"
+ 65380,  "Enhanced Metafiles"
+ 65381,  "Icons"
+ 65382,  "Bitmaps"
+ 65383,  "Invalid property value"
+ 65384,  "Warning"
+ 65385,  "Error"
+ 65386,  "Information"
+ 65387,  "Confirm"
+ 65388,  "&Yes"
+ 65389,  "&No"
+ 65390,  "OK"
+ 65391,  "Cancel"
+}
+
+
+STRINGTABLE
+{
+ 65392,  "Not enough timers available"
+ 65393,  "Printer is not currently printing"
+ 65394,  "Printing in progress"
+ 65395,  "Printer selected is not valid"
+ 65396,  "%s on %s"
+ 65397,  "GroupIndex cannot be less than a previous menu item's GroupIndex"
+ 65398,  "Cannot create form. No MDI forms are currently active"
+ 65399,  "A control cannot have itself as its parent"
+ 65400,  "OK"
+ 65401,  "Cancel"
+ 65402,  "&Yes"
+ 65403,  "&No"
+ 65404,  "&Help"
+ 65405,  "&Close"
+ 65406,  "&Ignore"
+ 65407,  "&Retry"
+}
+
+
+STRINGTABLE
+{
+ 65408,  "Out of system resources"
+ 65409,  "Canvas does not allow drawing"
+ 65410,  "Invalid image size"
+ 65411,  "Invalid ImageList"
+ 65412,  "Invalid ImageList Index"
+ 65413,  "Failed to read ImageList data from stream"
+ 65414,  "Error creating window device context"
+ 65415,  "Error creating window class"
+ 65416,  "Cannot focus a disabled or invisible window"
+ 65417,  "Control '%s' has no parent window"
+ 65418,  "Cannot hide an MDI Child Form"
+ 65419,  "Cannot change Visible in OnShow or OnHide"
+ 65420,  "Cannot make a visible window modal"
+ 65421,  "Menu index out of range"
+ 65422,  "Menu inserted twice"
+ 65423,  "Sub-menu is not in menu"
+}
+
+
+STRINGTABLE
+{
+ 65424,  "Operation not allowed on sorted string list"
+ 65425,  "String list does not allow duplicates"
+ 65426,  "A component named %s already exists"
+ 65427,  "''%s'' is not a valid component name"
+ 65428,  "A class named %s already exists"
+ 65429,  "Invalid property value"
+ 65430,  "Invalid property path"
+ 65431,  "Property does not exist"
+ 65432,  "Property is read-only"
+ 65433,  "Error reading %s%s%s: %s"
+ 65434,  "Ancestor for '%s' not found"
+ 65435,  "Bitmap image is not valid"
+ 65436,  "Icon image is not valid"
+ 65437,  "Metafile is not valid"
+ 65438,  "Cannot change the size of an icon"
+ 65439,  "Unsupported clipboard format"
+}
+
+
+STRINGTABLE
+{
+ 65440,  "Thursday"
+ 65441,  "Friday"
+ 65442,  "Saturday"
+ 65443,  "Cannot assign a %s to a %s"
+ 65444,  "Cannot create file %s"
+ 65445,  "Cannot open file %s"
+ 65446,  "Stream read error"
+ 65447,  "Stream write error"
+ 65448,  "Out of memory while expanding memory stream"
+ 65449,  "Can't write to a read-only resource stream"
+ 65450,  "Class %s not found"
+ 65451,  "Invalid stream format"
+ 65452,  "Resource %s not found"
+ 65453,  "List index out of bounds (%d)"
+ 65454,  "List capacity out of bounds (%d)"
+ 65455,  "List count out of bounds (%d)"
+}
+
+
+STRINGTABLE
+{
+ 65456,  "August"
+ 65457,  "September"
+ 65458,  "October"
+ 65459,  "November"
+ 65460,  "December"
+ 65461,  "Sun"
+ 65462,  "Mon"
+ 65463,  "Tue"
+ 65464,  "Wed"
+ 65465,  "Thu"
+ 65466,  "Fri"
+ 65467,  "Sat"
+ 65468,  "Sunday"
+ 65469,  "Monday"
+ 65470,  "Tuesday"
+ 65471,  "Wednesday"
+}
+
+
+STRINGTABLE
+{
+ 65472,  "Apr"
+ 65473,  "May"
+ 65474,  "Jun"
+ 65475,  "Jul"
+ 65476,  "Aug"
+ 65477,  "Sep"
+ 65478,  "Oct"
+ 65479,  "Nov"
+ 65480,  "Dec"
+ 65481,  "January"
+ 65482,  "February"
+ 65483,  "March"
+ 65484,  "April"
+ 65485,  "May"
+ 65486,  "June"
+ 65487,  "July"
+}
+
+
+STRINGTABLE
+{
+ 65488,  "Write"
+ 65489,  "Format string too long"
+ 65490,  "Error creating variant array"
+ 65491,  "Variant is not an array"
+ 65492,  "Variant array index out of bounds"
+ 65493,  "External exception %x"
+ 65494,  "Assertion failed"
+ 65495,  "Interface not supported"
+ 65496,  "%s (%s, line %d)"
+ 65497,  "Abstract Error"
+ 65498,  "Access violation at address %p in module '%s'. %s of address %p"
+ 65499,  "Win32 Error.  Code: %d.\n%s"
+ 65500,  "A Win32 API function failed"
+ 65501,  "Jan"
+ 65502,  "Feb"
+ 65503,  "Mar"
+}
+
+
+STRINGTABLE
+{
+ 65504,  "Floating point underflow"
+ 65505,  "Invalid pointer operation"
+ 65506,  "Invalid class typecast"
+ 65507,  "Access violation at address %p. %s of address %p"
+ 65508,  "Stack overflow"
+ 65509,  "Control-C hit"
+ 65510,  "Privileged instruction"
+ 65511,  "Operation aborted"
+ 65512,  "Exception %s in module %s at %p.\n%s%s"
+ 65513,  "Application Error"
+ 65514,  "Format '%s' invalid or incompatible with argument"
+ 65515,  "No argument for format '%s'"
+ 65516,  "Invalid variant type conversion"
+ 65517,  "Invalid variant operation"
+ 65518,  "Variant method calls not supported"
+ 65519,  "Read"
+}
+
+
+STRINGTABLE
+{
+ 65520,  "'%s' is not a valid integer value"
+ 65521,  "Out of memory"
+ 65522,  "I/O error %d"
+ 65523,  "File not found"
+ 65524,  "Invalid filename"
+ 65525,  "Too many open files"
+ 65526,  "File access denied"
+ 65527,  "Read beyond end of file"
+ 65528,  "Disk full"
+ 65529,  "Invalid numeric input"
+ 65530,  "Division by zero"
+ 65531,  "Range check error"
+ 65532,  "Integer overflow"
+ 65533,  "Invalid floating point operation"
+ 65534,  "Floating point division by zero"
+ 65535,  "Floating point overflow"
+}
+

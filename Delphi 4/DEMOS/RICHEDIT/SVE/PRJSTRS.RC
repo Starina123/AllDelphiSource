@@ -1,0 +1,264 @@
+
+STRINGTABLE
+{
+ 65328,  "Ogiltigt index"
+ 65329,  "Det gick inte att infoga ett objekt"
+ 65330,  "Ogiltig ägare"
+ 65331,  "Infogningsfel, RichEdit"
+ 65332,  "Kunde inte utföra Load Stream"
+ 65333,  "Kunde inte utföra Save Stream"
+ 65334,  "%s är redan associerat till %s"
+}
+
+
+STRINGTABLE
+{
+ 65344,  "Vänster"
+ 65345,  "Upp"
+ 65346,  "Höger"
+ 65347,  "Ned"
+ 65348,  "Ins"
+ 65349,  "Del"
+ 65350,  "Skift+"
+ 65351,  "Ctrl+"
+ 65352,  "Alt+"
+ 65353,  "Kan inte infoga en rad"
+ 65354,  "Urklippet kan inte hantera ikoner"
+ 65355,  "Texten ryms inte i memo"
+ 65356,  "Operationen stöds ej av vald skrivare"
+ 65357,  "Ingen skrivare är vald"
+ 65358,  "Bits-index utanför intervall"
+ 65359,  "Menu '%s' is already being used by another form"
+}
+
+
+STRINGTABLE
+{
+ 65360,  "&Hjälp"
+ 65361,  "&Avbryt"
+ 65362,  "N&ytt försök"
+ 65363,  "&Ignorera"
+ 65364,  "&Alla"
+ 65365,  "N&o to All"
+ 65366,  "Yes to &All"
+ 65367,  "BkSt"
+ 65368,  "Tab"
+ 65369,  "Esc"
+ 65370,  "Retur"
+ 65371,  "Blanktecken"
+ 65372,  "PgUp"
+ 65373,  "PgDn"
+ 65374,  "End"
+ 65375,  "Home"
+}
+
+
+STRINGTABLE
+{
+ 65376,  "Avbryt"
+ 65377,  "&Alla"
+ 65378,  "Kan inte dra ett formulär"
+ 65379,  "Metafiler"
+ 65380,  "Enhanced Metafiles"
+ 65381,  "Ikoner"
+ 65382,  "Bitmappar"
+ 65383,  "Ogiltigt egenskapsvärde"
+ 65384,  "Varning"
+ 65385,  "Fel"
+ 65386,  "Information"
+ 65387,  "Bekräfta"
+ 65388,  "&Ja"
+ 65389,  "&Nej"
+ 65390,  "OK"
+ 65391,  "Avbryt"
+}
+
+
+STRINGTABLE
+{
+ 65392,  "För få tillgängliga timers"
+ 65393,  "Skrivaren skriver inte för närvarande"
+ 65394,  "Utskrift pågår"
+ 65395,  "Vald skrivare är ogiltig"
+ 65396,  "%s på %s"
+ 65397,  "GroupIndex cannot be less than a previous menu item's GroupIndex"
+ 65398,  "Kan inte skapa formulär. Inga MDI-formulär är aktiva"
+ 65399,  "En control kan inte vara sin egen förälder"
+ 65400,  "OK"
+ 65401,  "Avbryt"
+ 65402,  "&Ja"
+ 65403,  "&Nej"
+ 65404,  "&Hjälp"
+ 65405,  "Stä&ng"
+ 65406,  "&Ignorera"
+ 65407,  "N&ytt försök"
+}
+
+
+STRINGTABLE
+{
+ 65408,  "Slut på systemresurser"
+ 65409,  "Det går inte att rita på ytan"
+ 65410,  "Ogiltig bildstorlek"
+ 65411,  "Ogiltig ImageList"
+ 65412,  "Ogiltigt index för ImageList"
+ 65413,  "Failed to read ImageList data from stream"
+ 65414,  "Fel då fönsterenhet skapades"
+ 65415,  "Fel då fönsterklass skapades"
+ 65416,  "Kan inte fokusera ett inaktivt eller osynligt fönster"
+ 65417,  "Kontrollen \"%s\" har inget föräldrafönster"
+ 65418,  "Kan inte dölja ett MDI Child-formulär"
+ 65419,  "Kan inte ändra Visible i OnShow eller OnHide"
+ 65420,  "Kan inte göra ett synligt fönster modalt"
+ 65421,  "Menyindex utanför intervall"
+ 65422,  "Meny infogad två gånger"
+ 65423,  "Undermenyn saknas i menyn"
+}
+
+
+STRINGTABLE
+{
+ 65424,  "Operationen ej tillåten på sorterad stränglista"
+ 65425,  "Stränglistan tillåter inte dubbletter"
+ 65426,  "Komponenten %s finns redan"
+ 65427,  "''%s'' is not a valid component name"
+ 65428,  "Klassen %s finns redan"
+ 65429,  "Ogiltigt egenskapsvärde"
+ 65430,  "Ogiltig sökväg till egenskap"
+ 65431,  "Egenskapen finns inte"
+ 65432,  "Egenskapen är skrivskyddad"
+ 65433,  "Fel vid läsning av %s%s%s: %s"
+ 65434,  "Hittar inte förfader till \"%s\""
+ 65435,  "Bitmap ogiltig"
+ 65436,  "Ogiltig ikonbild"
+ 65437,  "Ogiltig metafil"
+ 65438,  "Kan inte ändra en ikons storlek"
+ 65439,  "Urklippsformatet stöds inte"
+}
+
+
+STRINGTABLE
+{
+ 65440,  "Torsdag"
+ 65441,  "Fredag"
+ 65442,  "Lördag"
+ 65443,  "Kan inte tilldela en %s till en %s"
+ 65444,  "Kan inte skapa filen %s"
+ 65445,  "Kan inte öppna filen %s"
+ 65446,  "Läsfel, Stream"
+ 65447,  "Skrivfel, Stream"
+ 65448,  "Slut på minne vid utvidgning av minnes-stream"
+ 65449,  "Kan inte skriva till skrivskyddad resurs-stream"
+ 65450,  "Hittar inte klassen %s"
+ 65451,  "Ogiltigt stream format"
+ 65452,  "Resursen %s hittades inte"
+ 65453,  "Listindex utanför intervall (%d)"
+ 65454,  "Listans kapacitet ligger utanför intervallet (%d)"
+ 65455,  "Listantalet ligger utanför intervallet (%d)"
+}
+
+
+STRINGTABLE
+{
+ 65456,  "Augusti"
+ 65457,  "September"
+ 65458,  "Oktober"
+ 65459,  "November"
+ 65460,  "December"
+ 65461,  "Sön"
+ 65462,  "Mån"
+ 65463,  "Tis"
+ 65464,  "Ons"
+ 65465,  "Tor"
+ 65466,  "Fre"
+ 65467,  "Lör"
+ 65468,  "Söndag"
+ 65469,  "Måndag"
+ 65470,  "Tisdag"
+ 65471,  "Onsdag"
+}
+
+
+STRINGTABLE
+{
+ 65472,  "Apr"
+ 65473,  "Maj"
+ 65474,  "Jun"
+ 65475,  "Jul"
+ 65476,  "Aug"
+ 65477,  "Sep"
+ 65478,  "Okt"
+ 65479,  "Nov"
+ 65480,  "Dec"
+ 65481,  "Januari"
+ 65482,  "Februari"
+ 65483,  "Mars"
+ 65484,  "April"
+ 65485,  "Maj"
+ 65486,  "Juni"
+ 65487,  "Juli"
+}
+
+
+STRINGTABLE
+{
+ 65488,  "Skriv"
+ 65489,  "Formatsträng för lång"
+ 65490,  "Fel då variantvektor skapades"
+ 65491,  "Varianten är inte en vektor"
+ 65492,  "Index för variantvektor utanför intervall"
+ 65493,  "Externt undantag %x"
+ 65494,  "Förutsättningsfel"
+ 65495,  "Detta OLE-interface stöds inte"
+ 65496,  "%s (%s rad %d)"
+ 65497,  "Abstrakt fel"
+ 65498,  "Åtkomstfel vid adress %p. i modul '%s'. %s av adress %p"
+ 65499,  "Win32-fel. Kod: %d.\n%s"
+ 65500,  "Ett Win32 API-funktionsanrop misslyckades"
+ 65501,  "Jan"
+ 65502,  "Feb"
+ 65503,  "Mar"
+}
+
+
+STRINGTABLE
+{
+ 65504,  "För litet flyttal"
+ 65505,  "Ogiltig pekaroperation"
+ 65506,  "Ogiltig typomvandling för klass"
+ 65507,  "Åtkomstfel vid adress %p. %s av adress %p"
+ 65508,  "Stackspill"
+ 65509,  "Ctrl+C-signal"
+ 65510,  "Priviligierad instruktion"
+ 65511,  "Operation avbruten"
+ 65512,  "Undantagsfel %s i modul %s vid %p.\n%s%s"
+ 65513,  "Tillämpningsfel"
+ 65514,  "Formatet '%s' ogiltigt eller inkompatibelt med argument"
+ 65515,  "Inget argument till formatet '%s'"
+ 65516,  "Ogiltig typkonvertering för variant"
+ 65517,  "Ogiltig variantoperation"
+ 65518,  "Variantmetodanrop stöds ej"
+ 65519,  "Läs"
+}
+
+
+STRINGTABLE
+{
+ 65520,  "'%s' är inte ett giltigt heltalsvärde"
+ 65521,  "Slut på minne"
+ 65522,  "I/O-fel %d"
+ 65523,  "Det gick inte att hitta filen"
+ 65524,  "Ogiltigt filnamn"
+ 65525,  "För många öppna filer"
+ 65526,  "Filåtkomst nekad"
+ 65527,  "Läsning bortom filslut"
+ 65528,  "Disken är full"
+ 65529,  "Ogiltig numerisk inmatning"
+ 65530,  "Division med noll"
+ 65531,  "Fel vid intervallkontroll"
+ 65532,  "Heltalsspill"
+ 65533,  "Ogiltig flyttalsoperation"
+ 65534,  "Flyttalsdivision med noll"
+ 65535,  "För stort flyttal"
+}
+

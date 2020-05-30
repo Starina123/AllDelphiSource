@@ -1,0 +1,264 @@
+
+STRINGTABLE
+{
+ 65328,  "Ungültiger Index"
+ 65329,  "Eintrag kann nicht eingefügt werden"
+ 65330,  "Ungültiger Besitzer"
+ 65331,  "Fehler bei Einfügen von RichEdit-Zeile"
+ 65332,  "Das Laden des Streams ist mißlungen"
+ 65333,  "Das Speichern des Streams ist mißlungen"
+ 65334,  "%s ist bereits mit %s verknüpft"
+}
+
+
+STRINGTABLE
+{
+ 65344,  "Linksbündig"
+ 65345,  "Nach oben"
+ 65346,  "Rechts"
+ 65347,  "Nach unten"
+ 65348,  "Einfg"
+ 65349,  "Entf"
+ 65350,  "Umsch+"
+ 65351,  "Strg+"
+ 65352,  "Alt+"
+ 65353,  "Zeile kann nicht eingefügt werden"
+ 65354,  "Zwischenablage unterstützt keine Symbole"
+ 65355,  "Text überschreitet Memo-Kapazität"
+ 65356,  "Operation auf ausgewähltem Drucker nicht verfügbar"
+ 65357,  "Zur Zeit ist kein Standard-Drucker gewählt"
+ 65358,  "Bits-Index außerhalb des zulässigen Bereichs"
+ 65359,  "Menü '%s' wird bereits von einem anderen Formular benutzt"
+}
+
+
+STRINGTABLE
+{
+ 65360,  "&Hilfe"
+ 65361,  "&Abbrechen"
+ 65362,  "&Wiederholen"
+ 65363,  "&Ignorieren"
+ 65364,  "&Alles"
+ 65365,  "&Alle Nein"
+ 65366,  "A&lle Ja"
+ 65367,  "Rück"
+ 65368,  "Tab"
+ 65369,  "Esc"
+ 65370,  "Enter"
+ 65371,  "Leertaste"
+ 65372,  "BildAuf"
+ 65373,  "BildAb"
+ 65374,  "Ende"
+ 65375,  "Pos1"
+}
+
+
+STRINGTABLE
+{
+ 65376,  "Abbruch"
+ 65377,  "&Alles"
+ 65378,  "Formulare können nicht gezogen werden"
+ 65379,  "Metadateien"
+ 65380,  "Erweiterte Metadateien"
+ 65381,  "Symbole"
+ 65382,  "Bitmaps"
+ 65383,  "Ungültiger Wert der Eigenschaft"
+ 65384,  "Warnung"
+ 65385,  "Fehler"
+ 65386,  "Information"
+ 65387,  "Bestätigung"
+ 65388,  "&Ja"
+ 65389,  "&Nein"
+ 65390,  "OK"
+ 65391,  "Abbrechen"
+}
+
+
+STRINGTABLE
+{
+ 65392,  "Nicht genügend Timer verfügbar"
+ 65393,  "Der Drucker ist nicht am Drucken"
+ 65394,  "Das Drucken ist im Gang"
+ 65395,  "Ausgewählter Drucker ist ungültig"
+ 65396,  "%s an %s"
+ 65397,  "GroupIndex kann nicht kleiner sein als der GroupIndex eines vorhergehenden Menüelementes"
+ 65398,  "Formular kann nicht erstellt werden. Zur Zeit sind keine MDI-Formulare aktiv"
+ 65399,  "Ein Steuerelement kann nicht sich selbst als Vorfahr haben"
+ 65400,  "OK"
+ 65401,  "Abbrechen"
+ 65402,  "&Ja"
+ 65403,  "&Nein"
+ 65404,  "&Hilfe"
+ 65405,  "&Schließen"
+ 65406,  "&Ignorieren"
+ 65407,  "&Wiederholen"
+}
+
+
+STRINGTABLE
+{
+ 65408,  "Systemressourcen erschöpft."
+ 65409,  "Leinwand/Bild erlaubt kein Zeichnen"
+ 65410,  "Ungültige Bildgröße"
+ 65411,  "Ungültige ImageList"
+ 65412,  "Ungültiger ImageList-Index"
+ 65413,  "Die ImageList-Daten konnten nicht aus dem Stream gelesen werden"
+ 65414,  "Fehler beim Erstellen des Fenster-Gerätekontexts"
+ 65415,  "Fehler beim Erzeugen einer Fensterklasse"
+ 65416,  "Ein deaktiviertes oder unsichtbares Fenster kann nicht den Fokus erhalten"
+ 65417,  "Element '%s' hat kein übergeordnetes Fenster"
+ 65418,  "Ein MDI-Kindformular kann nicht verborgen werden"
+ 65419,  "Eigenschaft Visible kann in OnShow oder OnHide nicht verändert werden"
+ 65420,  "Aus einem sichtbaren Fenster kann kein modales gemacht werden"
+ 65421,  "Menüindex außerhalb des zulässigen Bereichs"
+ 65422,  "Menü zweimal eingefügt"
+ 65423,  "Untermenü ist nicht im Menü"
+}
+
+
+STRINGTABLE
+{
+ 65424,  "Operation bei sortierten Stringlisten nicht erlaubt"
+ 65425,  "In der Stringliste sind Duplikate nicht erlaubt"
+ 65426,  "Eine Komponente mit der Bezeichnung %s existiert bereits"
+ 65427,  "''%s'' ist kein gültiger Komponentenname"
+ 65428,  "Eine Klasse mit der Bezeichnung %s existiert bereits"
+ 65429,  "Ungültiger Wert der Eigenschaft"
+ 65430,  "Ungültiger Pfad für Eigenschaft"
+ 65431,  "Eigenschaft existiert nicht"
+ 65432,  "Eigenschaft kann nur gelesen werden"
+ 65433,  "Fehler beim Lesen von %s%s%s: %s"
+ 65434,  "Vorfahr für '%s' nicht gefunden"
+ 65435,  "Bitmap ist ungültig"
+ 65436,  "Ungültiges Symbol"
+ 65437,  "Metadatei ist ungültig"
+ 65438,  "Die Größe eines Symbols kann nicht geändert werden"
+ 65439,  "Format der Zwischenablage wird nicht unterstützt"
+}
+
+
+STRINGTABLE
+{
+ 65440,  "Donnerstag"
+ 65441,  "Freitag"
+ 65442,  "Samstag"
+ 65443,  "%s kann nicht zu  %s zugewiesen werden"
+ 65444,  "Datei %s kann nicht erstellt werden"
+ 65445,  "Datei %s kann nicht geöffnet werden"
+ 65446,  "Stream-Read-Fehler"
+ 65447,  "Stream-Write-Fehler"
+ 65448,  "Expandieren des Speicher-Stream wegen Speichermangel nicht möglich"
+ 65449,  "In einen zum Lesen geöffneten Ressourcen-Stream kann nicht geschrieben werden"
+ 65450,  "Klasse %s nicht gefunden"
+ 65451,  "Ungültiges Stream-Format"
+ 65452,  "Ressource %s nicht gefunden"
+ 65453,  "Der Index der Liste überschreitet das Maximum (%d)"
+ 65454,  "Die Kapazität der Liste ist erschöpft (%d)"
+ 65455,  "Zu viele Einträge in der Liste (%d)"
+}
+
+
+STRINGTABLE
+{
+ 65456,  "August"
+ 65457,  "September"
+ 65458,  "Oktober"
+ 65459,  "November"
+ 65460,  "Dezember"
+ 65461,  "So"
+ 65462,  "Mo"
+ 65463,  "Di"
+ 65464,  "Mi"
+ 65465,  "Do"
+ 65466,  "Fr"
+ 65467,  "Sa"
+ 65468,  "Sonntag"
+ 65469,  "Montag"
+ 65470,  "Dienstag"
+ 65471,  "Mittwoch"
+}
+
+
+STRINGTABLE
+{
+ 65472,  "Apr"
+ 65473,  "Mai"
+ 65474,  "Jun"
+ 65475,  "Jul"
+ 65476,  "Aug"
+ 65477,  "Sep"
+ 65478,  "Okt"
+ 65479,  "Nov"
+ 65480,  "Dez"
+ 65481,  "Januar"
+ 65482,  "Februar"
+ 65483,  "März"
+ 65484,  "April"
+ 65485,  "Mai"
+ 65486,  "Juni"
+ 65487,  "Juli"
+}
+
+
+STRINGTABLE
+{
+ 65488,  "Schreiben"
+ 65489,  "Format-String zu lang"
+ 65490,  "Fehler beim Erstellen des Variant-Arrays"
+ 65491,  "Variant ist kein Array"
+ 65492,  "Index des Variant-Arrays außerhalb des Bereichs"
+ 65493,  "Externe Exception %x"
+ 65494,  "Auswertung von assert fehlgeschlagen"
+ 65495,  "Schnittstelle nicht unterstützt"
+ 65496,  "%s (%s, Zeile %d)"
+ 65497,  "Abstrakter Fehler"
+ 65498,  "Zugriffsverletzung bei Adresse %p in Modul '%s'. %s von Adresse %p"
+ 65499,  "Win32-Fehler.  Code: %d.\n%s"
+ 65500,  "Eine Win32-API-Funktion ist fehlgeschlagen"
+ 65501,  "Jan"
+ 65502,  "Feb"
+ 65503,  "Mär"
+}
+
+
+STRINGTABLE
+{
+ 65504,  "Gleitkommaunterlauf"
+ 65505,  "Ungültige Zeigeroperation"
+ 65506,  "Ungültige Typumwandlung"
+ 65507,  "Zugriffsverletzung bei Adresse %p. %s von Adresse %p"
+ 65508,  "Stack-Überlauf"
+ 65509,  "Strg+C gedrückt"
+ 65510,  "Privilegierte Anweisung"
+ 65511,  "Operation abgebrochen"
+ 65512,  "Exception %s im Modul %s bei %p.\n%s%s"
+ 65513,  "Anwendungsfehler"
+ 65514,  "Format '%s' ungültig oder nicht kompatibel mit Argument"
+ 65515,  "Kein Argument für Format '%s'"
+ 65516,  "Ungültige Variant-Typumwandlung"
+ 65517,  "Ungültige Variant-Operation"
+ 65518,  "Variant-Methodenaufruf nicht unterstützt"
+ 65519,  "Lesen"
+}
+
+
+STRINGTABLE
+{
+ 65520,  "'%s' ist kein gültiger Integerwert"
+ 65521,  "Zu wenig Arbeitsspeicher"
+ 65522,  "E/A-Fehler %d"
+ 65523,  "Datei nicht gefunden"
+ 65524,  "Ungültiger Dateiname"
+ 65525,  "Zu viele geöffnete Dateien"
+ 65526,  "Dateizugriff verweigert"
+ 65527,  "Versuch hinter dem Dateiende zu lesen"
+ 65528,  "Zu wenig Speicherplatz"
+ 65529,  "Ungültige numerische Eingabe"
+ 65530,  "Division durch Null"
+ 65531,  "Fehler bei Bereichsprüfung"
+ 65532,  "Integerüberlauf"
+ 65533,  "Ungültige Gleitkommaoperation"
+ 65534,  "Gleitkommadivision durch Null"
+ 65535,  "Gleitkommaüberlauf"
+}
+

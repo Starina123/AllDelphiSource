@@ -1,0 +1,158 @@
+// include codegen.txt as RCData
+
+SNIPETS RCDATA CODEGEN.TXT
+
+// string tables
+
+STRINGTABLE DISCARDABLE
+{
+
+    11001  "Dialog Wizard"
+    11002  "Dialog Wizard from demonstration Wizard DLL."
+    11003  "Application Wizard"
+    11004  "Application Wizard from demonstration Wizard DLL"
+    11005  "&Finish"
+    11006  "&Next >"
+    11007  "An application name is required!"
+    11008  "The application name is not a valid identifier."
+    11009  "The path entered does not exist."
+    11010 "MAIN.PAS"
+    11011 "MAIN.DFM"
+    11012 "MAIN.TXT"
+
+// variable names
+
+    11020 "StatusLine"
+    11021 "OpenDialog"
+    11022 "SaveDialog"
+    11023 "MainMenu"
+    11024 "MainForm"
+    11025 "SpeedButton%d"
+    11026 "PrintDialog"
+    11027 "PrintSetupDialog"
+    11028 "SpeedBar"
+
+// misc method names
+    11030 "ShowHint"
+    11031 "FormCreate"
+
+// Button captions
+    11050 "OK"
+    11051 "Cancel"
+    11052 "&Help"
+
+// Menu text
+
+    11080 "&File"
+    11081 "&Edit"
+    11082 "&Window"
+    11083 "&Help"
+
+// Menu names
+
+    11090 "FileMenu"
+    11091 "EditMenu"
+    11092 "WindowMenu"
+    11093 "HelpMenu"
+
+// Menu item text
+
+    11100 "&New"
+    11101 "&Open..."
+    11102 "&Save"
+    11103 "Save &As..."
+    11104 "&Print..."
+    11105 "P&rint Setup..."
+    11106 "E&xit"
+
+    11107 "&Undo"
+    11108 "Cu&t"
+    11109 "&Copy"
+    11110 "&Paste"
+
+    11111 "&Tile"
+    11112 "&Cascade"
+    11113 "&Arrange All"
+
+    11114 "&Contents"
+    11115 "&Search for Help On..."
+    11116 "&How to Use Help"
+    11117 "&About..."
+
+// Menu item names
+
+    11200 "FileNewItem"
+    11201 "FileOpenItem"
+    11202 "FileSaveItem"
+    11203 "FileSaveAsItem"
+    11204 "FilePrintItem"
+    11205 "FilePrintSetupItem"
+    11206 "FileExitItem"
+
+    11207 "EditUndoItem"
+    11208 "EditCutItem"
+    11209 "EditCopyItem"
+    11210 "EditPasteItem"
+
+    11211 "WindowTileItem"
+    11212 "WindowCascadeItem"
+    11213 "WindowArrangeItem"
+
+    11214 "HelpContentsItem"
+    11215 "HelpSearchItem"
+    11216 "HelpHowToUseItem"
+    11217 "HelpAboutItem"
+
+// procedure names for menus
+
+    11300 "FileNew"
+    11301 "FileOpen"
+    11302 "FileSave"
+    11303 "FileSaveAs"
+    11304 "FilePrint"
+    11305 "FilePrintSetup"
+    11306 "FileExit"
+
+    11307 "EditUndo"
+    11308 "EditCut"
+    11309 "EditCopy"
+    11310 "EditPaste"
+
+    11311 "WindowTile"
+    11312 "WindowCascade"
+    11313 "WindowArrange"
+
+    11314 "HelpContents"
+    11315 "HelpSearch"
+    11316 "HelpHowToUse"
+    11317 "HelpAbout"
+
+// fly-by hints for speedbar
+
+    11400 "New|"
+    11401 "Open|"
+    11402 "Save|"
+    11403 "Save As|"
+    11404 "Print|"
+    11405 "Print Setup|"
+    11406 "Exit|"
+
+    11407 "Undo|"
+    11408 "Cut|"
+    11409 "Copy|"
+    11410 "Paste|"
+
+    11411 "Tile|"
+    11412 "Cascade|"
+    11413 "Arrange|"
+
+    11414 "Help Contents|"
+    11415 "Topic Search|"
+    11416 "How to Use Help|"
+    11417 "About|"
+
+    11500 "Dialogs"
+    11501 "Projects"
+}
+
+
